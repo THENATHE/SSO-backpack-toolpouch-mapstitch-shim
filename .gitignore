@@ -16,3 +16,5 @@
 /test-kit/
 **/integrity.json
 /release-record.json
+/qa/whetstone-acquisition/baseline-*/
+/qa/whetstone-acquisition/fixed-*/

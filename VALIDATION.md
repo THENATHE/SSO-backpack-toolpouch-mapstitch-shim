@@ -1,46 +1,41 @@
-# Validation — 1.0.0+26.3
+# Validation — 1.0.1+26.3
 
-Tested locally on 2026-10-01 with Minecraft 26.3, Java 25, Fabric Loader 0.19.5, Fabric API 0.161.0+26.3 and Polymer 0.18.2+26.3. Candidate SHA-256:
+Minecraft 26.3; Java 25; Fabric Loader 0.19.5; Fabric API 0.161.0+26.3; Polymer Bundled 0.18.2+26.3. Production candidate SHA-256:
 
-`2ab08d31dc335b03e2e4c16bfd2b1538de8e7e5a6e1760aac4164ed807e49fe3`
+`55787adf8c25f0b3b0891a40f8441d8247d9599d9312f9b9f2eb2cfdaf2745b8`
 
-The production JAR stayed unchanged throughout the final tests. The private test kit contains 97 verified production JAR copies across seven server/native-client profile pairs; every archive, manifest hash, dependency ID and absence of duplicate mod IDs was checked. Exact original/dependency JAR hashes are recorded per suite in [qa/evidence](qa/evidence), the [target inventory](qa/matrix/TARGET-ARTIFACTS.json), and separate [developer](tracks/developer/runtime.lock.json) / [SSO port](tracks/sso-port/runtime.lock.json) locks. Original JARs were not edited.
+## Confirmed defect and correction
 
-| Check | Result and actual scope |
+The user's actual server used the expected original JARs and released combined shim 1.0.0. Its saved enchanted diamond pickaxe contained an explicit `minecraft:repairable` override accepting only calcite. Matching enchantments and one diamond therefore could not satisfy the original portable repair recipe. Read-only inspection did not alter the server or world; private player/world data is not published.
+
+The cause is a client-side component-rule expansion. SSO configures a calcite repair rule for `#chalk:chalks` through Defaulted. Polymer hides Chalk's original item registry entries, leaving that tag empty on the native client. Defaulted 1.3.8 interprets an all-empty selector as global. Thus unrelated client item defaults became calcite-repairable, and a native Creative item packet could persist that incorrect component on the server. Actual Creative acquisition → anvil book enchantment → matching enchanted whetstone + one diamond reproduced the failure with 1.0.0.
+
+Version 1.0.1 projects outgoing Defaulted selectors into explicit client-visible item holders. Scoped rules with no visible target remain inapplicable, instead of becoming global; genuine server wildcard rules, patch values, generators and priority are preserved. The original packet and authoritative server rules remain intact. Defaulted is retained unchanged; neither original SSO nor Chalk JARs are modified. The existing SSO port, which has no Defaulted dependency, skips the optional hook.
+
+An operator-only `/sso-shim repair-held` command explicitly restores a saved unexpected single-calcite override to the fresh server item default. All other components remain intact. Recovery is not automatic: a deliberately command-created calcite override cannot be distinguished from this bug, so the operator must select the affected held item. Legitimate calcite-repairable Chalk and unselected items are preserved.
+
+## New release checks
+
+| Check | Result |
 | --- | --- |
-| Build | Offline Gradle build passed, Java 25 bytecode; all original compile-input hashes verified |
-| Optional modules | All 16 installed-mod subsets passed startup and actual datapack reload, including zero originals and each original alone; expected enabled modules, every custom-item fallback and preserved source stacks checked |
-| SSO port | Separate port-only and full-four port-target startup/reload passed; actual enchanted repair recipe passed; port dependencies isolated from developer Defaulted/CodecUI |
-| Chalk coexistence | All four modules plus the unchanged separate Chalk shim and requested 26.3 Chalk port passed startup/reload; Chalk excluded from combined module list |
-| Native Creative and commands | 144 checks passed across full-stack and Tiered-only profiles (72 each): six backpack tiers, operator/non-operator Creative actions and player-issued `/give`, across Overworld, Nether, End and a custom dimension |
-| Recipe book | Full recipe unlock decoded 1,078 native recipe collections without disconnection |
-| Native storage | All six backpack menus, keybinds, retained 42 diamonds, equipped backpack with four gold, Atlas world map; passed native-client and native-client-plus-Polymer sessions; 162 supplemental server assertions |
-| Unmodified vanilla | Zero-mod vanilla client connected and remained in gameplay for 40 seconds; safe placeholders/unsupported-action guards checked |
-| Native Survival anvil | Actual input placement, result pickup and storage passed for Mending pickaxe; repaired-component input and an injected 41-level menu cost verified native displayed cost and actual 41-level XP payment |
-| Native whetstone | Developer inventory and crafting-table repair passed (damage 1000 → 479, Efficiency I/Unbreaking I retained, diamond consumed, whetstone retained); separate SSO port and SSO-only developer profile also passed actual client clicks |
-| Native Creative whetstone | Enchanted whetstone packet preserved original item identity and stored Efficiency I/Unbreaking I without disconnect |
-| SSO vanilla-wire gameplay | Both developer and port tracks passed four actual client transactions each: free anvil, 65-level anvil, 5-level smithing and grindstone. This used a test-only Fabric API client without content mods and with its registry-sync receiver removed; it is explicitly not an unmodified vanilla client |
-| Atlas/elytra addon | Unchanged addon 1.0.0+26.3, original Tool Pouch/MapStitch, combined server plus separate Chalk, native client without Polymer: atlas 30 assertions and elytra 68 assertions passed |
-| Closed-pouch atlas updates | Actual terrain changes reached native maps with the pouch closed, both in inventory and attached to leggings; minimap/world map, renderer, compass and clock checked |
-| Elytra toggle and persistence | Registered key → client/server toggle packets → synchronized state, inventory/leggings, chest fallback, cosmetic behavior, respawn and server restart passed |
-| Survival cursor | Six item types, actual screen mouse clicks and 100 ms delay each direction passed; all 246 sampled post-placement cursor states empty, with server item counts/identity/map ID/damage/repair components preserved |
-| Same-process reconnect | Same client JVM explicitly disconnected and rejoined; 12 moves across two cycles, 492 empty post-placement cursor samples, and both server invariant checks passed |
-| Isolated native clients | SSO-only repair, Tool Pouch-only native contents/menu editing, MapStitch-only crafting/map sync/world map, and all 72 Tiered-only Creative/command/dimension checks passed |
+| Offline build | Passed; exact original compile-input hashes checked, Java 25 bytecode |
+| Original bad-state replay | 32 cases across the released combined stack and a control without it. A calcite-overridden enchanted pickaxe rejects diamond1 through direct recipe, recipe manager, 2×2 and 3×3 menus; restoring only target repairability restores output. The diamond's own repairability is irrelevant |
+| Defaulted selector projection | 29 runtime assertions passed: genuine wildcards, visible/mixed/hidden scopes, original immutability, nonempty generators, component patch and priority preservation, fully visible Chalk targets |
+| Acquisition and enchantment | All nine crafted/`give`/Creative tool-and-whetstone pairs passed actual anvil/book Efficiency I enchanting followed by diamond1 repair (damage3 → 0, enchantment retained, diamond consumed, whetstone retained). Client/server components stayed diamond/quartz-repairable; the oversized diamond9 negative control remained rejected |
+| Saved-item recovery | Developer operator command passed: enchanted pickaxe and whetstone recovered while damage, enchantments and other components were preserved; clean, legitimate Chalk, custom non-calcite, empty-hand and non-operator negative cases passed. The same checks passed on the separate SSO port |
+| Optional module and port tracks | Six cases passed: developer modules none, SSO only, Tool Pouch+MapStitch only, and all four; SSO port alone and with all four. Startup and reload passed in every case; portable repair checks passed where SSO was present |
+| Native anvil | Actual Mending application/result collection and 41-level cost display/payment passed, including prior repair-count component |
+| Creative/commands, recipe book, storage | Passed: 72 Creative/command cases across six backpack tiers and four dimensions; 1,762 recipes unlocked / 1,078 collections decoded; 162 storage assertions plus actual native, native+Polymer and zero-mod vanilla sessions. See [network report](qa/evidence/defaulted-network-report-1.0.1.md) |
+| Test-kit staging | Passed: all 97 production JAR copies across seven server/native-client profile pairs have valid archives and matching manifest hashes; every combined shim copy is the tested 1.0.1 candidate. Release assembly verifies the final ZIP and records its checksum separately |
 
-## Limits and interpretation
+Every final result records exact JAR hashes in [qa/evidence](qa/evidence). [Developer runtime lock](tracks/developer/runtime.lock.json) and [SSO port runtime lock](tracks/sso-port/runtime.lock.json) remain separate. Only the existing SSO target is substituted in the port track; developer Defaulted/CodecUI dependencies are preserved and are not imposed on the port.
 
-The earlier reported ghost cursor was not reproduced reliably on the old 1.0.1 stack. These are regression passes, **not proof that its original cause was found or fixed**. Restart clients fully when changing the server mod stack; reconnect coverage is reported separately above.
+## Coverage boundaries
 
-Chalk is outside the combined shim. Coexistence does not certify all Chalk gameplay or fix the separate shim's native Creative behavior. The atlas/elytra addon remains unchanged, including its duplicate Controls category heading; that client-side heading cannot be fixed by this server-only JAR.
+The negative 1.0.0 acquisition run passed six crafted/given tool combinations before its Creative-origin enchanted pickaxe failed. We do not claim that every fresh Survival-crafted item independently failed. The demonstrated problem is incorrect client defaults and persisted repair components, regardless of the item's earlier provenance. Prior tests seeded valid server-side enchanted items and checked item identity/enchantments while missing this repair-material corruption; those passes did not rule it out.
 
-SSO and Tiered native detection retains strict Fabric registry validation: a Fabric client advertising registry sync needs matching original mods. The Type A modules do not provide native backpack/pouch/atlas systems to vanilla clients. The listed native feature paths were tested with the pinned originals; other feature-modified originals and arbitrary additional mods are not certified.
+The original recipe also rejects an oversized material stack for a lightly damaged tool. That separate behavior is retained and tested as a negative control; it is not used to explain away the one-diamond failure.
 
-The matrix tests initialization/reload and bounded recipe/fallback invariants, not every gameplay path in every subset. The tests cover initial connections and the listed dimension/restart/reconnect scenarios, not every same-connection reconfiguration or production-world migration. Pack generation/integrity and specific native rendering checks do not prove every vanilla texture on every renderer.
+The [1.0.0 validation record](https://github.com/THENATHE/SSO-backpack-toolpouch-mapstitch-shim/blob/v1.0.0%2B26.3/VALIDATION.md) contains the earlier 16-subset, dimension, isolated-module, atlas/elytra, restart and cursor checks. Those historical results are not presented as new runs of 1.0.1. The atlas/elytra addon and separate Chalk shim are unchanged. Their existing duplicate keybind heading / full-stack Chalk Creative coverage limits remain documented. The prior ghost-cursor cause is not claimed to be resolved by this fix.
 
-Initial QA-only defects were preserved in local runs and corrected before final evidence: flat-world settings emitted an unrelated configuration error; anvil file markers raced arriving click packets; a manually injected map color was immediately overwritten by ordinary terrain scanning. A first reconnect fixture cleared only the client world and was excluded because it left the original socket open; the final replay explicitly closes the network connection and verifies two normal server logins. Final anvil assertions wait for server processing; final atlas assertions change actual terrain. No production fixes were made merely to satisfy these fixture assumptions.
-
-## Reproducing the checks
-
-[Matrix instructions](qa/matrix/README.md), [network/cursor instructions](qa/regression/README.md), [native repair fixtures](qa/repair/README.md), and [matrix/SSO evidence notes](qa/evidence/MATRIX-AND-SSO-VANILLA-VALIDATION.md) describe the local harnesses. Test-only fixtures are never packaged in the production JAR or test kit. Harnesses depend on the existing local Minecraft caches, original-artifact staging and offline QA launch baseline; proprietary game files, dependency JARs, launch credentials, worlds and full logs are excluded from GitHub.
-
-These checks support testing this exact stack in a disposable copy of your gameplay environment. They are not a blanket production certification for every permission setup, extra dimension, modpack or long-running world.
+Native clients should fully exit and restart after updating the server so old client component defaults are discarded. Existing saved corrupted items need explicit recovery. No client companion or new dependency is required. Passing the listed regressions does not certify unrelated mods, every configuration, or every production-world migration.

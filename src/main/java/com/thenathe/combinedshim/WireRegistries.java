@@ -78,6 +78,12 @@ public final class WireRegistries {
         Ids ids = mapping(registry, context);
         return ids == null ? wire : ids.in.get(wire);
     }
+    /** Test visibility using server IDs even when called from inside a packet codec. */
+    public static <T> boolean isVisible(Registry<T> registry, T value, PacketContext context) {
+        var ids = mapping(registry.key().identifier(), context);
+        return ids == null || ScopedValue.where(WRITE, false)
+                .call(() -> ids.out.containsKey(registry.getId(value)));
+    }
     private static Ids mapping(Identifier registry, PacketContext context) {
         var map = context == null ? null : context.get(KEY);
         return map == null ? null : map.get(registry);

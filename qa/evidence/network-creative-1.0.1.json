@@ -1,0 +1,129 @@
+{
+  "suite": "candidate-1.0.1-defaulted",
+  "pass": true,
+  "client-result": "PASS 48 Creative item packets (op and non-op) + 24 player-issued /give commands across Overworld, Nether, End, custom dimension",
+  "server-result": "PASS 72 real network cases; six tiers; Creative op/nonop + Survival player /give; four dimensions",
+  "mods": {
+    "server": [
+      {
+        "file": "SSO-backpack-toolpouch-mapstitch-shim-1.0.1+26.3.jar",
+        "sha256": "55787adf8c25f0b3b0891a40f8441d8247d9599d9312f9b9f2eb2cfdaf2745b8"
+      },
+      {
+        "file": "chalk-3.2.1+26.3.jar",
+        "sha256": "886b0b10cc12df65d47f446c2bd54c0c670f9a54fa09a1fe95c9ec46df565f49"
+      },
+      {
+        "file": "chalk-polymer-compat-1.0.0+26.3.jar",
+        "sha256": "48e437bf54419a1016469abd422df1c278318e157668efc7f6304f421f53eade"
+      },
+      {
+        "file": "cloth-config-fabric-26.3.159.jar",
+        "sha256": "1716b9964f90d2b885f9bd3887f8824b71b55c32a4123a5853486e722f7c2e4b"
+      },
+      {
+        "file": "codecui-26.3-1.4.3-fabric.jar",
+        "sha256": "4d07c219bd85b58283a0317d6f43cca838adf9cd16be321316cd32f2fb1be898"
+      },
+      {
+        "file": "creative-qa-server.jar",
+        "sha256": "11f97bd7d60e62eb34f5e022bb17486546881fa359c8074fcc610b1bee7dcda4"
+      },
+      {
+        "file": "defaulted-1.3.8.release-26.3-fabric.jar",
+        "sha256": "0f6efc6423902b83da78ce85a119c69536517b1a9af52ed7046858859ff582a0"
+      },
+      {
+        "file": "fabric-api-0.161.0+26.3.jar",
+        "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+      },
+      {
+        "file": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+        "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+      },
+      {
+        "file": "fzzy_config-0.7.7+fix2+26.3.jar",
+        "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+      },
+      {
+        "file": "mapstitch-fabric-1.1.6+26.3.jar",
+        "sha256": "e1b768bbd1ae06f83305eeba3ab19bfe4eb99bf21de12d57364d04ce9a1cde81"
+      },
+      {
+        "file": "mixson-2.2.1-multiloader.jar",
+        "sha256": "e4d38f31be95a1f03f8bef290c079f4bb5573d8f4e15808e8c1fc8ba3e5913a0"
+      },
+      {
+        "file": "polymer-bundled-0.18.2+26.3.jar",
+        "sha256": "3d79318e8202d0e87af308d7f232220714e5f1409d06c23db774877ec6f3848f"
+      },
+      {
+        "file": "simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+        "sha256": "fb6cbf8c13938d68fb19171dac386b5567d71625bce727b22d3380f6b7880126"
+      },
+      {
+        "file": "tiered_backpacks-fabric-1.0.19+26.3-upstream.jar",
+        "sha256": "03cd9aaf16666024362a47b9659033ef0baeceefb4d50ee581d0b60fc00d2c55"
+      },
+      {
+        "file": "toolpouch-fabric-1.1.10+26.3.jar",
+        "sha256": "a5bb4f084e7d929f3a89cc43317af63bd45abe3e3f4fed8b45f99b2da846e903"
+      }
+    ],
+    "client": [
+      {
+        "file": "chalk-3.2.1+26.3.jar",
+        "sha256": "886b0b10cc12df65d47f446c2bd54c0c670f9a54fa09a1fe95c9ec46df565f49"
+      },
+      {
+        "file": "cloth-config-fabric-26.3.159.jar",
+        "sha256": "1716b9964f90d2b885f9bd3887f8824b71b55c32a4123a5853486e722f7c2e4b"
+      },
+      {
+        "file": "codecui-26.3-1.4.3-fabric.jar",
+        "sha256": "4d07c219bd85b58283a0317d6f43cca838adf9cd16be321316cd32f2fb1be898"
+      },
+      {
+        "file": "creative-qa-client.jar",
+        "sha256": "ce3dab9cf5322ea621d45b49e406c38e576d4520a88c43dcbfd63c78d3028904"
+      },
+      {
+        "file": "defaulted-1.3.8.release-26.3-fabric.jar",
+        "sha256": "0f6efc6423902b83da78ce85a119c69536517b1a9af52ed7046858859ff582a0"
+      },
+      {
+        "file": "fabric-api-0.161.0+26.3.jar",
+        "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+      },
+      {
+        "file": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+        "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+      },
+      {
+        "file": "fzzy_config-0.7.7+fix2+26.3.jar",
+        "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+      },
+      {
+        "file": "mapstitch-fabric-1.1.6+26.3.jar",
+        "sha256": "e1b768bbd1ae06f83305eeba3ab19bfe4eb99bf21de12d57364d04ce9a1cde81"
+      },
+      {
+        "file": "mixson-2.2.1-multiloader.jar",
+        "sha256": "e4d38f31be95a1f03f8bef290c079f4bb5573d8f4e15808e8c1fc8ba3e5913a0"
+      },
+      {
+        "file": "simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+        "sha256": "fb6cbf8c13938d68fb19171dac386b5567d71625bce727b22d3380f6b7880126"
+      },
+      {
+        "file": "tiered_backpacks-fabric-1.0.19+26.3-upstream.jar",
+        "sha256": "03cd9aaf16666024362a47b9659033ef0baeceefb4d50ee581d0b60fc00d2c55"
+      },
+      {
+        "file": "toolpouch-fabric-1.1.10+26.3.jar",
+        "sha256": "a5bb4f084e7d929f3a89cc43317af63bd45abe3e3f4fed8b45f99b2da846e903"
+      }
+    ]
+  },
+  "local_evidence": "qa/regression/creative/runs/candidate-1.0.1-defaulted/result.json"
+}

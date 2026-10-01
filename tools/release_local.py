@@ -3,10 +3,10 @@
 from pathlib import Path
 import hashlib,json,shutil,subprocess,zipfile,re
 P=Path(__file__).resolve().parents[1];W=P.parents[1]
-version='1.0.0+26.3';kitversion='2026-10-01.1+26.3';tag='v'+version
+version='1.0.1+26.3';kitversion='2026-10-01.2+26.3';tag='v'+version
 revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=P,text=True).strip()
 jar=P/'build/libs'/f'SSO-backpack-toolpouch-mapstitch-shim-{version}.jar'
-expected='2ab08d31dc335b03e2e4c16bfd2b1538de8e7e5a6e1760aac4164ed807e49fe3'
+expected='55787adf8c25f0b3b0891a40f8441d8247d9599d9312f9b9f2eb2cfdaf2745b8'
 assert hashlib.sha256(jar.read_bytes()).hexdigest()==expected
 validation=(P/'VALIDATION.md').read_text();assert 'Pending final' not in validation and 'checks pending' not in validation
 repo='https://github.com/THENATHE/SSO-backpack-toolpouch-mapstitch-shim'
@@ -36,6 +36,8 @@ Requires Minecraft 26.3, Java 25+, Fabric Loader 0.19.5, Fabric API 0.161.0+26.3
 Developer originals: SSO 2.9.14+26.3, Tiered Backpacks 1.0.19+26.3, Tool Pouch 1.1.10+26.3, MapStitch 1.1.6+26.3. Fzzy Config 0.7.7+fix2+26.3 and Kotlin 1.14.1+kotlin.2.4.20; developer SSO also uses Defaulted 1.3.8.release-26.3, CodecUI 26.3-1.4.3 and Mixson 2.2.1. The separately verified SSO port track instead uses existing SSO 2.9.14-port.1+26.3 with Fzzy/Kotlin/Mixson; see [exact runtime lock](runtime.lock.json). This is a shared binary independently tested against both targets, with separate release/source copies.
 
 For Tool Pouch atlas/elytra integration, install the unchanged addon 1.0.0+26.3 on server and native client alongside original Tool Pouch and MapStitch. Its duplicate keybind category remains unchanged. Keep the separate Chalk shim with the requested Chalk 26.3 port if desired.
+
+This release corrects outgoing Defaulted repair-rule selectors. Fully restart native clients after updating. For existing saved unexpected calcite repair overrides, hold the item and run `/sso-shim repair-held` as an operator; other components are preserved and no inventory-wide migration runs.
 
 SSO retains Type B vanilla gameplay. The other three modules retain Type A display/guards and native-client systems. Fabric clients advertising registry sync need matching installed SSO/Tiered originals. Configure Polymer pack delivery for custom vanilla visuals. Full details and tested limits: [README]({repo}/blob/{tag}/README.md), [validation](VALIDATION.md).
 

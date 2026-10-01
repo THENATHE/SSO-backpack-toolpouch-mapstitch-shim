@@ -1,0 +1,22 @@
+{
+  "version": "1.0.1+26.3",
+  "jar_copies": 97,
+  "profiles": {
+    "mods": 16,
+    "native-client/mods": 13,
+    "individual/mapstitch/server/mods": 6,
+    "individual/mapstitch/native-client/mods": 4,
+    "individual/tool-pouch/server/mods": 6,
+    "individual/tool-pouch/native-client/mods": 4,
+    "individual/tiered-backpacks/server/mods": 6,
+    "individual/tiered-backpacks/native-client/mods": 4,
+    "individual/tool-pouch-atlas-addon/server/mods": 8,
+    "individual/tool-pouch-atlas-addon/native-client/mods": 6,
+    "individual/chalk/server/mods": 5,
+    "individual/chalk/native-client/mods": 3,
+    "individual/simple-smithing/server/mods": 9,
+    "individual/simple-smithing/native-client/mods": 7
+  },
+  "all_hashes_and_archives_valid": true,
+  "candidate_sha256": "55787adf8c25f0b3b0891a40f8441d8247d9599d9312f9b9f2eb2cfdaf2745b8"
+}

@@ -2,5 +2,5 @@ package com.thenathe.combinedshim;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.LoggerFactory;
 public final class CombinedShim implements ModInitializer {
- public void onInitialize(){LoggerFactory.getLogger("SSO-backpack-toolpouch-mapstitch-shim").info("SSO_STACK_MODULES={}",Modules.enabled());}
+ public void onInitialize(){LoggerFactory.getLogger("SSO-backpack-toolpouch-mapstitch-shim").info("SSO_STACK_MODULES={}",Modules.enabled());if(Modules.enabled("simple_smithing_overhaul"))RepairMaterialRecovery.register();}
 }

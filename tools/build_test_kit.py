@@ -5,7 +5,7 @@ import json,hashlib,shutil,zipfile
 P=Path(__file__).resolve().parents[1]; W=P.parents[1]
 BASE=W/'Minecraft/polymer-shim-test-bundle/staging'
 STAGE=P/'test-kit'; STAGE.mkdir(exist_ok=True)
-JAR=P/'build/libs/SSO-backpack-toolpouch-mapstitch-shim-1.0.0+26.3.jar'
+JAR=P/'build/libs/SSO-backpack-toolpouch-mapstitch-shim-1.0.1+26.3.jar'
 ADDON=W/'Builds/Minecraft/Tool Pouch/Feature Addon - Atlas and Elytra/1.0.0+26.3/toolpouch-atlas-elytra-compat-1.0.0+26.3.jar'
 OLD=('simple-smithing-polymer-compat-', 'tiered-backpacks-polymer-compat-', 'toolpouch-polymer-compat-', 'mapstitch-polymer-compat-')
 def copy_mods(source,dest,unified=False,addon=False):
@@ -31,17 +31,19 @@ for f in sorted(STAGE.rglob('*.jar')):
  records.append({'path':str(f.relative_to(STAGE)), 'id':m['id'], 'version':m['version'],'sha256':hashlib.sha256(f.read_bytes()).hexdigest()})
 (STAGE/'MANIFEST.json').write_text(json.dumps(records,indent=2)+'\n')
 (STAGE/'SHA256SUMS.sha256').write_text(''.join(r['sha256']+'  '+r['path']+'\n' for r in records))
-(STAGE/'README.md').write_text("""# Local Polymer test kit 2026-10-01.1+26.3
+(STAGE/'README.md').write_text("""# Local Polymer test kit 2026-10-01.2+26.3
 
 Full combined server: copy `mods/` into a fresh Minecraft 26.3 Fabric 0.19.5 server running Java 25+. Native client: use `native-client/mods/` with the same Minecraft/loader. The supplied native client has no Polymer or server shim. The atlas/elytra addon is installed on both sides in this full profile.
 
-Only one server shim handles SSO, Tiered Backpacks, Tool Pouch and MapStitch: SSO-backpack-toolpouch-mapstitch-shim 1.0.0+26.3. Each module activates only for its installed original. Remove the four former standalone shims if updating an existing server. Chalk uses its separate shim and the explicitly requested 26.3 port.
+Only one server shim handles SSO, Tiered Backpacks, Tool Pouch and MapStitch: SSO-backpack-toolpouch-mapstitch-shim 1.0.1+26.3. Each module activates only for its installed original. Remove the four former standalone shims if updating an existing server. Chalk uses its separate shim and the explicitly requested 26.3 port.
 
 `individual/` contains isolated server and matching native-client mods folders for the four modules, Chalk, and the Tool Pouch + MapStitch atlas/elytra integration. Use one profile at a time. Keep the original mods and all included dependencies. These are untouched developer releases except the explicitly identified Chalk port; hashes and declared versions are in MANIFEST.json.
 
 The addon remains version 1.0.0+26.3. Its duplicate keybind category is a known client-side behavior of that unchanged addon. The combined server shim cannot change client Controls headings.
 
 Vanilla players can use SSO's server-side compatibility; backpack, pouch and atlas native systems require their original client mods. Fabric clients advertising registry sync need matching SSO and Tiered originals when those are on the server. Restart server and clients after changing JARs. Configure Polymer resource-pack hosting for custom vanilla visuals.
+
+Version 1.0.1 prevents a hidden Chalk selector from applying its calcite repair rule to unrelated client items. Fully restart clients after updating the server. For already affected items, hold each item and run `/sso-shim repair-held` as an operator; only the unexpected calcite repair material is reset, preserving enchantments and other components. Legitimate calcite-repairable Chalk is preserved.
 
 See VALIDATION.md for exact tested coverage and outstanding limits. Passing regression tests is not a guarantee for every production world or extra mod. Use a disposable world first, including your real configuration, dimensions, permissions, persistence and restart workflow.
 """)

@@ -1,0 +1,456 @@
+{
+  "suite": "Real acquired and anvil-enchanted whetstone repair on fixed release",
+  "result": "PASS 9 genuinely anvil-enchanted acquisition pairs at damage3 plus oversized9 rejection; actual crafting clicks, give commands, native Creative packets and mixed origins; 2x2 repair clicks and consumption\n",
+  "server_evidence": [
+    "ACQUIRED tool origin=crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={}",
+    "ACQUIRED whetstone origin=crafted stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={}",
+    "ANVIL TOOL stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "ANVIL STONE stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PREPARE REPAIR tool stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:damage=>3} stone stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PASS case=0 tool=crafted stone=crafted repairedDamage=0 stoneDamage=0 diamondConsumed=true",
+    "ACQUIRED tool origin=crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={}",
+    "ACQUIRED whetstone origin=give stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={}",
+    "ANVIL TOOL stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "ANVIL STONE stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PREPARE REPAIR tool stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:damage=>3} stone stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PASS case=1 tool=crafted stone=give repairedDamage=0 stoneDamage=1 diamondConsumed=true",
+    "ACQUIRED tool origin=crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={}",
+    "ACQUIRED whetstone origin=creative stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={}",
+    "ANVIL TOOL stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "ANVIL STONE stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PREPARE REPAIR tool stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:damage=>3} stone stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PASS case=2 tool=crafted stone=creative repairedDamage=0 stoneDamage=0 diamondConsumed=true",
+    "ACQUIRED tool origin=give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={}",
+    "ACQUIRED whetstone origin=crafted stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={}",
+    "ANVIL TOOL stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "ANVIL STONE stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PREPARE REPAIR tool stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:damage=>3} stone stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PASS case=3 tool=give stone=crafted repairedDamage=0 stoneDamage=0 diamondConsumed=true",
+    "ACQUIRED tool origin=give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={}",
+    "ACQUIRED whetstone origin=give stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={}",
+    "ANVIL TOOL stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "ANVIL STONE stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PREPARE REPAIR tool stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:damage=>3} stone stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PASS case=4 tool=give stone=give repairedDamage=0 stoneDamage=0 diamondConsumed=true",
+    "ACQUIRED tool origin=give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={}",
+    "ACQUIRED whetstone origin=creative stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={}",
+    "ANVIL TOOL stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "ANVIL STONE stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PREPARE REPAIR tool stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:damage=>3} stone stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PASS case=5 tool=give stone=creative repairedDamage=0 stoneDamage=0 diamondConsumed=true",
+    "ACQUIRED tool origin=creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={}",
+    "ACQUIRED whetstone origin=crafted stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={}",
+    "ANVIL TOOL stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "ANVIL STONE stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PREPARE REPAIR tool stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:damage=>3} stone stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PASS case=6 tool=creative stone=crafted repairedDamage=0 stoneDamage=1 diamondConsumed=true",
+    "ACQUIRED tool origin=creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={}",
+    "ACQUIRED whetstone origin=give stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={}",
+    "ANVIL TOOL stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "ANVIL STONE stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PREPARE REPAIR tool stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:damage=>3} stone stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PASS case=7 tool=creative stone=give repairedDamage=0 stoneDamage=0 diamondConsumed=true",
+    "ACQUIRED tool origin=creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={}",
+    "ACQUIRED whetstone origin=creative stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={}",
+    "ANVIL TOOL stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "ANVIL STONE stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PREPARE REPAIR tool stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:damage=>3} stone stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PASS case=8 tool=creative stone=creative repairedDamage=0 stoneDamage=0 diamondConsumed=true",
+    "PREPARE REPAIR tool stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false patch={minecraft:repair_cost=>1, simple_smithing_overhaul:repair_count=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:damage=>3} stone stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false patch={minecraft:repair_cost=>1, minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}}",
+    "PASS oversized9 rejected under original recipe count limit; no consumption"
+  ],
+  "client_evidence": [
+    "CLIENT DEFAULTS 1:tool:crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 1:tool:crafted result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 1:tool:crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 2:stone:crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 2:stone:crafted result=1 simple_smithing_overhaul:whetstone damage=0",
+    "PASS CLIENT 2:stone:crafted stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 3:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 3:enchant-tool:anvil result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 3:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}} damage=0",
+    "CLIENT DEFAULTS 4:enchant-stone:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 4:enchant-stone:anvil result=1 simple_smithing_overhaul:whetstone damage=0",
+    "PASS CLIENT 4:enchant-stone:anvil stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:repair_cost=>1} damage=0",
+    "CLIENT DEFAULTS 5:repair:crafted+crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 5:repair:crafted+crafted result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 5:repair:crafted+crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, simple_smithing_overhaul:repair_count=>1} damage=0",
+    "CLIENT DEFAULTS 6:tool:crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 6:tool:crafted result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 6:tool:crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 7:stone:give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PASS CLIENT 7:stone:give stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 8:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 8:enchant-tool:anvil result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 8:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}} damage=0",
+    "CLIENT DEFAULTS 9:enchant-stone:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 9:enchant-stone:anvil result=1 simple_smithing_overhaul:whetstone damage=0",
+    "PASS CLIENT 9:enchant-stone:anvil stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:repair_cost=>1} damage=0",
+    "CLIENT DEFAULTS 10:repair:crafted+give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 10:repair:crafted+give result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 10:repair:crafted+give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, simple_smithing_overhaul:repair_count=>1} damage=0",
+    "CLIENT DEFAULTS 11:tool:crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 11:tool:crafted result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 11:tool:crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 12:stone:creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PASS CLIENT 12:stone:creative stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 13:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 13:enchant-tool:anvil result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 13:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}} damage=0",
+    "CLIENT DEFAULTS 14:enchant-stone:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 14:enchant-stone:anvil result=1 simple_smithing_overhaul:whetstone damage=0",
+    "PASS CLIENT 14:enchant-stone:anvil stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:repair_cost=>1} damage=0",
+    "CLIENT DEFAULTS 15:repair:crafted+creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 15:repair:crafted+creative result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 15:repair:crafted+creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, simple_smithing_overhaul:repair_count=>1} damage=0",
+    "CLIENT DEFAULTS 16:tool:give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PASS CLIENT 16:tool:give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 17:stone:crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 17:stone:crafted result=1 simple_smithing_overhaul:whetstone damage=0",
+    "PASS CLIENT 17:stone:crafted stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 18:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 18:enchant-tool:anvil result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 18:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}} damage=0",
+    "CLIENT DEFAULTS 19:enchant-stone:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 19:enchant-stone:anvil result=1 simple_smithing_overhaul:whetstone damage=0",
+    "PASS CLIENT 19:enchant-stone:anvil stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:repair_cost=>1} damage=0",
+    "CLIENT DEFAULTS 20:repair:give+crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 20:repair:give+crafted result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 20:repair:give+crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, simple_smithing_overhaul:repair_count=>1} damage=0",
+    "CLIENT DEFAULTS 21:tool:give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PASS CLIENT 21:tool:give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 22:stone:give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PASS CLIENT 22:stone:give stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 23:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 23:enchant-tool:anvil result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 23:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}} damage=0",
+    "CLIENT DEFAULTS 24:enchant-stone:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 24:enchant-stone:anvil result=1 simple_smithing_overhaul:whetstone damage=0",
+    "PASS CLIENT 24:enchant-stone:anvil stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:repair_cost=>1} damage=0",
+    "CLIENT DEFAULTS 25:repair:give+give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 25:repair:give+give result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 25:repair:give+give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, simple_smithing_overhaul:repair_count=>1} damage=0",
+    "CLIENT DEFAULTS 26:tool:give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PASS CLIENT 26:tool:give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 27:stone:creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PASS CLIENT 27:stone:creative stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 28:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 28:enchant-tool:anvil result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 28:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}} damage=0",
+    "CLIENT DEFAULTS 29:enchant-stone:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 29:enchant-stone:anvil result=1 simple_smithing_overhaul:whetstone damage=0",
+    "PASS CLIENT 29:enchant-stone:anvil stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:repair_cost=>1} damage=0",
+    "CLIENT DEFAULTS 30:repair:give+creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 30:repair:give+creative result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 30:repair:give+creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, simple_smithing_overhaul:repair_count=>1} damage=0",
+    "CLIENT DEFAULTS 31:tool:creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PASS CLIENT 31:tool:creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 32:stone:crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 32:stone:crafted result=1 simple_smithing_overhaul:whetstone damage=0",
+    "PASS CLIENT 32:stone:crafted stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 33:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 33:enchant-tool:anvil result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 33:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}} damage=0",
+    "CLIENT DEFAULTS 34:enchant-stone:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 34:enchant-stone:anvil result=1 simple_smithing_overhaul:whetstone damage=0",
+    "PASS CLIENT 34:enchant-stone:anvil stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:repair_cost=>1} damage=0",
+    "CLIENT DEFAULTS 35:repair:creative+crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 35:repair:creative+crafted result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 35:repair:creative+crafted stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, simple_smithing_overhaul:repair_count=>1} damage=0",
+    "CLIENT DEFAULTS 36:tool:creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PASS CLIENT 36:tool:creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 37:stone:give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PASS CLIENT 37:stone:give stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 38:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 38:enchant-tool:anvil result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 38:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}} damage=0",
+    "CLIENT DEFAULTS 39:enchant-stone:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 39:enchant-stone:anvil result=1 simple_smithing_overhaul:whetstone damage=0",
+    "PASS CLIENT 39:enchant-stone:anvil stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:repair_cost=>1} damage=0",
+    "CLIENT DEFAULTS 40:repair:creative+give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 40:repair:creative+give result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 40:repair:creative+give stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, simple_smithing_overhaul:repair_count=>1} damage=0",
+    "CLIENT DEFAULTS 41:tool:creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PASS CLIENT 41:tool:creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 42:stone:creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PASS CLIENT 42:stone:creative stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={} damage=0",
+    "CLIENT DEFAULTS 43:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 43:enchant-tool:anvil result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 43:enchant-tool:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}} damage=0",
+    "CLIENT DEFAULTS 44:enchant-stone:anvil stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 44:enchant-stone:anvil result=1 simple_smithing_overhaul:whetstone damage=0",
+    "PASS CLIENT 44:enchant-stone:anvil stack=1 simple_smithing_overhaul:whetstone repairable=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] diamond=false calcite=false prototype=Repairable[items=DirectSet[[Reference{ResourceKey[minecraft:item / minecraft:quartz]=minecraft:quartz}]]] patch={minecraft:stored_enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, minecraft:repair_cost=>1} damage=0",
+    "CLIENT DEFAULTS 45:repair:creative+creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PREVIEW 45:repair:creative+creative result=1 minecraft:diamond_pickaxe damage=0",
+    "PASS CLIENT 45:repair:creative+creative stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={minecraft:repair_cost=>1, minecraft:enchantments=>ItemEnchantments{enchantments={Reference{ResourceKey[minecraft:enchantment / minecraft:efficiency]=Enchantment Efficiency}=>1}}, simple_smithing_overhaul:repair_count=>1} damage=0",
+    "CLIENT DEFAULTS 46:repair:overstack9 stack=1 minecraft:diamond_pickaxe repairable=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] diamond=true calcite=false prototype=Repairable[items=NamedSet(TagKey[minecraft:item / minecraft:diamond_tool_materials])[[Reference{ResourceKey[minecraft:item / minecraft:diamond]=minecraft:diamond}]]] patch={} chalkTagSize=0",
+    "PASS CLIENT oversized9 no output, input count=9"
+  ],
+  "server_mods": [
+    {
+      "name": "chalk-polymer-compat-1.0.0+26.3.jar",
+      "sha256": "48e437bf54419a1016469abd422df1c278318e157668efc7f6304f421f53eade"
+    },
+    {
+      "name": "toolpouch-fabric-1.1.10+26.3.jar",
+      "sha256": "a5bb4f084e7d929f3a89cc43317af63bd45abe3e3f4fed8b45f99b2da846e903"
+    },
+    {
+      "name": "defaulted-1.3.8.release-26.3-fabric.jar",
+      "sha256": "0f6efc6423902b83da78ce85a119c69536517b1a9af52ed7046858859ff582a0"
+    },
+    {
+      "name": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+      "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+    },
+    {
+      "name": "polymer-bundled-0.18.2+26.3.jar",
+      "sha256": "3d79318e8202d0e87af308d7f232220714e5f1409d06c23db774877ec6f3848f"
+    },
+    {
+      "name": "fabric-api-0.161.0+26.3.jar",
+      "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+    },
+    {
+      "name": "tiered_backpacks-fabric-1.0.19+26.3-upstream.jar",
+      "sha256": "03cd9aaf16666024362a47b9659033ef0baeceefb4d50ee581d0b60fc00d2c55"
+    },
+    {
+      "name": "cloth-config-fabric-26.3.159.jar",
+      "sha256": "1716b9964f90d2b885f9bd3887f8824b71b55c32a4123a5853486e722f7c2e4b"
+    },
+    {
+      "name": "codecui-26.3-1.4.3-fabric.jar",
+      "sha256": "4d07c219bd85b58283a0317d6f43cca838adf9cd16be321316cd32f2fb1be898"
+    },
+    {
+      "name": "fzzy_config-0.7.7+fix2+26.3.jar",
+      "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+    },
+    {
+      "name": "chalk-3.2.1+26.3.jar",
+      "sha256": "886b0b10cc12df65d47f446c2bd54c0c670f9a54fa09a1fe95c9ec46df565f49"
+    },
+    {
+      "name": "simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+      "sha256": "fb6cbf8c13938d68fb19171dac386b5567d71625bce727b22d3380f6b7880126"
+    },
+    {
+      "name": "mapstitch-fabric-1.1.6+26.3.jar",
+      "sha256": "e1b768bbd1ae06f83305eeba3ab19bfe4eb99bf21de12d57364d04ce9a1cde81"
+    },
+    {
+      "name": "mixson-2.2.1-multiloader.jar",
+      "sha256": "e4d38f31be95a1f03f8bef290c079f4bb5573d8f4e15808e8c1fc8ba3e5913a0"
+    },
+    {
+      "name": "SSO-backpack-toolpouch-mapstitch-shim-1.0.1+26.3.jar",
+      "sha256": "55787adf8c25f0b3b0891a40f8441d8247d9599d9312f9b9f2eb2cfdaf2745b8"
+    },
+    {
+      "name": "toolpouch-atlas-elytra-compat-1.0.0+26.3.jar",
+      "sha256": "9969d1e8e4debb7e85832137add1fc5f5ae49c2f235469a9f95dacc9e3bc7be6"
+    },
+    {
+      "name": "server-qa.jar",
+      "sha256": "275157f0421308b558a30816157d3582460f57fd60c72f85c5578ed4243431cc"
+    }
+  ],
+  "client_mods": [
+    {
+      "name": "toolpouch-fabric-1.1.10+26.3.jar",
+      "sha256": "a5bb4f084e7d929f3a89cc43317af63bd45abe3e3f4fed8b45f99b2da846e903"
+    },
+    {
+      "name": "defaulted-1.3.8.release-26.3-fabric.jar",
+      "sha256": "0f6efc6423902b83da78ce85a119c69536517b1a9af52ed7046858859ff582a0"
+    },
+    {
+      "name": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+      "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+    },
+    {
+      "name": "fabric-api-0.161.0+26.3.jar",
+      "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+    },
+    {
+      "name": "tiered_backpacks-fabric-1.0.19+26.3-upstream.jar",
+      "sha256": "03cd9aaf16666024362a47b9659033ef0baeceefb4d50ee581d0b60fc00d2c55"
+    },
+    {
+      "name": "cloth-config-fabric-26.3.159.jar",
+      "sha256": "1716b9964f90d2b885f9bd3887f8824b71b55c32a4123a5853486e722f7c2e4b"
+    },
+    {
+      "name": "codecui-26.3-1.4.3-fabric.jar",
+      "sha256": "4d07c219bd85b58283a0317d6f43cca838adf9cd16be321316cd32f2fb1be898"
+    },
+    {
+      "name": "fzzy_config-0.7.7+fix2+26.3.jar",
+      "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+    },
+    {
+      "name": "chalk-3.2.1+26.3.jar",
+      "sha256": "886b0b10cc12df65d47f446c2bd54c0c670f9a54fa09a1fe95c9ec46df565f49"
+    },
+    {
+      "name": "simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+      "sha256": "fb6cbf8c13938d68fb19171dac386b5567d71625bce727b22d3380f6b7880126"
+    },
+    {
+      "name": "mapstitch-fabric-1.1.6+26.3.jar",
+      "sha256": "e1b768bbd1ae06f83305eeba3ab19bfe4eb99bf21de12d57364d04ce9a1cde81"
+    },
+    {
+      "name": "mixson-2.2.1-multiloader.jar",
+      "sha256": "e4d38f31be95a1f03f8bef290c079f4bb5573d8f4e15808e8c1fc8ba3e5913a0"
+    },
+    {
+      "name": "toolpouch-atlas-elytra-compat-1.0.0+26.3.jar",
+      "sha256": "9969d1e8e4debb7e85832137add1fc5f5ae49c2f235469a9f95dacc9e3bc7be6"
+    },
+    {
+      "name": "client-qa.jar",
+      "sha256": "832bd047fff8d0ca0e807459a52b354b82d2339acd3baef9fc11dfb71d5a4a5d"
+    }
+  ],
+  "integrity_unchanged": true,
+  "client_polymer": false,
+  "cases": [
+    {
+      "tool_origin": "crafted",
+      "whetstone_origin": "crafted",
+      "tool_enchantment": "Efficiency I",
+      "whetstone_stored_enchantment": "Efficiency I",
+      "tool_enchantment_origin": "Actual anvil/book clicks",
+      "whetstone_enchantment_origin": "Actual anvil/book clicks",
+      "initial_damage": 3,
+      "diamonds_in_repair_grid": 1,
+      "final_damage": 0,
+      "result": "PASS"
+    },
+    {
+      "tool_origin": "crafted",
+      "whetstone_origin": "give",
+      "tool_enchantment": "Efficiency I",
+      "whetstone_stored_enchantment": "Efficiency I",
+      "tool_enchantment_origin": "Actual anvil/book clicks",
+      "whetstone_enchantment_origin": "Actual anvil/book clicks",
+      "initial_damage": 3,
+      "diamonds_in_repair_grid": 1,
+      "final_damage": 0,
+      "result": "PASS"
+    },
+    {
+      "tool_origin": "crafted",
+      "whetstone_origin": "creative",
+      "tool_enchantment": "Efficiency I",
+      "whetstone_stored_enchantment": "Efficiency I",
+      "tool_enchantment_origin": "Actual anvil/book clicks",
+      "whetstone_enchantment_origin": "Actual anvil/book clicks",
+      "initial_damage": 3,
+      "diamonds_in_repair_grid": 1,
+      "final_damage": 0,
+      "result": "PASS"
+    },
+    {
+      "tool_origin": "give",
+      "whetstone_origin": "crafted",
+      "tool_enchantment": "Efficiency I",
+      "whetstone_stored_enchantment": "Efficiency I",
+      "tool_enchantment_origin": "Actual anvil/book clicks",
+      "whetstone_enchantment_origin": "Actual anvil/book clicks",
+      "initial_damage": 3,
+      "diamonds_in_repair_grid": 1,
+      "final_damage": 0,
+      "result": "PASS"
+    },
+    {
+      "tool_origin": "give",
+      "whetstone_origin": "give",
+      "tool_enchantment": "Efficiency I",
+      "whetstone_stored_enchantment": "Efficiency I",
+      "tool_enchantment_origin": "Actual anvil/book clicks",
+      "whetstone_enchantment_origin": "Actual anvil/book clicks",
+      "initial_damage": 3,
+      "diamonds_in_repair_grid": 1,
+      "final_damage": 0,
+      "result": "PASS"
+    },
+    {
+      "tool_origin": "give",
+      "whetstone_origin": "creative",
+      "tool_enchantment": "Efficiency I",
+      "whetstone_stored_enchantment": "Efficiency I",
+      "tool_enchantment_origin": "Actual anvil/book clicks",
+      "whetstone_enchantment_origin": "Actual anvil/book clicks",
+      "initial_damage": 3,
+      "diamonds_in_repair_grid": 1,
+      "final_damage": 0,
+      "result": "PASS"
+    },
+    {
+      "tool_origin": "creative",
+      "whetstone_origin": "crafted",
+      "tool_enchantment": "Efficiency I",
+      "whetstone_stored_enchantment": "Efficiency I",
+      "tool_enchantment_origin": "Actual anvil/book clicks",
+      "whetstone_enchantment_origin": "Actual anvil/book clicks",
+      "initial_damage": 3,
+      "diamonds_in_repair_grid": 1,
+      "final_damage": 0,
+      "result": "PASS"
+    },
+    {
+      "tool_origin": "creative",
+      "whetstone_origin": "give",
+      "tool_enchantment": "Efficiency I",
+      "whetstone_stored_enchantment": "Efficiency I",
+      "tool_enchantment_origin": "Actual anvil/book clicks",
+      "whetstone_enchantment_origin": "Actual anvil/book clicks",
+      "initial_damage": 3,
+      "diamonds_in_repair_grid": 1,
+      "final_damage": 0,
+      "result": "PASS"
+    },
+    {
+      "tool_origin": "creative",
+      "whetstone_origin": "creative",
+      "tool_enchantment": "Efficiency I",
+      "whetstone_stored_enchantment": "Efficiency I",
+      "tool_enchantment_origin": "Actual anvil/book clicks",
+      "whetstone_enchantment_origin": "Actual anvil/book clicks",
+      "initial_damage": 3,
+      "diamonds_in_repair_grid": 1,
+      "final_damage": 0,
+      "result": "PASS"
+    }
+  ],
+  "negative_control": {
+    "material_stack_size": 9,
+    "initial_damage": 3,
+    "result": "Rejected with no output and no material consumption, as required by upstream material count limit"
+  },
+  "component_assertions": [
+    "Fresh client diamond pickaxe prototype accepts diamond and rejects calcite",
+    "Every acquired and actual anvil-enchanted client/server tool accepts diamond and rejects calcite",
+    "Every acquired and actual anvil-enchanted client/server whetstone accepts quartz and rejects calcite",
+    "Matching Efficiency I stored enchantment was produced on whetstone by actual anvil/book clicks",
+    "Efficiency I survives each actual repair result"
+  ],
+  "fixture_sources": [
+    {
+      "name": "AcquisitionClientQa.java",
+      "sha256": "869bacf6b7cd75f4fd9f97e8dab30fe87390041c35b8774384d4885af1ae32a9"
+    },
+    {
+      "name": "AcquisitionServerQa.java",
+      "sha256": "2331cae5ab3163467a5ccfbdbac0e4c096e984ae72df6da52e38f8e0baf9967f"
+    }
+  ],
+  "limitations": [
+    "Test fixtures provided raw crafting materials, provided books via actual give command, opened working menus, and applied controlled damage3 after acquisition.",
+    "No pre-enchanted tools or whetstones were fabricated; all enchantments on those items came from real anvil transactions.",
+    "This bounded regression is not a full gameplay or arbitrary third-party mod certification."
+  ]
+}

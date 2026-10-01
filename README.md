@@ -4,6 +4,11 @@ Unofficial server-side Polymer compatibility for Minecraft **26.3 / Fabric**, wi
 
 [Releases](https://github.com/THENATHE/SSO-backpack-toolpouch-mapstitch-shim/releases) · [Validation](VALIDATION.md) · [Credits](NOTICE.md)
 
+**1.0.1 fixes incorrect repair materials on native clients.** Polymer-hidden Chalk items could empty a Defaulted selector and turn the Chalk-only calcite repair rule into a rule for every client item. Enchanted tools could consequently retain the wrong repair material and reject diamond repairs. This release keeps outgoing Defaulted rules scoped to the items actually present in the client registry, while retaining the original library and server rules.
+
+Replace combined shim 1.0.0 with 1.0.1 on the server, then fully restart the server and Minecraft clients. Already saved incorrect overrides persist until repaired: hold an affected item and, as an operator, run `/sso-shim repair-held`. This restores only the unexpected calcite repair-material component to its server default, preserving enchantments, damage, names, contents and other components. It does not alter other inventory items or legitimate calcite-repairable Chalk. Because an intentional command-created calcite override is indistinguishable from this bug's override, recovery is explicit and selected-item-only.
+
+
 | Module | Original target | Client without the original mod |
 | --- | --- | --- |
 | Simple Smithing Overhaul | Developer 2.9.14+26.3; separately verified port 2.9.14-port.1+26.3 | Type B: server-side smithing, repair and anvil systems with vanilla interfaces and guidance |
@@ -40,7 +45,7 @@ Supply the exact unmodified local developer JARs listed in `dependencies.lock.js
 ./gradlew build
 ```
 
-Output: `build/libs/SSO-backpack-toolpouch-mapstitch-shim-1.0.0+26.3.jar`. This workspace also supports a JDK 27 compiler with `-PcompilerVersion=27`, producing Java 25 bytecode while Gradle runs on JDK 25.
+Output: `build/libs/SSO-backpack-toolpouch-mapstitch-shim-1.0.1+26.3.jar`. This workspace also supports a JDK 27 compiler with `-PcompilerVersion=27`, producing Java 25 bytecode while Gradle runs on JDK 25.
 
 Optional mixins are gated before original-mod classes load. One shared connection-scoped coordinator negotiates native capabilities, restores allowed registry entries and assigns a single dense item/component/recipe/menu mapping. Both packet directions, registry tags and component preservation share this mapping. This replaces the former competing per-shim coordinators. Original item objects and saved data remain owned by the original mods.
 

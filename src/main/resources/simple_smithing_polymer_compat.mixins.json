@@ -6,6 +6,7 @@
     "InitializationMixin",
     "AnvilMenuMixin",
     "ContainerSynchronizerMixin",
+    "DefaultedSyncMixin",
     "DataPatchesMixin",
     "AdvancementTextMixin",
     "MendingUseMixin",
