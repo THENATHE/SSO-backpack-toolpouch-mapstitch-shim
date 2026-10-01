@@ -8,6 +8,8 @@ Outgoing Defaulted patch selectors now use only the recipient's visible targets.
 
 Add operator-only `/sso-shim repair-held` for explicit recovery of an already saved unexpected calcite override. The command restores the item's server-default repair material and preserves all other components. No automatic migration runs; deliberately customized calcite overrides require operator judgment.
 
+Follow-up validation also reproduced moving-click ghost items caused by these mismatched defaults and saved explicit calcite overrides. The existing 1.0.1 binary keeps those item hashes synchronized; see [cursor reproduction](qa/evidence/cursor-motion-1.0.1.md).
+
 Fully restart native clients after updating the server. Exact reproduction, corrected acquisition/enchantment cases, recovery tests and regressions are documented in [VALIDATION.md](VALIDATION.md).
 
 ## 1.0.0+26.3

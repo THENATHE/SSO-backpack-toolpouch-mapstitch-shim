@@ -6,6 +6,8 @@ Unofficial server-side Polymer compatibility for Minecraft **26.3 / Fabric**, wi
 
 **1.0.1 fixes incorrect repair materials on native clients.** Polymer-hidden Chalk items could empty a Defaulted selector and turn the Chalk-only calcite repair rule into a rule for every client item. Enchanted tools could consequently retain the wrong repair material and reject diamond repairs. This release keeps outgoing Defaulted rules scoped to the items actually present in the client registry, while retaining the original library and server rules.
 
+**Moving-click ghost items:** follow-up tests reproduced a placed diamond stack also remaining on the cursor in 1.0.0 when the item carried the saved incorrect calcite override. Movement invokes quick-craft packets; the mismatched client defaults cause intermediate carried-item corrections to arrive after placement. The same saved override stays synchronized with a fresh native client on 1.0.1. See [moving-cursor reproduction and controls](qa/evidence/cursor-motion-1.0.1.md).
+
 Replace combined shim 1.0.0 with 1.0.1 on the server, then fully restart the server and Minecraft clients. Already saved incorrect overrides persist until repaired: hold an affected item and, as an operator, run `/sso-shim repair-held`. This restores only the unexpected calcite repair-material component to its server default, preserving enchantments, damage, names, contents and other components. It does not alter other inventory items or legitimate calcite-repairable Chalk. Because an intentional command-created calcite override is indistinguishable from this bug's override, recovery is explicit and selected-item-only.
 
 
