@@ -1,0 +1,6 @@
+15-simple-smithing-tiered-backpacks-tool-pouch-mapstitch
+[02:56:18] [main/INFO]: SSO_STACK_MODULES=[mapstitch, simple_smithing_overhaul, tiered_backpacks, toolpouch]
+[02:56:24] [Server thread/INFO]: Done (3.886s)! For help, type "help"
+[02:56:26] [Server thread/INFO]: System chat: Reloading!
+[02:56:38] [Server thread/INFO]: Stopping server
+[02:56:38] [Server thread/INFO]: Saving worlds

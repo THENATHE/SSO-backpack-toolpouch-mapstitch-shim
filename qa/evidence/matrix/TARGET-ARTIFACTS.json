@@ -1,0 +1,199 @@
+{
+  "verification_date": "2026-10-01",
+  "minecraft": "26.3",
+  "loader": "0.19.5",
+  "runtime_java": "25",
+  "artifacts": [
+    {
+      "source_artifact": "Minecraft/polymer-shim-test-bundle/staging-2026-10-01/mods/toolpouch-fabric-1.1.10+26.3.jar",
+      "id": "toolpouch",
+      "version": "1.1.10",
+      "sha256": "a5bb4f084e7d929f3a89cc43317af63bd45abe3e3f4fed8b45f99b2da846e903",
+      "depends": {
+        "minecraft": "~26.3",
+        "fabricloader": ">=0.19.5",
+        "java": ">=25",
+        "fabric-api": ">=0.160.5",
+        "fzzy_config": ">=0.7.7"
+      },
+      "declared_sources": "https://github.com/pajicadvance/toolpouch"
+    },
+    {
+      "source_artifact": "Minecraft/polymer-shim-test-bundle/staging-2026-10-01/mods/defaulted-1.3.8.release-26.3-fabric.jar",
+      "id": "defaulted",
+      "version": "1.3.8",
+      "sha256": "0f6efc6423902b83da78ce85a119c69536517b1a9af52ed7046858859ff582a0",
+      "depends": {
+        "fabric-api": ">=0.160.5+26.3",
+        "fabricloader": ">=0.19.5",
+        "minecraft": ">=26.3",
+        "java": ">=25"
+      },
+      "declared_sources": "https://github.com/Alexandra-Myers/Defaulted"
+    },
+    {
+      "source_artifact": "Minecraft/polymer-shim-test-bundle/staging-2026-10-01/mods/fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+      "id": "fabric-language-kotlin",
+      "version": "1.14.1+kotlin.2.4.20",
+      "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5",
+      "depends": {
+        "fabricloader": ">=0.19.5"
+      },
+      "declared_sources": "https://github.com/FabricMC/fabric-language-kotlin"
+    },
+    {
+      "source_artifact": "Minecraft/polymer-shim-test-bundle/staging-2026-10-01/mods/polymer-bundled-0.18.2+26.3.jar",
+      "id": "polymer-bundled",
+      "version": "0.18.2+26.3",
+      "sha256": "3d79318e8202d0e87af308d7f232220714e5f1409d06c23db774877ec6f3848f",
+      "depends": {},
+      "declared_sources": "https://github.com/Patbox/polymer"
+    },
+    {
+      "source_artifact": "Minecraft/polymer-shim-test-bundle/staging-2026-10-01/mods/fabric-api-0.161.0+26.3.jar",
+      "id": "fabric-api",
+      "version": "0.161.0+26.3",
+      "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6",
+      "depends": {
+        "fabricloader": ">=0.19.3",
+        "java": ">=25",
+        "minecraft": "~26.3-"
+      },
+      "declared_sources": "https://github.com/FabricMC/fabric"
+    },
+    {
+      "source_artifact": "Minecraft/polymer-shim-test-bundle/staging-2026-10-01/mods/tiered_backpacks-fabric-1.0.19+26.3-upstream.jar",
+      "id": "tiered_backpacks",
+      "version": "1.0.19",
+      "sha256": "03cd9aaf16666024362a47b9659033ef0baeceefb4d50ee581d0b60fc00d2c55",
+      "depends": {
+        "minecraft": "~26.3",
+        "fabricloader": ">=0.19.5",
+        "java": ">=25",
+        "fabric-api": ">=0.160.5",
+        "fzzy_config": ">=0.7.7"
+      },
+      "declared_sources": "https://github.com/pajicadvance/tiered_backpacks"
+    },
+    {
+      "source_artifact": "Minecraft/polymer-shim-test-bundle/staging-2026-10-01/mods/cloth-config-fabric-26.3.159.jar",
+      "id": "cloth-config",
+      "version": "26.3.159",
+      "sha256": "1716b9964f90d2b885f9bd3887f8824b71b55c32a4123a5853486e722f7c2e4b",
+      "depends": {
+        "fabricloader": ">=0.14.0",
+        "minecraft": ">=26.3-"
+      },
+      "declared_sources": "https://github.com/shedaniel/ClothConfig"
+    },
+    {
+      "source_artifact": "Minecraft/polymer-shim-test-bundle/staging-2026-10-01/mods/codecui-26.3-1.4.3-fabric.jar",
+      "id": "codecui",
+      "version": "26.3-1.4.3",
+      "sha256": "4d07c219bd85b58283a0317d6f43cca838adf9cd16be321316cd32f2fb1be898",
+      "depends": {
+        "fabricloader": ">=0.19.5",
+        "fabric-api": ">=0.160.5+26.3",
+        "minecraft": ">=26.3"
+      },
+      "declared_sources": "https://github.com/MehVahdJukaar/codecui"
+    },
+    {
+      "source_artifact": "Minecraft/polymer-shim-test-bundle/staging-2026-10-01/mods/fzzy_config-0.7.7+fix2+26.3.jar",
+      "id": "fzzy_config",
+      "version": "0.7.7+fix2+26.3",
+      "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f",
+      "depends": {
+        "fabricloader": ">=0.19.5",
+        "fabric-api": "*",
+        "fabric-language-kotlin": ">=1.13.11+kotlin.2.3.21",
+        "minecraft": ">=26.1",
+        "java": ">=25"
+      },
+      "declared_sources": "https://github.com/fzzyhmstrs/fconfig"
+    },
+    {
+      "source_artifact": "Minecraft/polymer-shim-test-bundle/staging-2026-10-01/mods/chalk-3.2.1+26.3.jar",
+      "id": "chalk",
+      "version": "3.2.1+26.3",
+      "sha256": "886b0b10cc12df65d47f446c2bd54c0c670f9a54fa09a1fe95c9ec46df565f49",
+      "depends": {
+        "minecraft": "~26.3",
+        "fabricloader": ">=0.19.5",
+        "fabric-api": "*",
+        "cloth-config": ">=26.3.159",
+        "java": ">=25"
+      },
+      "declared_sources": "https://github.com/DaFuqs/Chalk"
+    },
+    {
+      "source_artifact": "Minecraft/polymer-shim-test-bundle/staging-2026-10-01/mods/simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+      "id": "simple_smithing_overhaul",
+      "version": "2.9.14",
+      "sha256": "fb6cbf8c13938d68fb19171dac386b5567d71625bce727b22d3380f6b7880126",
+      "depends": {
+        "minecraft": "~26.3",
+        "fabricloader": ">=0.19.5",
+        "java": ">=25",
+        "defaulted": ">=1.3.8",
+        "fabric-api": ">=0.160.4",
+        "fzzy_config": ">=0.7.6",
+        "mixson": ">=2.2.0"
+      },
+      "declared_sources": "https://github.com/pajicadvance/simple-smithing-overhaul"
+    },
+    {
+      "source_artifact": "Minecraft/polymer-shim-test-bundle/staging-2026-10-01/mods/mapstitch-fabric-1.1.6+26.3.jar",
+      "id": "mapstitch",
+      "version": "1.1.6",
+      "sha256": "e1b768bbd1ae06f83305eeba3ab19bfe4eb99bf21de12d57364d04ce9a1cde81",
+      "depends": {
+        "minecraft": "~26.3",
+        "fabricloader": ">=0.19.5",
+        "java": ">=25",
+        "fabric-api": ">=0.160.5",
+        "fzzy_config": ">=0.7.7"
+      },
+      "declared_sources": "https://github.com/pajicadvance/mapstitch"
+    },
+    {
+      "source_artifact": "Minecraft/polymer-shim-test-bundle/staging-2026-10-01/mods/mixson-2.2.1-multiloader.jar",
+      "id": "mixson",
+      "version": "2.2.1",
+      "sha256": "e4d38f31be95a1f03f8bef290c079f4bb5573d8f4e15808e8c1fc8ba3e5913a0",
+      "depends": {
+        "fabricloader": ">=0.19.5",
+        "minecraft": ">=26.3",
+        "java": ">=25"
+      },
+      "declared_sources": null
+    },
+    {
+      "source_artifact": "Builds/Minecraft/Simple Smithing Overhaul/Main Plugin - Version Port/2.9.14-port.1 - Fabric 26.3/simple_smithing_overhaul-fabric-2.9.14-port.1+26.3.jar",
+      "id": "simple_smithing_overhaul",
+      "version": "2.9.14-port.1",
+      "sha256": "fde7de61945f008e716f71711f8eeed27d4b123e069893f381ee0bda2490587f",
+      "depends": {
+        "minecraft": "~26.3",
+        "fabricloader": ">=0.19.5",
+        "java": ">=25",
+        "fabric-api": ">=0.161.0",
+        "fzzy_config": ">=0.7.7",
+        "mixson": ">=2.2.1"
+      },
+      "declared_sources": "https://github.com/pajicadvance/simple-smithing-overhaul"
+    }
+  ],
+  "port_sources": [
+    {
+      "path": "Minecraft/simple-smithing-overhaul-26.3",
+      "revision": "509f137dc17d40d38e0fc7a71c662be34a92c51c",
+      "status": ""
+    },
+    {
+      "path": "Minecraft/chalk-26.3",
+      "revision": "dfb461ef9eb6f7bf5188570594c3bd21171c2391",
+      "status": ""
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "suite": "mapstitch-only optional module native-client regression",
+  "result": "PASS: native crafting network preview/result, ingredients consumed, atlas components/nested map, active map sync, minimap render state and server-opened worldmap",
+  "enabled_modules": [
+    "mapstitch"
+  ],
+  "enabled_modules_verified_from_server_log": true,
+  "server_mods": [
+    {
+      "name": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+      "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+    },
+    {
+      "name": "fabric-api-0.161.0+26.3.jar",
+      "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+    },
+    {
+      "name": "fzzy_config-0.7.7+fix2+26.3.jar",
+      "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+    },
+    {
+      "name": "mapstitch-fabric-1.1.6+26.3.jar",
+      "sha256": "e1b768bbd1ae06f83305eeba3ab19bfe4eb99bf21de12d57364d04ce9a1cde81"
+    },
+    {
+      "name": "polymer-bundled-0.18.2+26.3.jar",
+      "sha256": "3d79318e8202d0e87af308d7f232220714e5f1409d06c23db774877ec6f3848f"
+    },
+    {
+      "name": "SSO-backpack-toolpouch-mapstitch-shim-1.0.0+26.3.jar",
+      "sha256": "2ab08d31dc335b03e2e4c16bfd2b1538de8e7e5a6e1760aac4164ed807e49fe3"
+    },
+    {
+      "name": "server-qa.jar",
+      "sha256": "20237291a7823c1f6fee79ff160084c1168a2874d79e698de4ab46b908692a60"
+    }
+  ],
+  "client_mods": [
+    {
+      "name": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+      "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+    },
+    {
+      "name": "fabric-api-0.161.0+26.3.jar",
+      "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+    },
+    {
+      "name": "fzzy_config-0.7.7+fix2+26.3.jar",
+      "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+    },
+    {
+      "name": "mapstitch-fabric-1.1.6+26.3.jar",
+      "sha256": "e1b768bbd1ae06f83305eeba3ab19bfe4eb99bf21de12d57364d04ce9a1cde81"
+    },
+    {
+      "name": "client-qa.jar",
+      "sha256": "da853b9820f7307964fe13a53bdc1a73aa5405c0d96060a228f2d3248d2bddea"
+    }
+  ],
+  "integrity_unchanged": true,
+  "client_polymer": false,
+  "addon_present": false,
+  "chalk_present": false,
+  "qa_fixture_only": true,
+  "fixture_sources": [
+    {
+      "name": "MapstitchServerQa.java",
+      "sha256": "5c4a5c337a64299ea9c39203666a1ff1322bbe3609919b28fa4f32b57a9d3545"
+    },
+    {
+      "name": "MapstitchClientQa.java",
+      "sha256": "4c36df6cac41df10a6b1b3c1b8b854ab6bbbf2703812c54c8142a0daa033297b"
+    }
+  ],
+  "limitations": [
+    "Bounded original native item/menu/network regression; does not certify all mod features or arbitrary third-party mod interactions."
+  ],
+  "server_seed": "PASS: native crafting recipe preview and map 0"
+}

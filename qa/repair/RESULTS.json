@@ -1,0 +1,18 @@
+[
+  {
+    "suite": "developer-inventory",
+    "pass": true
+  },
+  {
+    "suite": "developer-table",
+    "pass": true
+  },
+  {
+    "suite": "ported-inventory",
+    "pass": true
+  },
+  {
+    "suite": "creative-enchanted",
+    "pass": true
+  }
+]

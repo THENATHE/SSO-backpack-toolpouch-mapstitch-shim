@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "package": "com.thenathe.ssopolymer.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "InitializationMixin",
+    "AnvilMenuMixin",
+    "ContainerSynchronizerMixin",
+    "DataPatchesMixin",
+    "AdvancementTextMixin",
+    "MendingUseMixin",
+    "MendingRepairCountMixin",
+    "MendingWhetstoneSelectionMixin",
+    "EnchantingPowerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "plugin": "com.thenathe.combinedshim.ModuleMixinPlugin"
+}

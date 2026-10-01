@@ -1,0 +1,92 @@
+{
+  "jar_copies_checked": 97,
+  "profiles": {
+    "individual/chalk/native-client/mods": {
+      "count": 3,
+      "dependency_presence": true,
+      "duplicate_ids": false,
+      "native_client": true
+    },
+    "individual/chalk/server/mods": {
+      "count": 5,
+      "dependency_presence": true,
+      "duplicate_ids": false,
+      "native_client": false
+    },
+    "individual/mapstitch/native-client/mods": {
+      "count": 4,
+      "dependency_presence": true,
+      "duplicate_ids": false,
+      "native_client": true
+    },
+    "individual/mapstitch/server/mods": {
+      "count": 6,
+      "dependency_presence": true,
+      "duplicate_ids": false,
+      "native_client": false
+    },
+    "individual/simple-smithing/native-client/mods": {
+      "count": 7,
+      "dependency_presence": true,
+      "duplicate_ids": false,
+      "native_client": true
+    },
+    "individual/simple-smithing/server/mods": {
+      "count": 9,
+      "dependency_presence": true,
+      "duplicate_ids": false,
+      "native_client": false
+    },
+    "individual/tiered-backpacks/native-client/mods": {
+      "count": 4,
+      "dependency_presence": true,
+      "duplicate_ids": false,
+      "native_client": true
+    },
+    "individual/tiered-backpacks/server/mods": {
+      "count": 6,
+      "dependency_presence": true,
+      "duplicate_ids": false,
+      "native_client": false
+    },
+    "individual/tool-pouch/native-client/mods": {
+      "count": 4,
+      "dependency_presence": true,
+      "duplicate_ids": false,
+      "native_client": true
+    },
+    "individual/tool-pouch/server/mods": {
+      "count": 6,
+      "dependency_presence": true,
+      "duplicate_ids": false,
+      "native_client": false
+    },
+    "individual/tool-pouch-atlas-addon/native-client/mods": {
+      "count": 6,
+      "dependency_presence": true,
+      "duplicate_ids": false,
+      "native_client": true
+    },
+    "individual/tool-pouch-atlas-addon/server/mods": {
+      "count": 8,
+      "dependency_presence": true,
+      "duplicate_ids": false,
+      "native_client": false
+    },
+    "mods": {
+      "count": 16,
+      "dependency_presence": true,
+      "duplicate_ids": false,
+      "native_client": false
+    },
+    "native-client/mods": {
+      "count": 13,
+      "dependency_presence": true,
+      "duplicate_ids": false,
+      "native_client": true
+    }
+  },
+  "all_jar_archives_valid": true,
+  "all_manifest_hashes_valid": true,
+  "candidate_sha256": "2ab08d31dc335b03e2e4c16bfd2b1538de8e7e5a6e1760aac4164ed807e49fe3"
+}

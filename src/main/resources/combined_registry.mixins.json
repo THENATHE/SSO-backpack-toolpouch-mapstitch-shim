@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "com.thenathe.combinedshim.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "NativeRegistrySyncMixin",
+    "RegistrySyncSchedulingMixin",
+    "NativeComponentsMixin",
+    "RegistryWireIdsMixin",
+    "RegistryPacketEncoderMixin",
+    "RegistryPacketDecoderMixin",
+    "NativeTagsMixin",
+    "PolymerNativeRegistryMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

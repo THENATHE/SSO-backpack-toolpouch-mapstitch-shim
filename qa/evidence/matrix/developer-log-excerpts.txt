@@ -1,0 +1,111 @@
+00-none
+[02:50:44] [main/INFO]: SSO_STACK_MODULES=[]
+[02:50:53] [Server thread/INFO]: Done (4.672s)! For help, type "help"
+[02:50:54] [Server thread/INFO]: System chat: Reloading!
+[02:51:09] [Server thread/INFO]: Stopping server
+[02:51:09] [Server thread/INFO]: Saving worlds
+
+01-simple-smithing
+[02:50:44] [main/INFO]: SSO_STACK_MODULES=[simple_smithing_overhaul]
+[02:50:53] [Server thread/INFO]: Done (4.424s)! For help, type "help"
+[02:50:54] [Server thread/INFO]: System chat: Reloading!
+[02:51:10] [Server thread/INFO]: Stopping server
+[02:51:10] [Server thread/INFO]: Saving worlds
+
+02-tiered-backpacks
+[02:51:23] [main/INFO]: SSO_STACK_MODULES=[tiered_backpacks]
+[02:51:31] [Server thread/INFO]: Done (4.147s)! For help, type "help"
+[02:51:32] [Server thread/INFO]: System chat: Reloading!
+[02:51:46] [Server thread/INFO]: Stopping server
+[02:51:46] [Server thread/INFO]: Saving worlds
+
+03-simple-smithing-tiered-backpacks
+[02:51:23] [main/INFO]: SSO_STACK_MODULES=[simple_smithing_overhaul, tiered_backpacks]
+[02:51:32] [Server thread/INFO]: Done (4.257s)! For help, type "help"
+[02:51:33] [Server thread/INFO]: System chat: Reloading!
+[02:51:47] [Server thread/INFO]: Stopping server
+[02:51:47] [Server thread/INFO]: Saving worlds
+
+04-tool-pouch
+[02:51:59] [main/INFO]: SSO_STACK_MODULES=[toolpouch]
+[02:52:09] [Server thread/INFO]: Done (5.857s)! For help, type "help"
+[02:52:11] [Server thread/INFO]: System chat: Reloading!
+[02:52:23] [Server thread/INFO]: Stopping server
+[02:52:23] [Server thread/INFO]: Saving worlds
+
+05-simple-smithing-tool-pouch
+[02:52:01] [main/INFO]: SSO_STACK_MODULES=[simple_smithing_overhaul, toolpouch]
+[02:52:11] [Server thread/INFO]: Done (5.108s)! For help, type "help"
+[02:52:12] [Server thread/INFO]: System chat: Reloading!
+[02:52:26] [Server thread/INFO]: Stopping server
+[02:52:26] [Server thread/INFO]: Saving worlds
+
+06-tiered-backpacks-tool-pouch
+[02:52:35] [main/INFO]: SSO_STACK_MODULES=[tiered_backpacks, toolpouch]
+[02:52:44] [Server thread/INFO]: Done (5.599s)! For help, type "help"
+[02:52:46] [Server thread/INFO]: System chat: Reloading!
+[02:52:58] [Server thread/INFO]: Stopping server
+[02:52:59] [Server thread/INFO]: Saving worlds
+
+07-simple-smithing-tiered-backpacks-tool-pouch
+[02:52:39] [main/INFO]: SSO_STACK_MODULES=[simple_smithing_overhaul, tiered_backpacks, toolpouch]
+[02:52:48] [Server thread/INFO]: Done (5.429s)! For help, type "help"
+[02:52:49] [Server thread/INFO]: System chat: Reloading!
+[02:53:01] [Server thread/INFO]: Stopping server
+[02:53:01] [Server thread/INFO]: Saving worlds
+
+08-mapstitch
+[02:53:10] [main/INFO]: SSO_STACK_MODULES=[mapstitch]
+[02:53:18] [Server thread/INFO]: Done (4.797s)! For help, type "help"
+[02:53:19] [Server thread/INFO]: System chat: Reloading!
+[02:53:30] [Server thread/INFO]: Stopping server
+[02:53:30] [Server thread/INFO]: Saving worlds
+
+09-simple-smithing-mapstitch
+[02:53:13] [main/INFO]: SSO_STACK_MODULES=[mapstitch, simple_smithing_overhaul]
+[02:53:20] [Server thread/INFO]: Done (4.032s)! For help, type "help"
+[02:53:21] [Server thread/INFO]: System chat: Reloading!
+[02:53:32] [Server thread/INFO]: Stopping server
+[02:53:32] [Server thread/INFO]: Saving worlds
+
+10-tiered-backpacks-mapstitch
+[02:53:39] [main/INFO]: SSO_STACK_MODULES=[mapstitch, tiered_backpacks]
+[02:53:46] [Server thread/INFO]: Done (3.552s)! For help, type "help"
+[02:53:47] [Server thread/INFO]: System chat: Reloading!
+[02:53:58] [Server thread/INFO]: Stopping server
+[02:53:58] [Server thread/INFO]: Saving worlds
+
+11-simple-smithing-tiered-backpacks-mapstitch
+[02:53:42] [main/INFO]: SSO_STACK_MODULES=[mapstitch, simple_smithing_overhaul, tiered_backpacks]
+[02:53:48] [Server thread/INFO]: Done (3.277s)! For help, type "help"
+[02:53:49] [Server thread/INFO]: System chat: Reloading!
+[02:54:00] [Server thread/INFO]: Stopping server
+[02:54:00] [Server thread/INFO]: Saving worlds
+
+12-tool-pouch-mapstitch
+[02:54:08] [main/INFO]: SSO_STACK_MODULES=[mapstitch, toolpouch]
+[02:54:26] [Server thread/INFO]: Done (14.337s)! For help, type "help"
+[02:54:28] [Server thread/INFO]: System chat: Reloading!
+[02:54:44] [Server thread/INFO]: Stopping server
+[02:54:44] [Server thread/INFO]: Saving worlds
+
+13-simple-smithing-tool-pouch-mapstitch
+[02:54:11] [main/INFO]: SSO_STACK_MODULES=[mapstitch, simple_smithing_overhaul, toolpouch]
+[02:54:19] [Server thread/INFO]: Done (4.489s)! For help, type "help"
+[02:54:20] [Server thread/INFO]: System chat: Reloading!
+[02:54:36] [Server thread/INFO]: Stopping server
+[02:54:36] [Server thread/INFO]: Saving worlds
+
+14-tiered-backpacks-tool-pouch-mapstitch
+[02:54:49] [main/INFO]: SSO_STACK_MODULES=[mapstitch, tiered_backpacks, toolpouch]
+[02:54:55] [Server thread/INFO]: Done (3.362s)! For help, type "help"
+[02:54:56] [Server thread/INFO]: System chat: Reloading!
+[02:55:08] [Server thread/INFO]: Stopping server
+[02:55:08] [Server thread/INFO]: Saving worlds
+
+15-simple-smithing-tiered-backpacks-tool-pouch-mapstitch
+[02:54:56] [main/INFO]: SSO_STACK_MODULES=[mapstitch, simple_smithing_overhaul, tiered_backpacks, toolpouch]
+[02:55:02] [Server thread/INFO]: Done (2.976s)! For help, type "help"
+[02:55:03] [Server thread/INFO]: System chat: Reloading!
+[02:55:13] [Server thread/INFO]: Stopping server
+[02:55:13] [Server thread/INFO]: Saving worlds

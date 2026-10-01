@@ -1,0 +1,13 @@
+01-simple-smithing
+[02:55:44] [main/INFO]: SSO_STACK_MODULES=[simple_smithing_overhaul]
+[02:55:52] [Server thread/INFO]: Done (4.720s)! For help, type "help"
+[02:55:53] [Server thread/INFO]: System chat: Reloading!
+[02:56:03] [Server thread/INFO]: Stopping server
+[02:56:03] [Server thread/INFO]: Saving worlds
+
+15-simple-smithing-tiered-backpacks-tool-pouch-mapstitch
+[02:55:45] [main/INFO]: SSO_STACK_MODULES=[mapstitch, simple_smithing_overhaul, tiered_backpacks, toolpouch]
+[02:55:54] [Server thread/INFO]: Done (6.310s)! For help, type "help"
+[02:55:55] [Server thread/INFO]: System chat: Reloading!
+[02:56:06] [Server thread/INFO]: Stopping server
+[02:56:06] [Server thread/INFO]: Saving worlds

@@ -1,0 +1,33 @@
+plugins { id 'net.fabricmc.fabric-loom' version '1.17.20' }
+version = '1.0.0+26.3'
+group = 'com.thenathe'
+base { archivesName = 'SSO-backpack-toolpouch-mapstitch-shim' }
+repositories { maven { url = 'https://maven.nucleoid.xyz/' } }
+dependencies {
+    minecraft 'com.mojang:minecraft:26.3'
+    implementation 'net.fabricmc:fabric-loader:0.19.5'
+    implementation 'net.fabricmc.fabric-api:fabric-api:0.161.0+26.3'
+    implementation 'eu.pb4:polymer-core:0.18.2+26.3'
+    implementation 'eu.pb4:polymer-resource-pack:0.18.2+26.3'
+    compileOnly fileTree('libs') { include '*.jar' }
+}
+tasks.register('verifyOriginalInputs') {
+    doLast {
+        new groovy.json.JsonSlurper().parse(file('dependencies.lock.json')).each { entry ->
+            def input = file("libs/${entry.file}")
+            if (!input.isFile() || java.security.MessageDigest.getInstance('SHA-256').digest(input.bytes).encodeHex().toString() != entry.sha256) {
+                throw new GradleException("Original dependency mismatch: ${entry.file}")
+            }
+        }
+    }
+}
+tasks.named('compileJava') { dependsOn 'verifyOriginalInputs' }
+processResources { inputs.property 'version', project.version; filesMatching('fabric.mod.json') { expand(version:project.version) } }
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'; options.release = 25
+    if (providers.gradleProperty('compilerVersion').isPresent()) {
+        javaCompiler = javaToolchains.compilerFor { languageVersion = JavaLanguageVersion.of(providers.gradleProperty('compilerVersion').get()) }
+    }
+}
+java { withSourcesJar(); sourceCompatibility = JavaVersion.VERSION_25; targetCompatibility = JavaVersion.VERSION_25 }
+jar { from('LICENSE') }

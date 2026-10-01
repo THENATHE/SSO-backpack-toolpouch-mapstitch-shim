@@ -1,0 +1,61 @@
+{
+  "suite": "tiered-only-1.0.0",
+  "pass": true,
+  "client-result": "PASS 48 Creative item packets (op and non-op) + 24 player-issued /give commands across Overworld, Nether, End, custom dimension",
+  "server-result": "PASS 72 real network cases; six tiers; Creative op/nonop + Survival player /give; four dimensions",
+  "mods": {
+    "server": [
+      {
+        "file": "SSO-backpack-toolpouch-mapstitch-shim-1.0.0+26.3.jar",
+        "sha256": "2ab08d31dc335b03e2e4c16bfd2b1538de8e7e5a6e1760aac4164ed807e49fe3"
+      },
+      {
+        "file": "creative-qa-server.jar",
+        "sha256": "df2a84ad55dbfae32484e999de46599ae3290d14d852732869625ac83034138f"
+      },
+      {
+        "file": "fabric-api-0.161.0+26.3.jar",
+        "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+      },
+      {
+        "file": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+        "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+      },
+      {
+        "file": "fzzy_config-0.7.7+fix2+26.3.jar",
+        "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+      },
+      {
+        "file": "polymer-bundled-0.18.2+26.3.jar",
+        "sha256": "3d79318e8202d0e87af308d7f232220714e5f1409d06c23db774877ec6f3848f"
+      },
+      {
+        "file": "tiered_backpacks-fabric-1.0.19+26.3-upstream.jar",
+        "sha256": "03cd9aaf16666024362a47b9659033ef0baeceefb4d50ee581d0b60fc00d2c55"
+      }
+    ],
+    "client": [
+      {
+        "file": "creative-qa-client.jar",
+        "sha256": "8b9d63c961f14053473f09f82a7a66780e44c8c9b78ca0788562c3d70a02410f"
+      },
+      {
+        "file": "fabric-api-0.161.0+26.3.jar",
+        "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+      },
+      {
+        "file": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+        "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+      },
+      {
+        "file": "fzzy_config-0.7.7+fix2+26.3.jar",
+        "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+      },
+      {
+        "file": "tiered_backpacks-fabric-1.0.19+26.3-upstream.jar",
+        "sha256": "03cd9aaf16666024362a47b9659033ef0baeceefb4d50ee581d0b60fc00d2c55"
+      }
+    ]
+  },
+  "local_evidence": "qa/regression/creative/runs/tiered-only-1.0.0/result.json"
+}

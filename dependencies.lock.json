@@ -1,0 +1,56 @@
+[
+  {
+    "file": "codecui-26.3-1.4.3-fabric.jar",
+    "sha256": "4d07c219bd85b58283a0317d6f43cca838adf9cd16be321316cd32f2fb1be898",
+    "origin": "Minecraft/polymer-shim-test-bundle/staging/mods/codecui-26.3-1.4.3-fabric.jar",
+    "bundled": false
+  },
+  {
+    "file": "defaulted-1.3.8.release-26.3-fabric.jar",
+    "sha256": "0f6efc6423902b83da78ce85a119c69536517b1a9af52ed7046858859ff582a0",
+    "origin": "Minecraft/polymer-shim-test-bundle/staging/mods/defaulted-1.3.8.release-26.3-fabric.jar",
+    "bundled": false
+  },
+  {
+    "file": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+    "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5",
+    "origin": "Minecraft/polymer-shim-test-bundle/staging/mods/fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+    "bundled": false
+  },
+  {
+    "file": "fzzy_config-0.7.7+fix2+26.3.jar",
+    "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f",
+    "origin": "Minecraft/polymer-shim-test-bundle/staging/mods/fzzy_config-0.7.7+fix2+26.3.jar",
+    "bundled": false
+  },
+  {
+    "file": "mapstitch-fabric-1.1.6+26.3.jar",
+    "sha256": "e1b768bbd1ae06f83305eeba3ab19bfe4eb99bf21de12d57364d04ce9a1cde81",
+    "origin": "Minecraft/polymer-shim-test-bundle/staging/mods/mapstitch-fabric-1.1.6+26.3.jar",
+    "bundled": false
+  },
+  {
+    "file": "mixson-2.2.1-multiloader.jar",
+    "sha256": "e4d38f31be95a1f03f8bef290c079f4bb5573d8f4e15808e8c1fc8ba3e5913a0",
+    "origin": "Minecraft/polymer-shim-test-bundle/staging/mods/mixson-2.2.1-multiloader.jar",
+    "bundled": false
+  },
+  {
+    "file": "simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+    "sha256": "fb6cbf8c13938d68fb19171dac386b5567d71625bce727b22d3380f6b7880126",
+    "origin": "Minecraft/polymer-shim-test-bundle/staging/mods/simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+    "bundled": false
+  },
+  {
+    "file": "tiered_backpacks-fabric-1.0.19+26.3-upstream.jar",
+    "sha256": "03cd9aaf16666024362a47b9659033ef0baeceefb4d50ee581d0b60fc00d2c55",
+    "origin": "Minecraft/polymer-shim-test-bundle/staging/mods/tiered_backpacks-fabric-1.0.19+26.3-upstream.jar",
+    "bundled": false
+  },
+  {
+    "file": "toolpouch-fabric-1.1.10+26.3.jar",
+    "sha256": "a5bb4f084e7d929f3a89cc43317af63bd45abe3e3f4fed8b45f99b2da846e903",
+    "origin": "Minecraft/polymer-shim-test-bundle/staging/mods/toolpouch-fabric-1.1.10+26.3.jar",
+    "bundled": false
+  }
+]

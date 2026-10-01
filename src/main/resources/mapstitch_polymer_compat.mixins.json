@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.thenathe.mapstitchcompat.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "MapstitchInitializationMixin",
+    "MapstitchNetworkingMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "plugin": "com.thenathe.combinedshim.ModuleMixinPlugin"
+}

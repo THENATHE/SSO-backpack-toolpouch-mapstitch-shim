@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.thenathe.backpackcompat.mixin",
+  "plugin": "com.thenathe.combinedshim.ModuleMixinPlugin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "InitializationMixin",
+    "BackpackItemMixin",
+    "BackpackScreenMixin",
+    "UnequipMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

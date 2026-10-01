@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "sso_backpack_toolpouch_mapstitch_shim",
+  "version": "${version}",
+  "name": "SSO-backpack-toolpouch-mapstitch-shim",
+  "description": "Optional Polymer compatibility modules for Simple Smithing Overhaul, Tiered Backpacks, Tool Pouch and MapStitch.",
+  "authors": [
+    "THENATHE"
+  ],
+  "license": "MIT",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "com.thenathe.combinedshim.CombinedShim"
+    ]
+  },
+  "mixins": [
+    "combined_registry.mixins.json",
+    "simple_smithing_polymer_compat.mixins.json",
+    "tiered_backpacks_polymer_compat.mixins.json",
+    "toolpouch_polymer_compat.mixins.json",
+    "mapstitch_polymer_compat.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "26.3",
+    "java": ">=25",
+    "fabricloader": ">=0.19.5",
+    "fabric-api": ">=0.161.0+26.3",
+    "polymer-core": "0.18.2+26.3",
+    "polymer-resource-pack": "0.18.2+26.3"
+  },
+  "suggests": {
+    "simple_smithing_overhaul": "*",
+    "tiered_backpacks": "1.0.19",
+    "toolpouch": "1.1.10",
+    "mapstitch": "1.1.6",
+    "toolpouch_atlas_elytra_compat": "*"
+  },
+  "breaks": {
+    "simple_smithing_polymer_compat": "*",
+    "tiered_backpacks_polymer_compat": "*",
+    "toolpouch_polymer_compat": "*",
+    "mapstitch_polymer_compat": "*"
+  },
+  "contact": {
+    "sources": "https://github.com/THENATHE/SSO-backpack-toolpouch-mapstitch-shim",
+    "issues": "https://github.com/THENATHE/SSO-backpack-toolpouch-mapstitch-shim/issues"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "client-result": "PASS: real inventory clicks produced and took enchanted diamond pickaxe repair, damage=479",
+  "server-result": "PASS: repaired diamond pickaxe damage=479, both enchants retained, diamond consumed, whetstone retained",
+  "server-output": "result=1 minecraft:diamond_pickaxe damage=479 inputs=1 minecraft:diamond_pickaxe,1 minecraft:diamond,1 simple_smithing_overhaul:whetstone",
+  "client-output": "result=1 minecraft:diamond_pickaxe damage=479 stone=1 simple_smithing_overhaul:whetstone",
+  "mods": {
+    "server": [
+      {
+        "file": "SSO-backpack-toolpouch-mapstitch-shim-1.0.0+26.3.jar",
+        "sha256": "2ab08d31dc335b03e2e4c16bfd2b1538de8e7e5a6e1760aac4164ed807e49fe3"
+      },
+      {
+        "file": "codecui-26.3-1.4.3-fabric.jar",
+        "sha256": "4d07c219bd85b58283a0317d6f43cca838adf9cd16be321316cd32f2fb1be898"
+      },
+      {
+        "file": "creative-qa-server.jar",
+        "sha256": "21fe40e44f6bd099e7d55935b688d56e2264954b3ebe1e6bc0a4bfb3d1660c12"
+      },
+      {
+        "file": "defaulted-1.3.8.release-26.3-fabric.jar",
+        "sha256": "0f6efc6423902b83da78ce85a119c69536517b1a9af52ed7046858859ff582a0"
+      },
+      {
+        "file": "fabric-api-0.161.0+26.3.jar",
+        "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+      },
+      {
+        "file": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+        "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+      },
+      {
+        "file": "fzzy_config-0.7.7+fix2+26.3.jar",
+        "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+      },
+      {
+        "file": "mixson-2.2.1-multiloader.jar",
+        "sha256": "e4d38f31be95a1f03f8bef290c079f4bb5573d8f4e15808e8c1fc8ba3e5913a0"
+      },
+      {
+        "file": "polymer-bundled-0.18.2+26.3.jar",
+        "sha256": "3d79318e8202d0e87af308d7f232220714e5f1409d06c23db774877ec6f3848f"
+      },
+      {
+        "file": "simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+        "sha256": "fb6cbf8c13938d68fb19171dac386b5567d71625bce727b22d3380f6b7880126"
+      }
+    ],
+    "client": [
+      {
+        "file": "codecui-26.3-1.4.3-fabric.jar",
+        "sha256": "4d07c219bd85b58283a0317d6f43cca838adf9cd16be321316cd32f2fb1be898"
+      },
+      {
+        "file": "creative-qa-client.jar",
+        "sha256": "e0e04d453e11b2962aae8c08e06fca52e0f0d2b27b3f3212d5e1ac0def0c3068"
+      },
+      {
+        "file": "defaulted-1.3.8.release-26.3-fabric.jar",
+        "sha256": "0f6efc6423902b83da78ce85a119c69536517b1a9af52ed7046858859ff582a0"
+      },
+      {
+        "file": "fabric-api-0.161.0+26.3.jar",
+        "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+      },
+      {
+        "file": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+        "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+      },
+      {
+        "file": "fzzy_config-0.7.7+fix2+26.3.jar",
+        "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+      },
+      {
+        "file": "mixson-2.2.1-multiloader.jar",
+        "sha256": "e4d38f31be95a1f03f8bef290c079f4bb5573d8f4e15808e8c1fc8ba3e5913a0"
+      },
+      {
+        "file": "simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+        "sha256": "fb6cbf8c13938d68fb19171dac386b5567d71625bce727b22d3380f6b7880126"
+      }
+    ]
+  },
+  "suite": "combined-four-isolated-sso",
+  "pass": true
+}
