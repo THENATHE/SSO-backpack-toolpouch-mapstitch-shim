@@ -33,6 +33,12 @@ Polymer's generated resource pack supplies custom visual assets. Configure Polym
 
 Native detection uses original Tool Pouch and MapStitch networking channels. SSO and Tiered Backpacks do not expose equivalent unique channels, so this release retains strict Fabric registry validation: **Fabric clients advertising registry sync must have the matching installed SSO/Tiered originals**. Unmodified vanilla clients use the fallback path. A Fabric client missing these originals is not treated as an unmodified vanilla client.
 
+## Mending Shift-use
+
+On the tested native stack, hold a damaged Mending item and Shift + right-click in air with its repair material and a usable whetstone in the player inventory. The whetstone must store every enchantment type on the tool, including Mending. Each successful activation consumes one repair material; the original recipe controls durability restored and random whetstone wear.
+
+[Native 1.0.1 tests](qa/evidence/mending-use-1.0.1.md) verified normal repair, matching additional enchantments, repeated uses, compatible-whetstone selection and negative controls. With default automatic break repair enabled, broken items repair automatically when suitable supplies are available. If that option is disabled, an item still marked broken is blocked by the original native client's use callback before it reaches the server; the same limitation reproduces without Polymer/shims.
+
 ## Exact dependency tracks
 
 All four developer targets use Fzzy Config 0.7.7+fix2+26.3 and Fabric Language Kotlin 1.14.1+kotlin.2.4.20. Developer SSO additionally requires Defaulted 1.3.8.release-26.3, CodecUI 26.3-1.4.3 and Mixson 2.2.1. Original metadata and hashes are in [the target inventory](qa/matrix/TARGET-ARTIFACTS.json).

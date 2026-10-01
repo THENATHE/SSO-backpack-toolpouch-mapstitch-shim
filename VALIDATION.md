@@ -36,6 +36,10 @@ A saved explicit calcite repair component is normalized away on the 1.0.0 native
 
 With the existing 1.0.1 JAR and a fresh client, the saved override remains explicit on both sides, so the predicted hashes agree. Cursor synchronization does not require recovering every saved override first; `/sso-shim repair-held` is still needed to restore affected repair gameplay. The binary is unchanged. Exact follow-up cases and controls are recorded in [the cursor report](qa/evidence/cursor-motion-1.0.1.md).
 
+## Follow-up: native Mending Shift-use
+
+The unchanged 1.0.1 binary passed ten ordinary-use/control cases through native Shift input and the normal right-click-in-air path, with exact damage/material/repair-count checks and client/server synchronization. Two further default cases verified automatic break repair followed by one manual repair. A focused automatic-repair-disabled comparison found the same still-broken-item client guard with and without Polymer/shims. [Full results, configuration distinction and evidence](qa/evidence/mending-use-1.0.1.md). XP, offhand and use-on-block behavior were not independently asserted by this suite.
+
 ## Coverage boundaries
 
 The negative 1.0.0 acquisition run passed six crafted/given tool combinations before its Creative-origin enchanted pickaxe failed. We do not claim that every fresh Survival-crafted item independently failed. The demonstrated problem is incorrect client defaults and persisted repair components, regardless of the item's earlier provenance. Prior tests seeded valid server-side enchanted items and checked item identity/enchantments while missing this repair-material corruption; those passes did not rule it out.
