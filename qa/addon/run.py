@@ -57,6 +57,12 @@ def main():
     if args.without_mapstitch:
         server_mods=[p for p in server_mods if not p.name.startswith('mapstitch-')]
         native_mods=[p for p in native_mods if not p.name.startswith('mapstitch-')]
+    tiered_override = Path(os.environ['TIERED_QA_JAR']).resolve() if os.environ.get('TIERED_QA_JAR') else None
+    if tiered_override:
+        with zipfile.ZipFile(tiered_override) as archive:
+            assert json.loads(archive.read('fabric.mod.json'))['id'] == 'tiered_backpacks'
+        server_mods = [p for p in server_mods if not p.name.startswith('tiered_backpacks-')] + [tiered_override]
+        native_mods = [p for p in native_mods if not p.name.startswith('tiered_backpacks-')] + [tiered_override]
     assert not any('polymer' in p.name.lower() for p in native_mods)
     mods=list(dict.fromkeys(server_mods+native_mods)); build(where,mods,suite)
     if args.build_only:return
