@@ -58,7 +58,7 @@ Install this JAR on the server only. Replace the earlier combined shim; remove s
 
 Requires Minecraft 26.3, Java 25+, Fabric Loader 0.19.5, Fabric API 0.161.0+26.3 and Polymer Bundled 0.18.2+26.3. Developer targets are SSO 2.9.14+26.3, Tiered Backpacks 1.0.19+26.3, Tool Pouch 1.1.10+26.3 and MapStitch 1.1.6+26.3, with Fzzy Config 0.7.7+fix2+26.3 and Kotlin 1.14.1+kotlin.2.4.20. Developer SSO also uses Defaulted 1.3.8.release-26.3, CodecUI 26.3-1.4.3 and Mixson 2.2.1. The SSO port target instead uses 2.9.14-port.1+26.3 and its preserved Fzzy/Kotlin/Mixson stack. See [exact runtime input lock](runtime.lock.json). Both tracks are independently tested; the JAR is shared.
 
-This release repairs missing atlas map centers and stale active-map IDs, prevents seed-map duplication and stale crafting previews, and preserves custom fallback lore within Minecraft's limit. Existing atlases repair their metadata when ticked; maps need not be discarded. Original map contents and original mod JARs remain intact.
+This release fixes persistent duplication and item loss when reopening pouch-held shulkers or moving their source pouch. Saves remain anchored to the original pouch and changes persist immediately. Previous atlas metadata, crafting and fallback-lore corrections remain included. Original mod JARs remain intact. See validation for the reported leggings-pouch/bed workflow and exact regression results.
 
 For the separate Toggle Tool Pouch Elytra heading fix, also replace the atlas/elytra addon with **toolpouch-atlas-elytra-compat-1.0.1+26.3.jar on both server and native clients**. [Addon repository](https://github.com/THENATHE/toolpouch-atlas-elytra-modification). The server shim cannot change a client's controls menu by itself.
 

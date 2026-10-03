@@ -1,0 +1,145 @@
+{
+  "track": "released",
+  "artifacts": {
+    "server": {
+      "mods": [
+        {
+          "filename": "chalk-polymer-compat-1.0.0+26.3.jar",
+          "sha256": "48e437bf54419a1016469abd422df1c278318e157668efc7f6304f421f53eade"
+        },
+        {
+          "filename": "toolpouch-fabric-1.1.10+26.3.jar",
+          "sha256": "a5bb4f084e7d929f3a89cc43317af63bd45abe3e3f4fed8b45f99b2da846e903"
+        },
+        {
+          "filename": "defaulted-1.3.8.release-26.3-fabric.jar",
+          "sha256": "0f6efc6423902b83da78ce85a119c69536517b1a9af52ed7046858859ff582a0"
+        },
+        {
+          "filename": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+          "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+        },
+        {
+          "filename": "polymer-bundled-0.18.2+26.3.jar",
+          "sha256": "3d79318e8202d0e87af308d7f232220714e5f1409d06c23db774877ec6f3848f"
+        },
+        {
+          "filename": "fabric-api-0.161.0+26.3.jar",
+          "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+        },
+        {
+          "filename": "tiered_backpacks-fabric-1.0.19+26.3-upstream.jar",
+          "sha256": "03cd9aaf16666024362a47b9659033ef0baeceefb4d50ee581d0b60fc00d2c55"
+        },
+        {
+          "filename": "cloth-config-fabric-26.3.159.jar",
+          "sha256": "1716b9964f90d2b885f9bd3887f8824b71b55c32a4123a5853486e722f7c2e4b"
+        },
+        {
+          "filename": "codecui-26.3-1.4.3-fabric.jar",
+          "sha256": "4d07c219bd85b58283a0317d6f43cca838adf9cd16be321316cd32f2fb1be898"
+        },
+        {
+          "filename": "fzzy_config-0.7.7+fix2+26.3.jar",
+          "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+        },
+        {
+          "filename": "chalk-3.2.1+26.3.jar",
+          "sha256": "886b0b10cc12df65d47f446c2bd54c0c670f9a54fa09a1fe95c9ec46df565f49"
+        },
+        {
+          "filename": "simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+          "sha256": "fb6cbf8c13938d68fb19171dac386b5567d71625bce727b22d3380f6b7880126"
+        },
+        {
+          "filename": "mapstitch-fabric-1.1.6+26.3.jar",
+          "sha256": "e1b768bbd1ae06f83305eeba3ab19bfe4eb99bf21de12d57364d04ce9a1cde81"
+        },
+        {
+          "filename": "mixson-2.2.1-multiloader.jar",
+          "sha256": "e4d38f31be95a1f03f8bef290c079f4bb5573d8f4e15808e8c1fc8ba3e5913a0"
+        },
+        {
+          "filename": "SSO-backpack-toolpouch-mapstitch-shim-1.0.2+26.3.jar",
+          "sha256": "d71a659db9c2025542953839facc5263cf2f80085644608a753913d50786e7d4"
+        },
+        {
+          "filename": "toolpouch-atlas-elytra-compat-1.0.1+26.3.jar",
+          "sha256": "77dc668b164bca182eec1e558b2948bd98ee40545ef30881bcdd471f43af1b0a"
+        },
+        {
+          "filename": "server.jar",
+          "sha256": "a6f60bc97d62b345d140afa6bac6de396df7d2b2a80556f8df9681aac6e56d5c"
+        }
+      ],
+      "qa_fixture": true
+    },
+    "client": {
+      "mods": [
+        {
+          "filename": "toolpouch-fabric-1.1.10+26.3.jar",
+          "sha256": "a5bb4f084e7d929f3a89cc43317af63bd45abe3e3f4fed8b45f99b2da846e903"
+        },
+        {
+          "filename": "defaulted-1.3.8.release-26.3-fabric.jar",
+          "sha256": "0f6efc6423902b83da78ce85a119c69536517b1a9af52ed7046858859ff582a0"
+        },
+        {
+          "filename": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+          "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+        },
+        {
+          "filename": "fabric-api-0.161.0+26.3.jar",
+          "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+        },
+        {
+          "filename": "tiered_backpacks-fabric-1.0.19+26.3-upstream.jar",
+          "sha256": "03cd9aaf16666024362a47b9659033ef0baeceefb4d50ee581d0b60fc00d2c55"
+        },
+        {
+          "filename": "cloth-config-fabric-26.3.159.jar",
+          "sha256": "1716b9964f90d2b885f9bd3887f8824b71b55c32a4123a5853486e722f7c2e4b"
+        },
+        {
+          "filename": "codecui-26.3-1.4.3-fabric.jar",
+          "sha256": "4d07c219bd85b58283a0317d6f43cca838adf9cd16be321316cd32f2fb1be898"
+        },
+        {
+          "filename": "fzzy_config-0.7.7+fix2+26.3.jar",
+          "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+        },
+        {
+          "filename": "chalk-3.2.1+26.3.jar",
+          "sha256": "886b0b10cc12df65d47f446c2bd54c0c670f9a54fa09a1fe95c9ec46df565f49"
+        },
+        {
+          "filename": "simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+          "sha256": "fb6cbf8c13938d68fb19171dac386b5567d71625bce727b22d3380f6b7880126"
+        },
+        {
+          "filename": "mapstitch-fabric-1.1.6+26.3.jar",
+          "sha256": "e1b768bbd1ae06f83305eeba3ab19bfe4eb99bf21de12d57364d04ce9a1cde81"
+        },
+        {
+          "filename": "mixson-2.2.1-multiloader.jar",
+          "sha256": "e4d38f31be95a1f03f8bef290c079f4bb5573d8f4e15808e8c1fc8ba3e5913a0"
+        },
+        {
+          "filename": "toolpouch-atlas-elytra-compat-1.0.1+26.3.jar",
+          "sha256": "77dc668b164bca182eec1e558b2948bd98ee40545ef30881bcdd471f43af1b0a"
+        },
+        {
+          "filename": "client.jar",
+          "sha256": "1a1a7a7c72e7a73408a70bfbe791e650a0c8f2d2374c72002bf059aea1bc5046"
+        }
+      ],
+      "qa_fixture": true
+    }
+  },
+  "original_jars_unchanged": true,
+  "result.txt": "COMPLETE 2 authoritative conservation checks; persistent mismatches=2; client_mismatches=0\n",
+  "observations.txt": "leggings-beds-x-repeat: seed={QA-bed-1@damage=0=1, QA-bed-2@damage=0=1, QA-bed-3@damage=0=1, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1}\nleggings-beds-x-repeat: actual X opened child menu=1 child0=1 minecraft:white_bed child1=1 minecraft:red_bed child2=1 minecraft:blue_bed cursor=0 minecraft:air\nleggings-beds-x-repeat: bed1 withdrawn menu=4 child0=1 minecraft:white_bed child1=1 minecraft:red_bed child2=1 minecraft:blue_bed cursor=0 minecraft:air\nleggings-beds-x-repeat: bed1 picked up from inventory menu=7 child0=0 minecraft:air child1=1 minecraft:red_bed child2=1 minecraft:blue_bed cursor=0 minecraft:air\nleggings-beds-x-repeat: bed1 placed inventory slot27 menu=10 child0=1 minecraft:white_bed child1=1 minecraft:red_bed child2=1 minecraft:blue_bed cursor=0 minecraft:air\nleggings-beds-x-repeat: bed1 moved again menu=13 child0=0 minecraft:air child1=1 minecraft:red_bed child2=1 minecraft:blue_bed cursor=0 minecraft:air\nleggings-beds-x-repeat: bed1 placed inventory slot28 menu=16 child0=1 minecraft:white_bed child1=1 minecraft:red_bed child2=1 minecraft:blue_bed cursor=0 minecraft:air\nleggings-beds-x-repeat: bed2 withdrawn menu=19 child0=0 minecraft:air child1=1 minecraft:red_bed child2=1 minecraft:blue_bed cursor=0 minecraft:air\nleggings-beds-x-repeat: bed3 withdrawn menu=22 child0=1 minecraft:white_bed child1=0 minecraft:air child2=1 minecraft:blue_bed cursor=0 minecraft:air\nleggings-beds-x-repeat: after close PERSISTENT_MISMATCH expected={QA-bed-1@damage=0=1, QA-bed-2@damage=0=1, QA-bed-3@damage=0=1, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1} actual={QA-bed-1@damage=0=2, QA-bed-2@damage=0=1, QA-bed-3@damage=0=2, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1}\nleggings-beds-x-repeat: after close settled-client={QA-bed-1@damage=0=2, QA-bed-2@damage=0=1, QA-bed-3@damage=0=2, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1} client_matches_server=true\nleggings-beds-x-repeat: fresh reopen slot0=1 minecraft:white_bed slot1=0 minecraft:air\nleggings-beds-x-repeat: after reopen and close PERSISTENT_MISMATCH expected={QA-bed-1@damage=0=1, QA-bed-2@damage=0=1, QA-bed-3@damage=0=1, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1} actual={QA-bed-1@damage=0=2, QA-bed-2@damage=0=1, QA-bed-3@damage=0=2, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1}\nleggings-beds-x-repeat: after reopen and close settled-client={QA-bed-1@damage=0=2, QA-bed-2@damage=0=1, QA-bed-3@damage=0=2, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1} client_matches_server=true\n",
+  "server-snapshots.txt": "seed leggings-beds-x-repeat\n{QA-bed-1@damage=0=1, QA-bed-2@damage=0=1, QA-bed-3@damage=0=1, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1}\ninspect-closed leggings-beds-x-repeat\n{QA-bed-1@damage=0=2, QA-bed-2@damage=0=1, QA-bed-3@damage=0=2, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1}\ninspect-reopened leggings-beds-x-repeat\n{QA-bed-1@damage=0=2, QA-bed-2@damage=0=1, QA-bed-3@damage=0=2, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1}\n",
+  "menu-trace.txt": "menu=0 class=InventoryMenu command=\nmenu=1 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=2 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=3 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=4 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=5 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=6 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=7 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=8 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=9 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=10 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=11 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=12 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=13 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=14 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=15 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=16 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=17 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=18 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=19 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=20 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=21 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=22 class=ShulkerBoxMenu command=seed leggings-beds-x-repeat\nmenu=0 class=InventoryMenu command=seed leggings-beds-x-repeat\nmenu=23 class=ShulkerBoxMenu command=inspect-closed leggings-beds-x-repeat\nmenu=0 class=InventoryMenu command=inspect-closed leggings-beds-x-repeat\n",
+  "payload-trace.txt": "open request index=0 oldMenu=0 type=InventoryMenu\nopen request index=0 oldMenu=1 type=ShulkerBoxMenu\nopen request index=0 oldMenu=2 type=ShulkerBoxMenu\nopen request index=0 oldMenu=3 type=ShulkerBoxMenu\nopen request index=0 oldMenu=4 type=ShulkerBoxMenu\nopen request index=0 oldMenu=5 type=ShulkerBoxMenu\nopen request index=0 oldMenu=6 type=ShulkerBoxMenu\nopen request index=0 oldMenu=7 type=ShulkerBoxMenu\nopen request index=0 oldMenu=8 type=ShulkerBoxMenu\nopen request index=0 oldMenu=9 type=ShulkerBoxMenu\nopen request index=0 oldMenu=10 type=ShulkerBoxMenu\nopen request index=0 oldMenu=11 type=ShulkerBoxMenu\nopen request index=0 oldMenu=12 type=ShulkerBoxMenu\nopen request index=0 oldMenu=13 type=ShulkerBoxMenu\nopen request index=0 oldMenu=14 type=ShulkerBoxMenu\nopen request index=0 oldMenu=15 type=ShulkerBoxMenu\nopen request index=0 oldMenu=16 type=ShulkerBoxMenu\nopen request index=0 oldMenu=17 type=ShulkerBoxMenu\nopen request index=0 oldMenu=18 type=ShulkerBoxMenu\nopen request index=0 oldMenu=19 type=ShulkerBoxMenu\nopen request index=0 oldMenu=20 type=ShulkerBoxMenu\nopen request index=0 oldMenu=21 type=ShulkerBoxMenu\nopen request index=0 oldMenu=0 type=InventoryMenu\n"
+}

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3+26.3 — 2026-10-02
+
+- Fix persistent nested-shulker duplication and item loss reproduced with the original Tool Pouch developer release and the combined stack. Save the previous menu before resolving a new shulker, and reject stale/out-of-range selections.
+- Anchor nested-shulker saves to their original pouch and child slot. Persist changes as they happen, preserve unrelated pouch contents, and safely invalidate menus whose source is no longer available instead of writing into another pouch.
+- Add native-client regression coverage distinguishing authoritative item counts from stale client displays, including the reported leggings-pouch/quick-menu bed workflow.
+
 ## 1.0.2+26.3 — 2026-10-02
 
 - Restore missing or incorrect atlas seed-map centers from saved map data; recover stale active-map selections, preserving map contents and metadata.

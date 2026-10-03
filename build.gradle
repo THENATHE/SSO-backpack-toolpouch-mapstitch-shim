@@ -1,5 +1,5 @@
 plugins { id 'net.fabricmc.fabric-loom' version '1.17.20' }
-version = '1.0.2+26.3'
+version = '1.0.3+26.3'
 group = 'com.thenathe'
 base { archivesName = 'SSO-backpack-toolpouch-mapstitch-shim' }
 repositories { maven { url = 'https://maven.nucleoid.xyz/' } }

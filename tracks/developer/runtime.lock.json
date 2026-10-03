@@ -3,13 +3,13 @@
   "minecraft": "26.3",
   "fabric_loader": "0.19.5",
   "java": "25",
-  "combined_shim_sha256": "d71a659db9c2025542953839facc5263cf2f80085644608a753913d50786e7d4",
+  "combined_shim_sha256": "d5d08c6a5164206c9c2d47a58a89fec5f56ae03c7fcb12cbe04c98ed7d259722",
   "runtime_mods": [
     {
-      "file": "SSO-backpack-toolpouch-mapstitch-shim-1.0.2+26.3.jar",
+      "file": "SSO-backpack-toolpouch-mapstitch-shim-1.0.3+26.3.jar",
       "id": "sso_backpack_toolpouch_mapstitch_shim",
-      "version": "1.0.2+26.3",
-      "sha256": "d71a659db9c2025542953839facc5263cf2f80085644608a753913d50786e7d4"
+      "version": "1.0.3+26.3",
+      "sha256": "d5d08c6a5164206c9c2d47a58a89fec5f56ae03c7fcb12cbe04c98ed7d259722"
     },
     {
       "file": "codecui-26.3-1.4.3-fabric.jar",

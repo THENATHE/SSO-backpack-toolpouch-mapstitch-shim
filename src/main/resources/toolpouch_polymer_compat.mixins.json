@@ -8,7 +8,11 @@
     "ToolpouchNetworkingMixin",
     "ToolpouchUseMixin",
     "ToolpouchGameplayMixin",
-    "ToolpouchUnequipMixin"
+    "ToolpouchUnequipMixin",
+    "ToolpouchAccess",
+    "ShulkerOpenMixin",
+    "ShulkerContainerMixin",
+    "ShulkerSlotMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -4,7 +4,9 @@ Unofficial server-side Polymer compatibility for Minecraft **26.3 / Fabric**, wi
 
 [Releases](https://github.com/THENATHE/SSO-backpack-toolpouch-mapstitch-shim/releases) · [Validation](VALIDATION.md) · [Credits](NOTICE.md)
 
-**1.0.2 fixes missing atlas minimap tiles and hardens crafting and item fallbacks.** Existing nested maps regain their saved center metadata when the atlas ticks, and stale active-map IDs recover automatically. Atlas crafting consumes one seed map, handles repeated previews consistently, and rejects missing saved map data. Custom backpack/pouch lore survives fallback conversion without exceeding Minecraft's 256-entry limit.
+**1.0.3 fixes persistent duplication and item loss in pouch-held shulkers.** Reopening an active shulker saves its changes before reading it again. Changes stay attached to the original pouch, including after inventory rearrangement; moving or dropping a pouch cannot redirect a later save into another pouch. These faults also reproduced with the original Tool Pouch alone. The correction is server-side; original mod JARs stay unchanged.
+
+The 1.0.2 atlas and fallback fixes remain included. Existing nested maps regain their saved center metadata when the atlas ticks, and stale active-map IDs recover automatically. Atlas crafting consumes one seed map and handles repeated previews consistently. Custom backpack/pouch lore survives fallback conversion within Minecraft's 256-entry limit.
 
 The separate **Tool Pouch Atlas & Elytra addon 1.0.1** fixes the duplicate Tool Pouch controls heading and resets MapStitch's map-center cache when changing worlds. Update that addon on both server and native clients for its client-side fixes. This combined shim stays server-only.
 
@@ -54,7 +56,7 @@ Supply the exact unmodified local developer JARs listed in `dependencies.lock.js
 ./gradlew build
 ```
 
-Output: `build/libs/SSO-backpack-toolpouch-mapstitch-shim-1.0.2+26.3.jar`. This workspace also supports a JDK 27 compiler with `-PcompilerVersion=27`, producing Java 25 bytecode while Gradle runs on JDK 25.
+Output: `build/libs/SSO-backpack-toolpouch-mapstitch-shim-1.0.3+26.3.jar`. This workspace also supports a JDK 27 compiler with `-PcompilerVersion=27`, producing Java 25 bytecode while Gradle runs on JDK 25.
 
 Optional mixins are gated before original-mod classes load. One shared connection-scoped coordinator negotiates native capabilities, restores allowed registry entries and assigns a single dense item/component/recipe/menu mapping. Both packet directions, registry tags and component preservation share this mapping. This replaces the former competing per-shim coordinators. Original item objects and saved data remain owned by the original mods.
 

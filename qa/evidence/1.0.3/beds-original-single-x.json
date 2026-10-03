@@ -1,0 +1,61 @@
+{
+  "track": "original",
+  "artifacts": {
+    "server": {
+      "mods": [
+        {
+          "filename": "toolpouch-fabric-1.1.10+26.3.jar",
+          "sha256": "a5bb4f084e7d929f3a89cc43317af63bd45abe3e3f4fed8b45f99b2da846e903"
+        },
+        {
+          "filename": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+          "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+        },
+        {
+          "filename": "fabric-api-0.161.0+26.3.jar",
+          "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+        },
+        {
+          "filename": "fzzy_config-0.7.7+fix2+26.3.jar",
+          "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+        },
+        {
+          "filename": "server.jar",
+          "sha256": "abf7d03bbed4a9272886fd1cbcfbf7a40be71846adce16a69eaafc9ffc937911"
+        }
+      ],
+      "qa_fixture": true
+    },
+    "client": {
+      "mods": [
+        {
+          "filename": "toolpouch-fabric-1.1.10+26.3.jar",
+          "sha256": "a5bb4f084e7d929f3a89cc43317af63bd45abe3e3f4fed8b45f99b2da846e903"
+        },
+        {
+          "filename": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+          "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+        },
+        {
+          "filename": "fabric-api-0.161.0+26.3.jar",
+          "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+        },
+        {
+          "filename": "fzzy_config-0.7.7+fix2+26.3.jar",
+          "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+        },
+        {
+          "filename": "client.jar",
+          "sha256": "e6f8ebe17dac5707a235a6cfa8cc59db7a6ae03de9dd87a88514d18544b11e3e"
+        }
+      ],
+      "qa_fixture": true
+    }
+  },
+  "original_jars_unchanged": true,
+  "result.txt": "COMPLETE 2 authoritative conservation checks; persistent mismatches=0\n",
+  "observations.txt": "leggings-beds: seed={QA-bed-1@damage=0=1, QA-bed-2@damage=0=1, QA-bed-3@damage=0=1, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1}\nleggings-beds: actual X opened child menu=1 child0=1 minecraft:white_bed child1=1 minecraft:red_bed child2=1 minecraft:blue_bed cursor=0 minecraft:air\nleggings-beds: bed1 withdrawn menu=1 child0=0 minecraft:air child1=1 minecraft:red_bed child2=1 minecraft:blue_bed cursor=0 minecraft:air\nleggings-beds: bed1 picked up from inventory menu=1 child0=0 minecraft:air child1=1 minecraft:red_bed child2=1 minecraft:blue_bed cursor=1 minecraft:white_bed\nleggings-beds: bed1 placed inventory slot27 menu=1 child0=0 minecraft:air child1=1 minecraft:red_bed child2=1 minecraft:blue_bed cursor=0 minecraft:air\nleggings-beds: bed1 moved again menu=1 child0=0 minecraft:air child1=1 minecraft:red_bed child2=1 minecraft:blue_bed cursor=1 minecraft:white_bed\nleggings-beds: bed1 placed inventory slot28 menu=1 child0=0 minecraft:air child1=1 minecraft:red_bed child2=1 minecraft:blue_bed cursor=0 minecraft:air\nleggings-beds: bed2 withdrawn menu=1 child0=0 minecraft:air child1=0 minecraft:air child2=1 minecraft:blue_bed cursor=0 minecraft:air\nleggings-beds: bed3 withdrawn menu=1 child0=0 minecraft:air child1=0 minecraft:air child2=0 minecraft:air cursor=0 minecraft:air\nleggings-beds: after close CONSERVED expected={QA-bed-1@damage=0=1, QA-bed-2@damage=0=1, QA-bed-3@damage=0=1, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1} actual={QA-bed-1@damage=0=1, QA-bed-2@damage=0=1, QA-bed-3@damage=0=1, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1}\nleggings-beds: after close settled-client={QA-bed-1@damage=0=1, QA-bed-2@damage=0=1, QA-bed-3@damage=0=1, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1} client_matches_server=true\nleggings-beds: fresh reopen slot0=0 minecraft:air slot1=0 minecraft:air\nleggings-beds: after reopen and close CONSERVED expected={QA-bed-1@damage=0=1, QA-bed-2@damage=0=1, QA-bed-3@damage=0=1, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1} actual={QA-bed-1@damage=0=1, QA-bed-2@damage=0=1, QA-bed-3@damage=0=1, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1}\nleggings-beds: after reopen and close settled-client={QA-bed-1@damage=0=1, QA-bed-2@damage=0=1, QA-bed-3@damage=0=1, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1} client_matches_server=true\n",
+  "server-snapshots.txt": "seed leggings-beds\n{QA-bed-1@damage=0=1, QA-bed-2@damage=0=1, QA-bed-3@damage=0=1, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1}\ninspect-closed leggings-beds\n{QA-bed-1@damage=0=1, QA-bed-2@damage=0=1, QA-bed-3@damage=0=1, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1}\ninspect-reopened leggings-beds\n{QA-bed-1@damage=0=1, QA-bed-2@damage=0=1, QA-bed-3@damage=0=1, QA-bed-box@damage=0=1, QA-bed-diamonds@damage=0=7, QA-bed-leggings@damage=23=1, QA-deposit-pickaxe@damage=15=1}\n",
+  "menu-trace.txt": "menu=0 class=InventoryMenu command=\nmenu=1 class=ShulkerBoxMenu command=seed leggings-beds\nmenu=0 class=InventoryMenu command=seed leggings-beds\nmenu=2 class=ShulkerBoxMenu command=inspect-closed leggings-beds\nmenu=0 class=InventoryMenu command=inspect-closed leggings-beds\n",
+  "payload-trace.txt": "open request index=0 oldMenu=0 type=InventoryMenu\nopen request index=0 oldMenu=0 type=InventoryMenu\n"
+}

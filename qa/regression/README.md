@@ -16,3 +16,5 @@ The `cursor-rejoin` fixture repeats the six cursor moves after an actual disconn
 The synthetic storage assertions seed the central capability context through reflection only in the QA fixture. Actual client connection classification assertions use negotiated runtime state. Production source is not altered by these runners.
 
 Sanitized results and exact artifact hashes are recorded under `qa/evidence`; full local logs, mod manifests, fixture JARs and worlds remain in ignored `runs/` directories. Passing these bounded regressions is not a claim that all gameplay features or external server plugins have been tested.
+
+The separate [pouch/shulker regression](pouch-shulker/README.md) exercises original-only controls, native quick-menu bed interactions, repeated opening, source movement and server/client conservation. Its CLI differs from the older suite runners above.
