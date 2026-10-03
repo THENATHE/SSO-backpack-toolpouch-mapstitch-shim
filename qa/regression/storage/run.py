@@ -10,6 +10,43 @@ PROJECT = ROOT / 'Minecraft/tiered-backpacks-polymer-compat-26.3'
 QA = PROJECT / 'qa'
 sys.path.insert(0, str(BUNDLE))
 
+# Explicit QA-only target override: never edit staging or production libraries.
+tiered_override = Path(os.environ['TIERED_QA_JAR']).resolve() if os.environ.get('TIERED_QA_JAR') else None
+addon_override = Path(os.environ['STORAGE_QA_ADDON_JAR']).resolve() if os.environ.get('STORAGE_QA_ADDON_JAR') else None
+if addon_override:
+    with zipfile.ZipFile(addon_override) as archive:
+        addon_metadata = json.loads(archive.read('fabric.mod.json'))
+    assert addon_metadata['id'] == 'toolpouch_atlas_elytra_compat', 'STORAGE_QA_ADDON_JAR must contain the Atlas/Elytra addon'
+    addon_before = hashlib.sha256(addon_override.read_bytes()).hexdigest()
+if tiered_override:
+    with zipfile.ZipFile(tiered_override) as archive:
+        tiered_metadata = json.loads(archive.read('fabric.mod.json'))
+    assert tiered_metadata['id'] == 'tiered_backpacks', 'TIERED_QA_JAR must contain Tiered Backpacks'
+    tiered_before = hashlib.sha256(tiered_override.read_bytes()).hexdigest()
+
+def qa_mods(directory):
+    paths = list(directory.glob('*.jar'))
+    if tiered_override:
+        paths = [path for path in paths if not path.name.startswith('tiered_backpacks-')]
+        paths.append(tiered_override)
+    if addon_override:
+        paths = [path for path in paths if not path.name.startswith('toolpouch-atlas-elytra-compat-')]
+        paths.append(addon_override)
+    if os.environ.get('SSO_QA_TRACK') == 'sso-port':
+        paths = [path for path in paths if not path.name.startswith(('simple_smithing_overhaul-', 'defaulted-', 'codecui-'))]
+        paths.append(ROOT / 'Builds/Minecraft/Simple Smithing Overhaul/Main Plugin - Version Port/2.9.14-port.1 - Fabric 26.3/simple_smithing_overhaul-fabric-2.9.14-port.1+26.3.jar')
+    elif os.environ.get('SSO_QA_TRACK', 'developer') != 'developer':
+        raise ValueError('SSO_QA_TRACK must be developer or sso-port')
+    return paths
+
+def override_record():
+    if not tiered_override:
+        return None
+    after = hashlib.sha256(tiered_override.read_bytes()).hexdigest()
+    assert after == tiered_before, 'Tiered QA input changed during run'
+    return {'file': tiered_override.name, 'version': tiered_metadata['version'], 'sha256': after, 'original_unchanged': True}
+
+
 def module(name, path):
     spec = importlib.util.spec_from_file_location(name, path)
     value = importlib.util.module_from_spec(spec)
@@ -20,6 +57,9 @@ smoke = module('storage_smoke', BUNDLE / 'smoke_test.py')
 old = module('storage_old', QA / 'launch.py')
 suite = sys.argv[1]
 candidate = Path(sys.argv[2]).resolve()
+server_port = int(os.environ.get('STORAGE_QA_PORT', '25936'))
+client_modes = os.environ.get('STORAGE_QA_CLIENT_MODES', 'native,native-polymer,vanilla').split(',')
+assert client_modes and set(client_modes) <= {'native', 'native-polymer', 'vanilla'}, 'Invalid STORAGE_QA_CLIENT_MODES'
 run = HERE / 'runs' / suite
 run.mkdir(parents=True, exist_ok=False)
 control = run / 'control'
@@ -31,7 +71,7 @@ server_cp = smoke.classpath()
 audit = json.loads((QA / 'runs/atlas-fixed/native/launch-audit.json').read_text())
 client_cp = audit['command'][audit['command'].index('-cp') + 1]
 compile_paths = [server_cp, client_cp, str(candidate)]
-for jar in (BUNDLE / 'staging/mods').glob('*.jar'):
+for jar in qa_mods(BUNDLE / 'staging/mods'):
     compile_paths.append(str(jar))
     with zipfile.ZipFile(jar) as archive:
         for member in archive.namelist():
@@ -53,14 +93,16 @@ for side in ['server', 'client']:
 env = os.environ.copy()
 env.update(SDL_VIDEODRIVER='x11', SDL_VIDEO_X11_XINPUT2='0', LP_NUM_THREADS='2')
 server = run / 'server'
-shutil.copytree(BUNDLE / 'staging/mods', server / 'mods')
+(server / 'mods').mkdir(parents=True)
+for jar in qa_mods(BUNDLE / 'staging/mods'):
+    shutil.copy2(jar, server / 'mods' / jar.name)
 for jar in (server / 'mods').glob('*.jar'):
     with zipfile.ZipFile(jar) as z: mod_id=json.loads(z.read('fabric.mod.json'))['id']
     if mod_id in {'tiered_backpacks_polymer_compat','toolpouch_polymer_compat','mapstitch_polymer_compat','simple_smithing_polymer_compat'}: jar.unlink()
 shutil.copy2(candidate, server / 'mods' / candidate.name)
 shutil.copy2(build / 'server.jar', server / 'mods/backpack-qa-server.jar')
 shutil.copy2(BUNDLE / 'qa/chalk/eula.txt', server / 'eula.txt')
-(server / 'server.properties').write_text('server-ip=127.0.0.1\nserver-port=25936\nonline-mode=false\n'
+(server / 'server.properties').write_text(f'server-ip=127.0.0.1\nserver-port={server_port}\nonline-mode=false\n'
     'white-list=false\nenforce-secure-profile=false\nview-distance=3\nsimulation-distance=3\n'
     'spawn-protection=0\npause-when-empty-seconds=0\ngenerate-structures=false\ndifficulty=peaceful\n')
 server_command = ['/usr/lib/jvm/java-25-openjdk/bin/java', '-Xmx1G', '-XX:ActiveProcessorCount=2',
@@ -109,22 +151,33 @@ try:
         if not runtime.startswith('PASS'): raise RuntimeError(runtime)
         print('STORAGE_SERVER_READY', runtime.strip(), flush=True)
         for mode, username in [('native', 'BackpackNativeQA'), ('native-polymer', 'PackPolymerQA'), ('vanilla', 'PackVanillaQA')]:
+            if mode not in client_modes:
+                continue
             directory = run / mode
             (directory / 'mods').mkdir(parents=True)
             if mode != 'vanilla':
-                for jar in (BUNDLE / 'staging/native-client/mods').glob('*.jar'):
+                for jar in qa_mods(BUNDLE / 'staging/native-client/mods'):
                     shutil.copy2(jar, directory / 'mods' / jar.name)
                 shutil.copy2(build / 'client.jar', directory / 'mods/backpack-qa-client.jar')
             if mode == 'native-polymer':
                 polymer = next((BUNDLE / 'staging/mods').glob('polymer-bundled-*.jar'))
                 shutil.copy2(polymer, directory / 'mods' / polymer.name)
+            gui_pack = Path(os.environ['TIERED_QA_GUI_PACK']).resolve() if mode == 'native-polymer' and os.environ.get('TIERED_QA_GUI_PACK') else None
+            if gui_pack:
+                (directory / 'resourcepacks').mkdir()
+                shutil.copy2(gui_pack, directory / 'resourcepacks' / gui_pack.name)
             (directory / 'options.txt').write_text('graphicsMode:0\nrenderDistance:3\nsimulationDistance:3\n'
                 'maxFps:25\nmaxFpsInactive:25\nsoundCategory_master:0.0\njoinedFirstServer:true\n')
-            command = old.base_command(mode, directory, 25936)
+            if gui_pack:
+                with (directory / 'options.txt').open('a') as options:
+                    options.write('resourcePacks:' + json.dumps(['vanilla', 'file/' + gui_pack.name]) + '\n')
+            command = old.base_command(mode, directory, server_port)
             command = [argument.replace('-XX:ActiveProcessorCount=4', '-XX:ActiveProcessorCount=2') for argument in command]
             if mode != 'vanilla':
                 command.insert(1, '-Dbackpack.qa.control=' + str(control))
             results['clients'][mode] = record(directory, command)
+            if gui_pack:
+                results['clients'][mode]['gui_pack'] = {'file': gui_pack.name, 'sha256': hashlib.sha256(gui_pack.read_bytes()).hexdigest()}
             expected = ['server-result.txt', 'survived.txt'] if mode == 'vanilla' else ['client-result.txt', 'native-notice-result.txt', 'atlas-result.txt', 'survived.txt']
             with (directory / 'console.log').open('w') as client_log:
                 client_process = subprocess.Popen(command, cwd=directory, env=env, stdin=subprocess.PIPE,
@@ -158,6 +211,12 @@ finally:
         stop(client_process)
     if server_process is not None:
         stop(server_process, True)
+    results['tiered_override'] = override_record()
+    results['sso_track'] = os.environ.get('SSO_QA_TRACK', 'developer')
+    if addon_override:
+        addon_after = hashlib.sha256(addon_override.read_bytes()).hexdigest()
+        assert addon_after == addon_before, 'Addon QA input changed during run'
+        results['addon_override'] = {'file': addon_override.name, 'version': addon_metadata['version'], 'sha256': addon_after, 'original_unchanged': True}
     (run / 'result.json').write_text(json.dumps(results, indent=2) + '\n')
     print('STORAGE_RESULT', results['pass'], str(run / 'result.json'), flush=True)
 sys.exit(0 if results['pass'] else 1)

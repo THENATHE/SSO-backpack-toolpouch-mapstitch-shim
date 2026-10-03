@@ -5,6 +5,29 @@ HERE=Path(__file__).resolve().parent
 ROOT=next(p for p in HERE.parents if (p/"Minecraft/polymer-shim-test-bundle").is_dir())
 BUNDLE=ROOT/"Minecraft/polymer-shim-test-bundle"
 sys.path.insert(0,str(BUNDLE))
+
+# Explicit QA-only target override: never edit staging or production libraries.
+tiered_override = Path(os.environ['TIERED_QA_JAR']).resolve() if os.environ.get('TIERED_QA_JAR') else None
+if tiered_override:
+    with zipfile.ZipFile(tiered_override) as archive:
+        tiered_metadata = json.loads(archive.read('fabric.mod.json'))
+    assert tiered_metadata['id'] == 'tiered_backpacks', 'TIERED_QA_JAR must contain Tiered Backpacks'
+    tiered_before = hashlib.sha256(tiered_override.read_bytes()).hexdigest()
+
+def qa_mods(directory):
+    paths = list(directory.glob('*.jar'))
+    if tiered_override:
+        paths = [path for path in paths if not path.name.startswith('tiered_backpacks-')]
+        paths.append(tiered_override)
+    return paths
+
+def override_record():
+    if not tiered_override:
+        return None
+    after = hashlib.sha256(tiered_override.read_bytes()).hexdigest()
+    assert after == tiered_before, 'Tiered QA input changed during run'
+    return {'file': tiered_override.name, 'version': tiered_metadata['version'], 'sha256': after, 'original_unchanged': True}
+
 spec=importlib.util.spec_from_file_location('smoke',BUNDLE/'smoke_test.py');smoke=importlib.util.module_from_spec(spec);spec.loader.exec_module(smoke)
 AUDIT=ROOT/'Minecraft/tiered-backpacks-polymer-compat-26.3/qa/runs/atlas-fixed/native/launch-audit.json'
 base=json.loads(AUDIT.read_text())['command']
@@ -12,7 +35,7 @@ server_cp=smoke.classpath()
 client_cp=base[base.index('-cp')+1]
 fixture_build=HERE/'fixtures';fixture_build.mkdir(exist_ok=True)
 compile_cp=str(Path(sys.argv[2]).resolve())+os.pathsep+server_cp+os.pathsep+client_cp
-for jar in (BUNDLE/'staging/mods').glob('*.jar'):
+for jar in qa_mods(BUNDLE/'staging/mods'):
  compile_cp+=os.pathsep+str(jar)
  with zipfile.ZipFile(jar) as z:
   for n in z.namelist():
@@ -33,7 +56,8 @@ selection=sys.argv[3] if len(sys.argv)>3 else 'combined'
 server_source=BUNDLE/'staging'/('mods' if selection=='combined' else 'individual/'+selection+'/server/mods')
 client_source=BUNDLE/'staging'/('native-client/mods' if selection=='combined' else 'individual/'+selection+'/native-client/mods')
 for side,dest,source in [('server',server,server_source),('client',client,client_source)]:
- shutil.copytree(source,dest/'mods',dirs_exist_ok=True)
+ (dest/'mods').mkdir(parents=True,exist_ok=True)
+ for jar in qa_mods(source):shutil.copy2(jar,dest/'mods'/jar.name)
  shutil.copy2(fixture_build/(side+'.jar'),dest/'mods'/('creative-qa-'+side+'.jar'))
 if len(sys.argv)>2 and sys.argv[2]!='original':
  for p in (server/'mods').glob('*.jar'):
@@ -87,6 +111,7 @@ finally:
  for h in handles:h.close()
  result={f.name:f.read_text() for f in control.glob('*') if f.is_file()}
  result['mods']={side:[{'file':p.name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted((d/'mods').glob('*.jar'))] for side,d in [('server',server),('client',client)]}
+ result['tiered_override']=override_record()
  result['suite']=suite;result['pass']=result.get('client-result','').startswith('PASS') and result.get('server-result','').startswith('PASS')
  (run/'result.json').write_text(json.dumps(result,indent=2)+'\n')
  print('RESULT',result['pass'],flush=True)

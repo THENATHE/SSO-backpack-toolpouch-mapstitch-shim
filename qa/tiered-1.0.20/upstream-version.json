@@ -1,0 +1,62 @@
+{
+  "game_versions": [
+    "26.3"
+  ],
+  "loaders": [
+    "fabric"
+  ],
+  "environment": "client_and_server",
+  "id": "GHnqX59p",
+  "project_id": "IhNtYNEF",
+  "author_id": "Kg6RZEfM",
+  "featured": false,
+  "name": "1.0.20 for Fabric 26.3",
+  "version_number": "1.0.20+26.3",
+  "changelog": "- Backpack GUI now uses parts of the vanilla container sprite, making it compatible with GUI resource packs.\n",
+  "changelog_url": null,
+  "date_published": "2026-10-02T13:47:56.280259Z",
+  "downloads": 130,
+  "version_type": "release",
+  "status": "listed",
+  "requested_status": null,
+  "files": [
+    {
+      "id": "X3aMOYqs",
+      "hashes": {
+        "sha512": "ba1d4d0e4ac57b5baa26511219f8df66b7d60ab1f901cb139c3e905bddf354ff48e4b5390fc856cd059c408748fed94e5da9dc0272976820da7c9aec86d3e947",
+        "sha1": "f79aba8a60dd5ead9667d6387205bdf0d268dcb9"
+      },
+      "url": "https://cdn.modrinth.com/data/IhNtYNEF/versions/GHnqX59p/tiered_backpacks-fabric-1.0.20%2B26.3.jar",
+      "filename": "tiered_backpacks-fabric-1.0.20+26.3.jar",
+      "primary": true,
+      "size": 210613,
+      "file_type": null
+    },
+    {
+      "id": "BkkjN0q5",
+      "hashes": {
+        "sha1": "62986df1829b4135bdcaca3816bb2e69b33cd000",
+        "sha512": "b8a552c92ef10c02403b1e337092a69deed62233076f65ea7d9bbb908201f29f672a35dbdf188c839f5169003b2d2688ca13384bf6f3b0be74525fcd3a8d6aaa"
+      },
+      "url": "https://cdn.modrinth.com/data/IhNtYNEF/versions/GHnqX59p/tiered_backpacks-fabric-1.0.20%2B26.3-sources.jar",
+      "filename": "tiered_backpacks-fabric-1.0.20+26.3-sources.jar",
+      "primary": false,
+      "size": 183816,
+      "file_type": null
+    }
+  ],
+  "dependencies": [
+    {
+      "version_id": null,
+      "project_id": "P7dR8mSH",
+      "file_name": null,
+      "dependency_type": "required"
+    },
+    {
+      "version_id": null,
+      "project_id": "hYykXjDp",
+      "file_name": null,
+      "dependency_type": "required"
+    }
+  ]
+}

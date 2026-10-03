@@ -17,7 +17,7 @@ The earlier repair-material correction remains in place. For saved unexpected ca
 | Module | Original target | Client without the original mod |
 | --- | --- | --- |
 | Simple Smithing Overhaul | Developer 2.9.14+26.3; separately verified port 2.9.14-port.1+26.3 | Type B: server-side smithing, repair and anvil systems with vanilla interfaces and guidance |
-| Tiered Backpacks | Developer 1.0.19+26.3 | Type A: safe display and client-mod-required guards |
+| Tiered Backpacks | Developer 1.0.19+26.3 and 1.0.20+26.3 | Type A: safe display and client-mod-required guards |
 | Tool Pouch | Developer 1.1.10+26.3 | Type A: safe display and client-mod-required guards |
 | MapStitch | Developer 1.1.6+26.3 | Type A: safe display and client-mod-required guards |
 
@@ -61,3 +61,5 @@ Output: `build/libs/SSO-backpack-toolpouch-mapstitch-shim-1.0.3+26.3.jar`. This 
 Optional mixins are gated before original-mod classes load. One shared connection-scoped coordinator negotiates native capabilities, restores allowed registry entries and assigns a single dense item/component/recipe/menu mapping. Both packet directions, registry tags and component preservation share this mapping. This replaces the former competing per-shim coordinators. Original item objects and saved data remain owned by the original mods.
 
 See [VALIDATION.md](VALIDATION.md) for tested coverage and limitations. Automated regression checks cannot certify every gameplay combination or an arbitrary production modpack.
+
+Tiered Backpacks **1.0.20+26.3** was independently verified with the unchanged 1.0.3 shim on both SSO tracks, including native/Polymer/vanilla clients and the updated GUI. See the [compatibility report and evidence](qa/tiered-1.0.20/README.md).

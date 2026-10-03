@@ -1,0 +1,83 @@
+{
+  "audit_date": "2026-10-02",
+  "scope": "Read-only bytecode, ABI, source and metadata compatibility audit; runtime verification is recorded separately.",
+  "upstream_version_id": "GHnqX59p",
+  "upstream_version_url": "https://modrinth.com/mod/tiered-backpacks/version/GHnqX59p",
+  "published_at": "2026-10-02T13:47:56.280259Z",
+  "old_artifact": {
+    "filename": "tiered_backpacks-fabric-1.0.19+26.3-upstream.jar",
+    "sha256": "03cd9aaf16666024362a47b9659033ef0baeceefb4d50ee581d0b60fc00d2c55",
+    "sha512": "44a5e0eec654b9662a1d404b40d946656f6324454ebde91fa445ec866aa7baf1950cc29961f763a4433f670515bcd6ca88cbd5f2c7c0e7c3df71f269687cbf86"
+  },
+  "new_artifact": {
+    "filename": "tiered_backpacks-fabric-1.0.20+26.3.jar",
+    "sha256": "b129b9b61ec1da62842dc2dfa5b166a6df8e91c796666dcee70f7b8acf1ecc33",
+    "sha512": "ba1d4d0e4ac57b5baa26511219f8df66b7d60ab1f901cb139c3e905bddf354ff48e4b5390fc856cd059c408748fed94e5da9dc0272976820da7c9aec86d3e947"
+  },
+  "new_sources": {
+    "filename": "tiered_backpacks-fabric-1.0.20+26.3-sources.jar",
+    "sha256": "6eca3d8836506f1f32ea79a1956c367d23ff23b0320bc06424aa0c29d687fcba",
+    "sha512": "b8a552c92ef10c02403b1e337092a69deed62233076f65ea7d9bbb908201f29f672a35dbdf188c839f5169003b2d2688ca13384bf6f3b0be74525fcd3a8d6aaa"
+  },
+  "official_sha512_matches": true,
+  "archive_comparison": {
+    "added_files": [],
+    "removed_files": [
+      "assets/tiered_backpacks/textures/gui/sprites/backpack.png",
+      "assets/tiered_backpacks/textures/gui/sprites/backpack.png.mcmeta"
+    ],
+    "changed_files": [
+      "fabric.mod.json",
+      "me/pajic/tiered_backpacks/ui/BackpackMenu.class",
+      "me/pajic/tiered_backpacks/ui/BackpackScreen.class"
+    ],
+    "unchanged_files": 95,
+    "total_classes": 39,
+    "unchanged_classes": 37
+  },
+  "changed_class_public_abi_unchanged": {
+    "me.pajic.tiered_backpacks.ui.BackpackMenu": true,
+    "me.pajic.tiered_backpacks.ui.BackpackScreen": true
+  },
+  "source_and_bytecode_findings": {
+    "BackpackMenu": "Only constructor slot coordinates move +1 X and -1 Y. Slot index/order/count, container storage, quick-move, close persistence and validity methods remain unchanged.",
+    "BackpackScreen": "Uses pieces of vanilla generic_54.png instead of the removed custom backpack GUI sprite; label/slot/background offsets adjust accordingly. No public signature changes.",
+    "network": "All network package classes and payload codecs are byte-identical.",
+    "registries": "Item, menu and recipe registration classes are byte-identical.",
+    "data_components": "Component types and codecs are byte-identical.",
+    "recipes": "All recipe class/resource files are byte-identical.",
+    "resources": "Item models, textures and definitions copied by Polymer are unchanged; only obsolete native GUI sprite resources were removed.",
+    "mixin_targets": {
+      "me/pajic/tiered_backpacks/item/BackpackItem.class": "byte-identical",
+      "me/pajic/tiered_backpacks/platform/fabric/FabricLoaderUtil.class": "byte-identical",
+      "me/pajic/tiered_backpacks/platform/fabric/FabricEntrypoint.class": "byte-identical",
+      "me/pajic/tiered_backpacks/util/BackpackUtil.class": "byte-identical"
+    }
+  },
+  "requirements": {
+    "upstream_dependencies_unchanged": true,
+    "upstream_depends": {
+      "minecraft": "~26.3",
+      "fabricloader": ">=0.19.5",
+      "java": ">=25",
+      "fabric-api": ">=0.160.5",
+      "fzzy_config": ">=0.7.7"
+    },
+    "shim_version": "1.0.3+26.3",
+    "shim_tiered_backpacks_constraint": "1.0.19 appears only under suggests, which is optional metadata; no Tiered Backpacks depends or breaks constraint blocks 1.0.20.",
+    "native_client_recommendation": "Use matching Tiered Backpacks 1.0.20 on server and native client as the runtime-tested target; this audit makes no incompatibility claim about mixed 1.0.19/1.0.20 installations.",
+    "fabric_loader_suggests_audit": {
+      "loader": "0.19.5",
+      "source": "fabric-loader-0.19.5-sources.jar",
+      "warning_path": "net/fabricmc/loader/impl/discovery/ResultAnalyzer.java:222 gatherWarnings handles only RECOMMENDS and CONFLICTS; SUGGESTS reaches default ignore (lines 231-250).",
+      "resolution_path": "net/fabricmc/loader/impl/discovery/ModSolver.java dependency switches handle DEPENDS, RECOMMENDS and BREAKS, without SUGGESTS constraints; preselected soft mismatches are skipped.",
+      "conclusion": "The existing suggests tiered_backpacks=1.0.19 entry causes neither a hard version block nor a Loader dependency warning when 1.0.20 is installed."
+    }
+  },
+  "conclusion": {
+    "production_fix_required_by_static_audit": false,
+    "new_shim_build_required_by_static_audit": false,
+    "runtime_compatibility_claimed_by_this_file": false,
+    "limitation": "Does not independently certify the revised GUI with arbitrary third-party resource packs; runtime networking/storage checks are separate."
+  }
+}

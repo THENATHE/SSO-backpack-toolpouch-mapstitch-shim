@@ -39,6 +39,7 @@ def main():
     parser.add_argument('--track',choices=['developer','sso-port'],default='developer')
     parser.add_argument('--masks',default='all');parser.add_argument('--workers',type=int,default=2)
     parser.add_argument('--with-standalone-chalk',action='store_true')
+    parser.add_argument('--tiered-jar',type=Path,help='Test a newer original Tiered Backpacks JAR without changing the baseline inputs')
     args=parser.parse_args();candidate=args.candidate.resolve();assert candidate.is_file()
     masks=list(range(16)) if args.masks=='all' else [int(v) for v in args.masks.split(',')]
     assert all(0<=mask<16 for mask in masks)
@@ -50,6 +51,13 @@ def main():
     interrupted=threading.Event()
     for signum in (signal.SIGINT,signal.SIGTERM):signal.signal(signum,lambda *_:interrupted.set())
     jars={metadata(p)['id']:p for p in (STAGE/'mods').glob('*.jar')}
+    if args.tiered_jar:
+        original=args.tiered_jar.resolve();updated=metadata(original)
+        assert updated['id']=='tiered_backpacks','Override must be the original Tiered Backpacks mod'
+        assert updated.get('depends')==metadata(jars['tiered_backpacks']).get('depends'),'Changed requirements need a separately resolved dependency profile'
+        overrides=suite/'original-overrides';overrides.mkdir()
+        shutil.copy2(original,overrides/original.name)
+        jars['tiered_backpacks']=overrides/original.name
     profiles=json.loads((STAGE/'MANIFEST.json').read_text())['profiles']
     ports=queue.Queue()
     for port in range(25800,25800+args.workers):ports.put(port)

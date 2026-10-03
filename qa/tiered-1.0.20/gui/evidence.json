@@ -1,0 +1,367 @@
+{
+  "run": "/home/thenathe/SSDC/Plugins/WP Plugin Dev/Minecraft/SSO-backpack-toolpouch-mapstitch-shim/qa/regression/storage/runs/tiered-1.0.20-developer-current-stack2",
+  "status": "PASS: real native screens rendered with default resources and replacement vanilla chest/slot resources across all six configured tiers",
+  "pack_sha256": "4c60804a9b75ccfa44bfb8f95aeabe0bcea62aae8c6aeb24623f92f994a5ca41",
+  "screenshots": [
+    {
+      "mode": "native",
+      "tier": 0,
+      "path": "screenshots/native/backpack-tier-0.png",
+      "sha256": "950440dbe728fe7d68f78c66c7926adf45ebfaa2a6103aa4d99bfeeacb640b32",
+      "size": [
+        1280,
+        800
+      ],
+      "probe_color_pixels": {
+        "orange_border": 0,
+        "cyan_panel": 0,
+        "magenta_slot": 0
+      }
+    },
+    {
+      "mode": "native",
+      "tier": 1,
+      "path": "screenshots/native/backpack-tier-1.png",
+      "sha256": "d67d0d989c2fe1641645ce2f1ade3c15602bdc5dec8cd31e9827b096f91581f3",
+      "size": [
+        1280,
+        800
+      ],
+      "probe_color_pixels": {
+        "orange_border": 0,
+        "cyan_panel": 0,
+        "magenta_slot": 0
+      }
+    },
+    {
+      "mode": "native",
+      "tier": 2,
+      "path": "screenshots/native/backpack-tier-2.png",
+      "sha256": "6bd6cf248bb82ade84bb56f27856da6120c85c768bbfe67dd9dc43e915cd8d30",
+      "size": [
+        1280,
+        800
+      ],
+      "probe_color_pixels": {
+        "orange_border": 0,
+        "cyan_panel": 0,
+        "magenta_slot": 0
+      }
+    },
+    {
+      "mode": "native",
+      "tier": 3,
+      "path": "screenshots/native/backpack-tier-3.png",
+      "sha256": "9a297a69feff4692f48f5f7664a269dba20dccb6aaf20a50b6a124b1504a6b19",
+      "size": [
+        1280,
+        800
+      ],
+      "probe_color_pixels": {
+        "orange_border": 0,
+        "cyan_panel": 0,
+        "magenta_slot": 0
+      }
+    },
+    {
+      "mode": "native",
+      "tier": 4,
+      "path": "screenshots/native/backpack-tier-4.png",
+      "sha256": "f494148d0915ca7b78deaeb07c9ac9eb3d9b74115dfa54caffdc78010bcc4359",
+      "size": [
+        1280,
+        800
+      ],
+      "probe_color_pixels": {
+        "orange_border": 0,
+        "cyan_panel": 0,
+        "magenta_slot": 0
+      }
+    },
+    {
+      "mode": "native",
+      "tier": 5,
+      "path": "screenshots/native/backpack-tier-5.png",
+      "sha256": "bd1c6efdd338763f8ed1de9930efbdc2f6da5bf77de40bf727483a0ea51550d0",
+      "size": [
+        1280,
+        800
+      ],
+      "probe_color_pixels": {
+        "orange_border": 0,
+        "cyan_panel": 0,
+        "magenta_slot": 0
+      }
+    },
+    {
+      "mode": "native-polymer",
+      "tier": 0,
+      "path": "screenshots/native-polymer/backpack-tier-0.png",
+      "sha256": "bdcd909ae727edab51e9b727ef60342239ba4b35415e6c728da28e1b89f1e638",
+      "size": [
+        1280,
+        800
+      ],
+      "probe_color_pixels": {
+        "orange_border": 17244,
+        "cyan_panel": 47727,
+        "magenta_slot": 34344
+      }
+    },
+    {
+      "mode": "native-polymer",
+      "tier": 1,
+      "path": "screenshots/native-polymer/backpack-tier-1.png",
+      "sha256": "77d56e387496ca15534e27bf02453a40cc44809653f1898e0465a260b0be730c",
+      "size": [
+        1280,
+        800
+      ],
+      "probe_color_pixels": {
+        "orange_border": 23256,
+        "cyan_panel": 53649,
+        "magenta_slot": 41544
+      }
+    },
+    {
+      "mode": "native-polymer",
+      "tier": 2,
+      "path": "screenshots/native-polymer/backpack-tier-2.png",
+      "sha256": "491af4d387c21ef003c9d02d23a5a8144beed5f89920a7178ddfa3498ceae3d0",
+      "size": [
+        1280,
+        800
+      ],
+      "probe_color_pixels": {
+        "orange_border": 25704,
+        "cyan_panel": 55422,
+        "magenta_slot": 48474
+      }
+    },
+    {
+      "mode": "native-polymer",
+      "tier": 3,
+      "path": "screenshots/native-polymer/backpack-tier-3.png",
+      "sha256": "91d503f2536e9ab2274e003657100bae9d700270ce00e33f5c9799a4ade24b69",
+      "size": [
+        1280,
+        800
+      ],
+      "probe_color_pixels": {
+        "orange_border": 27000,
+        "cyan_panel": 56412,
+        "magenta_slot": 54216
+      }
+    },
+    {
+      "mode": "native-polymer",
+      "tier": 4,
+      "path": "screenshots/native-polymer/backpack-tier-4.png",
+      "sha256": "d1b067927c6cc8880d1738121c2121fd3e85ba03dc4d53996186ad6bba92a791",
+      "size": [
+        1280,
+        800
+      ],
+      "probe_color_pixels": {
+        "orange_border": 29592,
+        "cyan_panel": 88641,
+        "magenta_slot": 61092
+      }
+    },
+    {
+      "mode": "native-polymer",
+      "tier": 5,
+      "path": "screenshots/native-polymer/backpack-tier-5.png",
+      "sha256": "974b8289945dcac0d0563ba5d1354b4c1198361b3be5f4ea2fb096a9a18b181c",
+      "size": [
+        1280,
+        800
+      ],
+      "probe_color_pixels": {
+        "orange_border": 32184,
+        "cyan_panel": 120861,
+        "magenta_slot": 68004
+      }
+    }
+  ],
+  "server_artifacts": [
+    {
+      "file": "SSO-backpack-toolpouch-mapstitch-shim-1.0.3+26.3.jar",
+      "sha256": "d5d08c6a5164206c9c2d47a58a89fec5f56ae03c7fcb12cbe04c98ed7d259722"
+    },
+    {
+      "file": "tiered_backpacks-fabric-1.0.20+26.3.jar",
+      "sha256": "b129b9b61ec1da62842dc2dfa5b166a6df8e91c796666dcee70f7b8acf1ecc33"
+    },
+    {
+      "file": "toolpouch-atlas-elytra-compat-1.0.2+26.3.jar",
+      "sha256": "e08a8a45c2a89b4a7d64fadf27dd20e6a2bf1b1635da50c64333b8bd42de3748"
+    }
+  ],
+  "launch_audits": {
+    "native": {
+      "mods": [
+        {
+          "file": "backpack-qa-client.jar",
+          "sha256": "7ea648d9e0984d1aa344787f7f66e7be2d9cbc9cbc9f094d4e93b4cba6b06eaf"
+        },
+        {
+          "file": "chalk-3.2.1+26.3.jar",
+          "sha256": "886b0b10cc12df65d47f446c2bd54c0c670f9a54fa09a1fe95c9ec46df565f49"
+        },
+        {
+          "file": "cloth-config-fabric-26.3.159.jar",
+          "sha256": "1716b9964f90d2b885f9bd3887f8824b71b55c32a4123a5853486e722f7c2e4b"
+        },
+        {
+          "file": "codecui-26.3-1.4.3-fabric.jar",
+          "sha256": "4d07c219bd85b58283a0317d6f43cca838adf9cd16be321316cd32f2fb1be898"
+        },
+        {
+          "file": "defaulted-1.3.8.release-26.3-fabric.jar",
+          "sha256": "0f6efc6423902b83da78ce85a119c69536517b1a9af52ed7046858859ff582a0"
+        },
+        {
+          "file": "fabric-api-0.161.0+26.3.jar",
+          "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+        },
+        {
+          "file": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+          "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+        },
+        {
+          "file": "fzzy_config-0.7.7+fix2+26.3.jar",
+          "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+        },
+        {
+          "file": "mapstitch-fabric-1.1.6+26.3.jar",
+          "sha256": "e1b768bbd1ae06f83305eeba3ab19bfe4eb99bf21de12d57364d04ce9a1cde81"
+        },
+        {
+          "file": "mixson-2.2.1-multiloader.jar",
+          "sha256": "e4d38f31be95a1f03f8bef290c079f4bb5573d8f4e15808e8c1fc8ba3e5913a0"
+        },
+        {
+          "file": "simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+          "sha256": "fb6cbf8c13938d68fb19171dac386b5567d71625bce727b22d3380f6b7880126"
+        },
+        {
+          "file": "tiered_backpacks-fabric-1.0.20+26.3.jar",
+          "sha256": "b129b9b61ec1da62842dc2dfa5b166a6df8e91c796666dcee70f7b8acf1ecc33"
+        },
+        {
+          "file": "toolpouch-atlas-elytra-compat-1.0.2+26.3.jar",
+          "sha256": "e08a8a45c2a89b4a7d64fadf27dd20e6a2bf1b1635da50c64333b8bd42de3748"
+        },
+        {
+          "file": "toolpouch-fabric-1.1.10+26.3.jar",
+          "sha256": "a5bb4f084e7d929f3a89cc43317af63bd45abe3e3f4fed8b45f99b2da846e903"
+        }
+      ]
+    },
+    "native-polymer": {
+      "mods": [
+        {
+          "file": "backpack-qa-client.jar",
+          "sha256": "7ea648d9e0984d1aa344787f7f66e7be2d9cbc9cbc9f094d4e93b4cba6b06eaf"
+        },
+        {
+          "file": "chalk-3.2.1+26.3.jar",
+          "sha256": "886b0b10cc12df65d47f446c2bd54c0c670f9a54fa09a1fe95c9ec46df565f49"
+        },
+        {
+          "file": "cloth-config-fabric-26.3.159.jar",
+          "sha256": "1716b9964f90d2b885f9bd3887f8824b71b55c32a4123a5853486e722f7c2e4b"
+        },
+        {
+          "file": "codecui-26.3-1.4.3-fabric.jar",
+          "sha256": "4d07c219bd85b58283a0317d6f43cca838adf9cd16be321316cd32f2fb1be898"
+        },
+        {
+          "file": "defaulted-1.3.8.release-26.3-fabric.jar",
+          "sha256": "0f6efc6423902b83da78ce85a119c69536517b1a9af52ed7046858859ff582a0"
+        },
+        {
+          "file": "fabric-api-0.161.0+26.3.jar",
+          "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+        },
+        {
+          "file": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+          "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+        },
+        {
+          "file": "fzzy_config-0.7.7+fix2+26.3.jar",
+          "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+        },
+        {
+          "file": "mapstitch-fabric-1.1.6+26.3.jar",
+          "sha256": "e1b768bbd1ae06f83305eeba3ab19bfe4eb99bf21de12d57364d04ce9a1cde81"
+        },
+        {
+          "file": "mixson-2.2.1-multiloader.jar",
+          "sha256": "e4d38f31be95a1f03f8bef290c079f4bb5573d8f4e15808e8c1fc8ba3e5913a0"
+        },
+        {
+          "file": "polymer-bundled-0.18.2+26.3.jar",
+          "sha256": "3d79318e8202d0e87af308d7f232220714e5f1409d06c23db774877ec6f3848f"
+        },
+        {
+          "file": "simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+          "sha256": "fb6cbf8c13938d68fb19171dac386b5567d71625bce727b22d3380f6b7880126"
+        },
+        {
+          "file": "tiered_backpacks-fabric-1.0.20+26.3.jar",
+          "sha256": "b129b9b61ec1da62842dc2dfa5b166a6df8e91c796666dcee70f7b8acf1ecc33"
+        },
+        {
+          "file": "toolpouch-atlas-elytra-compat-1.0.2+26.3.jar",
+          "sha256": "e08a8a45c2a89b4a7d64fadf27dd20e6a2bf1b1635da50c64333b8bd42de3748"
+        },
+        {
+          "file": "toolpouch-fabric-1.1.10+26.3.jar",
+          "sha256": "a5bb4f084e7d929f3a89cc43317af63bd45abe3e3f4fed8b45f99b2da846e903"
+        }
+      ]
+    }
+  },
+  "visual_review": {
+    "reviewed_screenshots": 12,
+    "screen_resolution": [
+      1280,
+      800
+    ],
+    "gui_scale_observed": 3,
+    "default_tier_dimensions": [
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        6,
+        11
+      ],
+      [
+        6,
+        13
+      ]
+    ],
+    "findings": "Panel borders, inventory labels, visible slot positions, native item icons and content counts render normally; probe pack visibly replaces both background and slot sprites, including wider diamond/netherite layouts. No Multi-Shim-specific rendering conflict observed.",
+    "limitations": [
+      "New-player tutorial/advancement toasts obscure parts of some screenshots; this is not exhaustive pixel validation of every slot.",
+      "The native client used default resources and native-plus-Polymer used the probe pack; this is not a full client/resource-pack factorial test.",
+      "Arbitrary third-party pack art, custom texture coordinate layouts, nondefault backpack dimensions and other GUI scales were not tested."
+    ]
+  }
+}

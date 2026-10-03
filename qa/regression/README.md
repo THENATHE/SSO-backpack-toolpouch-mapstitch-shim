@@ -18,3 +18,5 @@ The synthetic storage assertions seed the central capability context through ref
 Sanitized results and exact artifact hashes are recorded under `qa/evidence`; full local logs, mod manifests, fixture JARs and worlds remain in ignored `runs/` directories. Passing these bounded regressions is not a claim that all gameplay features or external server plugins have been tested.
 
 The separate [pouch/shulker regression](pouch-shulker/README.md) exercises original-only controls, native quick-menu bed interactions, repeated opening, source movement and server/client conservation. Its CLI differs from the older suite runners above.
+
+For a Tiered Backpacks version check, storage/Creative/recipe runners accept `TIERED_QA_JAR=/path/to/original.jar`, replacing that mod in compile inputs and both server/native-client profiles without changing staging. Storage also supports `SSO_QA_TRACK=sso-port`, `STORAGE_QA_PORT`, `STORAGE_QA_ADDON_JAR`, `STORAGE_QA_CLIENT_MODES`, and `TIERED_QA_GUI_PACK` for the isolated dependency track, current addon and GUI probe. Exact new inputs and preservation checks are recorded. [Tiered 1.0.20 report](../tiered-1.0.20/README.md).

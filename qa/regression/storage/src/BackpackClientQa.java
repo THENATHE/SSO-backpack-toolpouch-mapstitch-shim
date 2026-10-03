@@ -11,6 +11,7 @@ import me.pajic.tiered_backpacks.network.ModNetworking;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.Screenshot;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -41,7 +42,7 @@ public class BackpackClientQa implements ClientModInitializer {
                     check(c.player.getInventory().getItem(6).get(ModDataComponents.BACKPACK_TIER)==BackpackTier.IRON,"attached armor tier missing");
                     open(c);step=1;wait=0;
                 }}
-                case 1->{if(wait>25){menu(c);check(c.player.containerMenu.getSlot(0).getItem().is(Items.DIAMOND),"native content slot missing");
+                case 1->{if(wait>25){menu(c);Screenshot.grab(c.gameDirectory,"backpack-tier-"+tier+".png",c.gameRenderer.mainRenderTarget(),1,message->System.out.println("BACKPACK_GUI_SCREENSHOT "+message.getString()));check(c.player.containerMenu.getSlot(0).getItem().is(Items.DIAMOND),"native content slot missing");
                     c.gameMode.handleContainerInput(c.player.containerMenu.containerId,0,0,ContainerInput.QUICK_MOVE,c.player);step=2;wait=0;}}
                 case 2->{if(wait>25){menu(c);check(c.player.containerMenu.getSlot(0).getItem().isEmpty(),"quick move did not remove diamonds");c.player.closeContainer();step=3;wait=0;}}
                 case 3->{if(wait>25){open(c);step=4;wait=0;}}

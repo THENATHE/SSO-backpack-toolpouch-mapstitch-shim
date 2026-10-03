@@ -67,3 +67,7 @@ The broader [1.0.2 QA record](https://github.com/THENATHE/SSO-backpack-toolpouch
 This is bounded regression testing, not a guarantee against every modpack interaction. Third-party accessory APIs, arbitrary refill mods, physical keyboard hardware and long-duration multiplayer load were not exercised. SSO retains Type B vanilla gameplay; other modules retain Type A display/guards and matching-original native gameplay. No new feature limitation or dependency removal was introduced.
 
 The prior 1.0.1 and 1.0.2 releases remain available in the standalone Multi-Shim build family. The new release retains separate source snapshots, dependency locks and release copies for developer targets and the existing SSO port.
+
+## Additional runtime target: Tiered Backpacks 1.0.20
+
+On 2026-10-02 the unchanged released 1.0.3 binary passed independent compatibility verification against official Tiered Backpacks 1.0.20+26.3. Both SSO tracks and current Atlas/Elytra addon 1.0.2 were covered. Results: twelve applicable optional-module combinations, 1,767 storage/serialization assertions per track, native/native-with-Polymer/vanilla clients per track, 72 Creative/command cases, 1,078 recipe collections and twelve GUI screenshots. No production fix or new shim build was needed. Exact artifacts, test evidence and scope limits are in the [separate compatibility report](qa/tiered-1.0.20/README.md); the original release provenance and historical results above are preserved.
