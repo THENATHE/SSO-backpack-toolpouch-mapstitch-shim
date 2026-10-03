@@ -1,0 +1,12 @@
+{
+  "initial_sha256": "fc756498299259767766054a9c817a4d183c7467c5b62c342eadde92b8554926",
+  "release_sha256": "d71a659db9c2025542953839facc5263cf2f80085644608a753913d50786e7d4",
+  "changed_classes": [
+    "com/thenathe/backpackcompat/BackpackCompat$BackpackOverlay.class",
+    "com/thenathe/backpackcompat/BackpackCompat.class",
+    "com/thenathe/combinedshim/FallbackLore.class",
+    "com/thenathe/mapstitchcompat/mixin/AtlasMetadataMixin.class",
+    "com/thenathe/mapstitchcompat/mixin/AtlasRecipeMixin.class",
+    "com/thenathe/toolpouchcompat/ToolpouchCompat$PouchOverlay.class"
+  ]
+}

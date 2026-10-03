@@ -1,0 +1,235 @@
+{
+  "suite": "Keybind and elytra integration without optional MapStitch, addon 1.0.1 release candidate",
+  "result": "PASS 101 assertions; Fabric 26.3 controls heading, registered key -> C2S toggle -> S2C shim state; inventory, leggings, chest fallback, respawn, reconnect, non-operator commands and dimension change",
+  "assertions": [
+    "initial toggle defaults to unbound",
+    "initial toggle registered in controls",
+    "initial controls contain one Tool Pouch heading (actual=1)",
+    "initial toggle shares upstream Tool Pouch category instance",
+    "initial toggle is registered exactly once",
+    "initial new player defaults enabled",
+    "initial server enabled=true command=seed-inventory",
+    "initial server canGlide=true command=seed-inventory",
+    "initial server cosmetic=true command=seed-inventory",
+    "initial client synchronized enabled=true phase=1",
+    "initial client canGlide=true phase=1",
+    "initial client functional pouch lookup phase=1",
+    "initial cosmetic wings retained phase=1",
+    "initial client synchronized enabled=false phase=2",
+    "initial client canGlide=false phase=2",
+    "initial client functional pouch lookup phase=2",
+    "initial cosmetic wings retained phase=2",
+    "initial actionbar: Tool Pouch Elytra disabled",
+    "initial server enabled=false command=inspect-disabled",
+    "initial server canGlide=false command=inspect-disabled",
+    "initial server cosmetic=true command=inspect-disabled",
+    "initial server enabled=false command=chest",
+    "initial server canGlide=true command=chest",
+    "initial server cosmetic=true command=chest",
+    "initial client synchronized enabled=false phase=4",
+    "initial client canGlide=true phase=4",
+    "initial client functional pouch lookup phase=4",
+    "initial cosmetic wings retained phase=4",
+    "initial client synchronized enabled=true phase=5",
+    "initial client canGlide=true phase=5",
+    "initial client functional pouch lookup phase=5",
+    "initial cosmetic wings retained phase=5",
+    "initial actionbar: Tool Pouch Elytra enabled",
+    "initial server enabled=true command=seed-leggings",
+    "initial server canGlide=true command=seed-leggings",
+    "initial server cosmetic=true command=seed-leggings",
+    "initial client synchronized enabled=true phase=6",
+    "initial client canGlide=true phase=6",
+    "initial client functional pouch lookup phase=6",
+    "initial cosmetic wings retained phase=6",
+    "initial client synchronized enabled=false phase=7",
+    "initial client canGlide=false phase=7",
+    "initial client functional pouch lookup phase=7",
+    "initial cosmetic wings retained phase=7",
+    "initial disabled preference synchronized after respawn",
+    "initial server preserves disabled preference after respawn",
+    "initial respawn replaced player entity",
+    "initial server enabled=false command=seed-leggings-before-reconnect",
+    "initial server canGlide=false command=seed-leggings-before-reconnect",
+    "initial server cosmetic=true command=seed-leggings-before-reconnect",
+    "initial client synchronized enabled=false phase=9",
+    "initial client canGlide=false phase=9",
+    "initial client functional pouch lookup phase=9",
+    "initial cosmetic wings retained phase=9",
+    "reconnect toggle defaults to unbound",
+    "reconnect toggle registered in controls",
+    "reconnect controls contain one Tool Pouch heading (actual=1)",
+    "reconnect toggle shares upstream Tool Pouch category instance",
+    "reconnect toggle is registered exactly once",
+    "reconnect client synchronized enabled=false phase=0",
+    "reconnect client canGlide=false phase=0",
+    "reconnect client functional pouch lookup phase=0",
+    "reconnect cosmetic wings retained phase=0",
+    "reconnect server enabled=false command=inspect-reconnect",
+    "reconnect server canGlide=false command=inspect-reconnect",
+    "reconnect server cosmetic=true command=inspect-reconnect",
+    "reconnect client synchronized enabled=true phase=21",
+    "reconnect client canGlide=true phase=21",
+    "reconnect client functional pouch lookup phase=21",
+    "reconnect cosmetic wings retained phase=21",
+    "reconnect actionbar: Tool Pouch Elytra enabled",
+    "reconnect server enabled=true command=inspect-final",
+    "reconnect server canGlide=true command=inspect-final",
+    "reconnect server cosmetic=true command=inspect-final",
+    "reconnect client synchronized enabled=false phase=23",
+    "reconnect client canGlide=false phase=23",
+    "reconnect client functional pouch lookup phase=23",
+    "reconnect cosmetic wings retained phase=23",
+    "reconnect actionbar: Tool Pouch Elytra disabled",
+    "reconnect client synchronized enabled=false phase=24",
+    "reconnect client canGlide=false phase=24",
+    "reconnect client functional pouch lookup phase=24",
+    "reconnect cosmetic wings retained phase=24",
+    "reconnect server enabled=false command=change-dimension",
+    "reconnect server canGlide=false command=change-dimension",
+    "reconnect server cosmetic=true command=change-dimension",
+    "reconnect client synchronized enabled=false phase=25",
+    "reconnect client canGlide=false phase=25",
+    "reconnect client functional pouch lookup phase=25",
+    "reconnect cosmetic wings retained phase=25",
+    "reconnect disabled preference resynchronized across dimension change",
+    "reconnect client synchronized enabled=true phase=26",
+    "reconnect client canGlide=true phase=26",
+    "reconnect client functional pouch lookup phase=26",
+    "reconnect cosmetic wings retained phase=26",
+    "reconnect actionbar: Tool Pouch Elytra enabled",
+    "reconnect client synchronized enabled=false phase=27",
+    "reconnect client canGlide=false phase=27",
+    "reconnect client functional pouch lookup phase=27",
+    "reconnect cosmetic wings retained phase=27",
+    "reconnect actionbar: Tool Pouch Elytra disabled"
+  ],
+  "mods": {
+    "server": [
+      {
+        "filename": "chalk-polymer-compat-1.0.0+26.3.jar",
+        "sha256": "48e437bf54419a1016469abd422df1c278318e157668efc7f6304f421f53eade"
+      },
+      {
+        "filename": "toolpouch-fabric-1.1.10+26.3.jar",
+        "sha256": "a5bb4f084e7d929f3a89cc43317af63bd45abe3e3f4fed8b45f99b2da846e903"
+      },
+      {
+        "filename": "defaulted-1.3.8.release-26.3-fabric.jar",
+        "sha256": "0f6efc6423902b83da78ce85a119c69536517b1a9af52ed7046858859ff582a0"
+      },
+      {
+        "filename": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+        "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+      },
+      {
+        "filename": "polymer-bundled-0.18.2+26.3.jar",
+        "sha256": "3d79318e8202d0e87af308d7f232220714e5f1409d06c23db774877ec6f3848f"
+      },
+      {
+        "filename": "fabric-api-0.161.0+26.3.jar",
+        "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+      },
+      {
+        "filename": "tiered_backpacks-fabric-1.0.19+26.3-upstream.jar",
+        "sha256": "03cd9aaf16666024362a47b9659033ef0baeceefb4d50ee581d0b60fc00d2c55"
+      },
+      {
+        "filename": "cloth-config-fabric-26.3.159.jar",
+        "sha256": "1716b9964f90d2b885f9bd3887f8824b71b55c32a4123a5853486e722f7c2e4b"
+      },
+      {
+        "filename": "codecui-26.3-1.4.3-fabric.jar",
+        "sha256": "4d07c219bd85b58283a0317d6f43cca838adf9cd16be321316cd32f2fb1be898"
+      },
+      {
+        "filename": "fzzy_config-0.7.7+fix2+26.3.jar",
+        "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+      },
+      {
+        "filename": "chalk-3.2.1+26.3.jar",
+        "sha256": "886b0b10cc12df65d47f446c2bd54c0c670f9a54fa09a1fe95c9ec46df565f49"
+      },
+      {
+        "filename": "simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+        "sha256": "fb6cbf8c13938d68fb19171dac386b5567d71625bce727b22d3380f6b7880126"
+      },
+      {
+        "filename": "mixson-2.2.1-multiloader.jar",
+        "sha256": "e4d38f31be95a1f03f8bef290c079f4bb5573d8f4e15808e8c1fc8ba3e5913a0"
+      },
+      {
+        "filename": "SSO-backpack-toolpouch-mapstitch-shim-1.0.2+26.3.jar",
+        "sha256": "fc756498299259767766054a9c817a4d183c7467c5b62c342eadde92b8554926"
+      },
+      {
+        "filename": "toolpouch-atlas-elytra-compat-1.0.1+26.3.jar",
+        "sha256": "77dc668b164bca182eec1e558b2948bd98ee40545ef30881bcdd471f43af1b0a"
+      },
+      {
+        "filename": "server-qa.jar",
+        "sha256": "ccd08c446367d1e8f28b560c39bf2b9f50d8c6699c5c82759ba2e2c9af691be5"
+      }
+    ],
+    "native": [
+      {
+        "filename": "toolpouch-fabric-1.1.10+26.3.jar",
+        "sha256": "a5bb4f084e7d929f3a89cc43317af63bd45abe3e3f4fed8b45f99b2da846e903"
+      },
+      {
+        "filename": "defaulted-1.3.8.release-26.3-fabric.jar",
+        "sha256": "0f6efc6423902b83da78ce85a119c69536517b1a9af52ed7046858859ff582a0"
+      },
+      {
+        "filename": "fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar",
+        "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5"
+      },
+      {
+        "filename": "fabric-api-0.161.0+26.3.jar",
+        "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6"
+      },
+      {
+        "filename": "tiered_backpacks-fabric-1.0.19+26.3-upstream.jar",
+        "sha256": "03cd9aaf16666024362a47b9659033ef0baeceefb4d50ee581d0b60fc00d2c55"
+      },
+      {
+        "filename": "cloth-config-fabric-26.3.159.jar",
+        "sha256": "1716b9964f90d2b885f9bd3887f8824b71b55c32a4123a5853486e722f7c2e4b"
+      },
+      {
+        "filename": "codecui-26.3-1.4.3-fabric.jar",
+        "sha256": "4d07c219bd85b58283a0317d6f43cca838adf9cd16be321316cd32f2fb1be898"
+      },
+      {
+        "filename": "fzzy_config-0.7.7+fix2+26.3.jar",
+        "sha256": "138e377563a8ca536a9af00d8eeefb7fe160903392df8e4ca7cd4b5da6f0bb5f"
+      },
+      {
+        "filename": "chalk-3.2.1+26.3.jar",
+        "sha256": "886b0b10cc12df65d47f446c2bd54c0c670f9a54fa09a1fe95c9ec46df565f49"
+      },
+      {
+        "filename": "simple_smithing_overhaul-fabric-2.9.14+26.3.jar",
+        "sha256": "fb6cbf8c13938d68fb19171dac386b5567d71625bce727b22d3380f6b7880126"
+      },
+      {
+        "filename": "mixson-2.2.1-multiloader.jar",
+        "sha256": "e4d38f31be95a1f03f8bef290c079f4bb5573d8f4e15808e8c1fc8ba3e5913a0"
+      },
+      {
+        "filename": "toolpouch-atlas-elytra-compat-1.0.1+26.3.jar",
+        "sha256": "77dc668b164bca182eec1e558b2948bd98ee40545ef30881bcdd471f43af1b0a"
+      },
+      {
+        "filename": "client-qa.jar",
+        "sha256": "a07db07927de0dd5b91d336f452aa7d15375da74f250ecbfb09bc297d8df653b"
+      }
+    ]
+  },
+  "original_jars_unchanged": true,
+  "limitations": [
+    "Real Fabric client with QA fixture; programmatic KeyMapping.click rather than physical keyboard input.",
+    "Controls verified by constructing actual vanilla KeyBindsList and inspecting heading widgets.",
+    "Dimension change uses server teleport API; command tests send real client commands as non-operator."
+  ]
+}

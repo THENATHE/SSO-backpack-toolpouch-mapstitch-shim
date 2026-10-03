@@ -1,57 +1,76 @@
 #!/usr/bin/env python3
-"""Package the verified combined shim and local-only dependency test kit."""
+"""Package a verified, committed Multi-Shim release into its standalone family."""
 from pathlib import Path
-import hashlib,json,shutil,subprocess,zipfile,re
-P=Path(__file__).resolve().parents[1];W=P.parents[1]
-version='1.0.1+26.3';kitversion='2026-10-01.2+26.3';tag='v'+version
-revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=P,text=True).strip()
-jar=P/'build/libs'/f'SSO-backpack-toolpouch-mapstitch-shim-{version}.jar'
-expected='55787adf8c25f0b3b0891a40f8441d8247d9599d9312f9b9f2eb2cfdaf2745b8'
-assert hashlib.sha256(jar.read_bytes()).hexdigest()==expected
-validation=(P/'VALIDATION.md').read_text();assert 'Pending final' not in validation and 'checks pending' not in validation
-repo='https://github.com/THENATHE/SSO-backpack-toolpouch-mapstitch-shim'
-def sha(f):return hashlib.sha256(f.read_bytes()).hexdigest()
-def externalize(text):
- return re.sub(r'\]\((?!https?://)([^)]+)\)',lambda m:']('+repo+'/blob/'+tag+'/'+m.group(1)+')',text)
-releases=[]
-for track,component in [('developer','Combined Compatibility Shim - Developer Release Targets'),('sso-port','Combined Compatibility Shim - SSO Version Port Target')]:
- out=W/'Builds/Minecraft/Polymer'/component/version;out.mkdir(parents=True,exist_ok=True)
- shutil.copy2(jar,out/jar.name)
- source=out/f'SSO-backpack-toolpouch-mapstitch-shim-{version}-source.zip'
- subprocess.run(['git','archive','--format=zip','--prefix=SSO-backpack-toolpouch-mapstitch-shim/','-o',str(source),revision],cwd=P,check=True)
- shutil.copy2(source,P/'tracks'/track/'source-snapshot.zip')
- shutil.copy2(P/'tracks'/track/'runtime.lock.json',out/'runtime.lock.json')
- shutil.copy2(P/'dependencies.lock.json',out/'compile-inputs.lock.json')
- (out/'SOURCE-REVISION.txt').write_text(revision+'\n')
- (out/'VALIDATION.md').write_text(externalize(validation))
- (out/'SHA256SUMS.sha256').write_text(''.join(sha(f)+'  '+f.name+'\n' for f in [out/jar.name,source]))
- (out/'README.md').write_text(f"""# SSO-backpack-toolpouch-mapstitch-shim {version}
+import hashlib
+import json
+import re
+import shutil
+import subprocess
+import zipfile
 
-Component: {component}. Target track: **{track}**. Unofficial separate server-side Polymer shim; one binary with four optional modules. Chalk stays separate.
+PROJECT = Path(__file__).resolve().parents[1]
+WORKSPACE = PROJECT.parents[1]
+REPO = 'https://github.com/THENATHE/SSO-backpack-toolpouch-mapstitch-shim'
+VERSION = re.search(r"^version = '([^']+)'", (PROJECT/'build.gradle').read_text(), re.M)[1]
+JAR = PROJECT/'build/libs'/f'SSO-backpack-toolpouch-mapstitch-shim-{VERSION}.jar'
 
-[Installable JAR]({jar.name}) · [Checksums](SHA256SUMS.sha256) · [Validation](VALIDATION.md) · [Repository]({repo}) · [Source snapshot]({source.name})
 
-Requires Minecraft 26.3, Java 25+, Fabric Loader 0.19.5, Fabric API 0.161.0+26.3 and Polymer Bundled 0.18.2+26.3. Keep whichever original mods you use and their dependencies. Remove the four separate SSO/Tiered Backpacks/Tool Pouch/MapStitch Polymer shims, then add this JAR to server mods. Do not install this server shim on clients. Native clients use matching original mods; Polymer is optional for them.
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
-Developer originals: SSO 2.9.14+26.3, Tiered Backpacks 1.0.19+26.3, Tool Pouch 1.1.10+26.3, MapStitch 1.1.6+26.3. Fzzy Config 0.7.7+fix2+26.3 and Kotlin 1.14.1+kotlin.2.4.20; developer SSO also uses Defaulted 1.3.8.release-26.3, CodecUI 26.3-1.4.3 and Mixson 2.2.1. The separately verified SSO port track instead uses existing SSO 2.9.14-port.1+26.3 with Fzzy/Kotlin/Mixson; see [exact runtime lock](runtime.lock.json). This is a shared binary independently tested against both targets, with separate release/source copies.
 
-For Tool Pouch atlas/elytra integration, install the unchanged addon 1.0.0+26.3 on server and native client alongside original Tool Pouch and MapStitch. Its duplicate keybind category remains unchanged. Keep the separate Chalk shim with the requested Chalk 26.3 port if desired.
+def main():
+    assert not subprocess.check_output(['git', 'status', '--porcelain'], cwd=PROJECT, text=True).strip(), 'Commit reviewed source and evidence before packaging'
+    revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=PROJECT, text=True).strip()
+    with zipfile.ZipFile(JAR) as archive:
+        assert archive.testzip() is None
+        metadata = json.loads(archive.read('fabric.mod.json'))
+        assert metadata['version'] == VERSION
+        assert metadata['id'] == 'sso_backpack_toolpouch_mapstitch_shim'
+    digest = sha(JAR)
+    validation = (PROJECT/'VALIDATION.md').read_text()
+    assert digest in validation, 'Validation must identify the exact release JAR'
+    releases = []
+    for track, component in [('developer', 'Combined Compatibility Shim - Developer Release Targets'), ('sso-port', 'Combined Compatibility Shim - SSO Version Port Target')]:
+        out = WORKSPACE/'Builds/Minecraft/Multi-Shim'/component/VERSION
+        assert not out.exists(), f'Refusing to overwrite existing release: {out}'
+        out.mkdir(parents=True)
+        shutil.copy2(JAR, out/JAR.name)
+        source = out/f'SSO-backpack-toolpouch-mapstitch-shim-{VERSION}-source.zip'
+        subprocess.run(['git', 'archive', '--format=zip', '--prefix=SSO-backpack-toolpouch-mapstitch-shim/', '-o', str(source), revision], cwd=PROJECT, check=True)
+        with zipfile.ZipFile(source) as archive:
+            assert archive.testzip() is None
+        shutil.copy2(source, PROJECT/'tracks'/track/'source-snapshot.zip')
+        shutil.copy2(PROJECT/'tracks'/track/'runtime.lock.json', out/'runtime.lock.json')
+        shutil.copy2(PROJECT/'dependencies.lock.json', out/'compile-inputs.lock.json')
+        (out/'SOURCE-REVISION.txt').write_text(revision+'\n')
+        # Revision links remain valid before a GitHub release tag is published.
+        external = re.sub(r'\]\((?!https?://)([^)]+)\)', lambda m: ']('+REPO+'/blob/'+revision+'/'+m[1]+')', validation)
+        (out/'VALIDATION.md').write_text(external)
+        (out/'SHA256SUMS.sha256').write_text(''.join(sha(path)+'  '+path.name+'\n' for path in [out/JAR.name, source]))
+        (out/'README.md').write_text(f'''# Multi-Shim {VERSION}
 
-This release corrects outgoing Defaulted repair-rule selectors. Fully restart native clients after updating. For existing saved unexpected calcite repair overrides, hold the item and run `/sso-shim repair-held` as an operator; other components are preserved and no inventory-wide migration runs.
+Component: {component}. Target track: **{track}**.
 
-SSO retains Type B vanilla gameplay. The other three modules retain Type A display/guards and native-client systems. Fabric clients advertising registry sync need matching installed SSO/Tiered originals. Configure Polymer pack delivery for custom vanilla visuals. Full details and tested limits: [README]({repo}/blob/{tag}/README.md), [validation](VALIDATION.md).
+[Installable JAR]({JAR.name}) · [Checksums](SHA256SUMS.sha256) · [Validation](VALIDATION.md) · [Source snapshot]({source.name}) · [Repository]({REPO})
 
-Local source: `Minecraft/SSO-backpack-toolpouch-mapstitch-shim`; immutable source revision `{revision}`. [Compile input hashes](compile-inputs.lock.json), exact original artifact provenance and QA evidence are retained in the source snapshot. Original JARs were not modified or embedded.
-""")
- releases.append({'track':track,'component':component,'directory':str(out.relative_to(W)),'jar':str((out/jar.name).relative_to(W)),'sha256':expected,'source_revision':revision})
-stage=P/'test-kit';shutil.copy2(P/'VALIDATION.md',stage/'VALIDATION.md');(stage/'VALIDATION.md').write_text(externalize(validation))
-kitout=W/'Builds/Minecraft/Polymer/Local Shim Test Bundle'/kitversion;kitout.mkdir(parents=True,exist_ok=True)
-kit=kitout/f'polymer-shim-test-kit-{kitversion}.zip'
-with zipfile.ZipFile(kit,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
- for f in sorted(stage.rglob('*')):
-  if f.is_file():z.write(f,f.relative_to(stage))
-with zipfile.ZipFile(kit) as z:assert z.testzip() is None
-for name in ('README.md','VALIDATION.md','MANIFEST.json'):shutil.copy2(stage/name,kitout/name)
-(kitout/'SHA256SUMS.sha256').write_text(sha(kit)+'  '+kit.name+'\n')
-record={'version':version,'releases':releases,'test_kit':str(kit.relative_to(W)),'test_kit_sha256':sha(kit),'test_kit_bytes':kit.stat().st_size}
-(P/'release-record.json').write_text(json.dumps(record,indent=2)+'\n');print(json.dumps(record,indent=2))
+Install this JAR on the server only. Replace the earlier combined shim; remove separate SSO, Tiered Backpacks, Tool Pouch and MapStitch shims. Keep original mods and dependencies. Chalk remains separate. Restart server and clients after updating.
+
+Requires Minecraft 26.3, Java 25+, Fabric Loader 0.19.5, Fabric API 0.161.0+26.3 and Polymer Bundled 0.18.2+26.3. Developer targets are SSO 2.9.14+26.3, Tiered Backpacks 1.0.19+26.3, Tool Pouch 1.1.10+26.3 and MapStitch 1.1.6+26.3, with Fzzy Config 0.7.7+fix2+26.3 and Kotlin 1.14.1+kotlin.2.4.20. Developer SSO also uses Defaulted 1.3.8.release-26.3, CodecUI 26.3-1.4.3 and Mixson 2.2.1. The SSO port target instead uses 2.9.14-port.1+26.3 and its preserved Fzzy/Kotlin/Mixson stack. See [exact runtime input lock](runtime.lock.json). Both tracks are independently tested; the JAR is shared.
+
+This release repairs missing atlas map centers and stale active-map IDs, prevents seed-map duplication and stale crafting previews, and preserves custom fallback lore within Minecraft's limit. Existing atlases repair their metadata when ticked; maps need not be discarded. Original map contents and original mod JARs remain intact.
+
+For the separate Toggle Tool Pouch Elytra heading fix, also replace the atlas/elytra addon with **toolpouch-atlas-elytra-compat-1.0.1+26.3.jar on both server and native clients**. [Addon repository](https://github.com/THENATHE/toolpouch-atlas-elytra-modification). The server shim cannot change a client's controls menu by itself.
+
+SSO retains Type B vanilla gameplay; the other modules retain Type A display/guards and native systems. Matching original client mods are required for native pouch/backpack/atlas gameplay. Polymer pack acceptance supplies custom vanilla visuals. Native clients do not require Polymer. See validation for exercised cases and coverage boundaries.
+
+Source: `Minecraft/SSO-backpack-toolpouch-mapstitch-shim`, revision `{revision}`. Original compile input hashes are in `compile-inputs.lock.json`. The pre-QA 1.0.1 release is preserved alongside this version under Multi-Shim.
+''')
+        releases.append({'track': track, 'component': component, 'directory': str(out.relative_to(WORKSPACE)), 'jar': str((out/JAR.name).relative_to(WORKSPACE)), 'sha256': digest, 'source_revision': revision})
+    record = {'version': VERSION, 'releases': releases}
+    (PROJECT/'release-record.json').write_text(json.dumps(record, indent=2)+'\n')
+    print(json.dumps(record, indent=2))
+
+
+if __name__ == '__main__':
+    main()

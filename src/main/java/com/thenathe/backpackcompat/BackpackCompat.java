@@ -1,6 +1,7 @@
 package com.thenathe.backpackcompat;
 
 import eu.pb4.polymer.core.api.item.PolymerItem;
+import com.thenathe.combinedshim.FallbackLore;
 import eu.pb4.polymer.core.api.other.PolymerComponent;
 import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils;
 import eu.pb4.polymer.rsm.api.RegistrySyncUtils;
@@ -115,6 +116,11 @@ public final class BackpackCompat {
 
     private record BackpackOverlay(String name) implements PolymerItem {
         @Override
+        public void modifyClientTooltip(List<Component> tooltip, ItemStack stack, PacketContext context) {
+            FallbackLore.fitTooltip(tooltip);
+        }
+
+        @Override
         public boolean canSyncRawToClient(PacketContext context) { return nativeClient(context); }
         @Override
         public Item getPolymerItem(ItemStack stack, PacketContext context) {
@@ -134,7 +140,8 @@ public final class BackpackCompat {
             if (nativeClient(context)) return stack;
             var result = PolymerItem.super.getPolymerItemStack(stack, tooltip, context, lookup);
             result.set(DataComponents.ITEM_NAME, Component.literal(name));
-            result.set(DataComponents.LORE, new ItemLore(List.of(NOTICE)));
+            result.set(DataComponents.LORE, FallbackLore.withNotice(
+                    result.getOrDefault(DataComponents.LORE, ItemLore.EMPTY), NOTICE));
             // Change only the network copy. Preserve real contents, dye, name and tier on disk.
             result.remove(DataComponents.CONTAINER);
             result.remove(DataComponents.EQUIPPABLE);

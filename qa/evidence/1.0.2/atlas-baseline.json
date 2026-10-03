@@ -1,0 +1,15 @@
+{
+  "baseline": "1.0.1+26.3",
+  "minimap": "FAIL phase=1 java.lang.AssertionError: real minimap render has non-null center for initially metadata-less seed map\n",
+  "integrity": true,
+  "recipe": "FAIL server java.lang.AssertionError: stacked map ingredient consumes only one map, not sixteen",
+  "cache_baseline_result": "FAIL phase=5 java.lang.AssertionError: rendered world transition discards map ID belonging only to old cache\ninventory: map=0; minimap rendered; compass and clock detected; disabling accessories excludes all three; worldmap tiles=1\nleggings: map=1; minimap rendered; compass and clock detected; disabling accessories excludes all three; worldmap tiles=1\nregressions PASS 35 server assertions: recipe count, repeated assembly, seed metadata, invalid map, stale IDs, metadata/name preservation",
+  "cache_baseline_addon": "toolpouch-atlas-elytra-compat-1.0.0+26.3.jar",
+  "cache_baseline_server": "SSO-backpack-toolpouch-mapstitch-shim-1.0.2+26.3.jar",
+  "cache_integrity_unchanged": true,
+  "cache_artifacts": {
+    "SSO-backpack-toolpouch-mapstitch-shim-1.0.2+26.3.jar": "d71a659db9c2025542953839facc5263cf2f80085644608a753913d50786e7d4",
+    "toolpouch-atlas-elytra-compat-1.0.0+26.3.jar": "9969d1e8e4debb7e85832137add1fc5f5ae49c2f235469a9f95dacc9e3bc7be6"
+  },
+  "seed_and_recipe_baseline_sha256": "55787adf8c25f0b3b0891a40f8441d8247d9599d9312f9b9f2eb2cfdaf2745b8"
+}

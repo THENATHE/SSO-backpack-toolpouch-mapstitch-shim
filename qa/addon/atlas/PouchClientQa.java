@@ -19,6 +19,8 @@ public class PouchClientQa implements ClientModInitializer {
     int phase, ticks, scenario, checks;
     boolean done;
     MapId id;
+    final MapId staleWorldId = new MapId(Integer.MAX_VALUE - 1);
+    net.minecraft.client.multiplayer.ClientLevel renderedLevel;
     void check(boolean value, String message) { if (!value) throw new AssertionError(message); checks++; }
     Object field(Class<?> type, String name) throws Exception {
         var field = type.getDeclaredField(name); field.setAccessible(true); return field.get(null);
@@ -30,6 +32,11 @@ public class PouchClientQa implements ClientModInitializer {
         requirements.compassAndClockScan.trySetQuiet(List.of(location));
     }
     public void onInitializeClient() {
+        // Observe an actual HUD frame after MapStitch, not just a dimension-change tick.
+        net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry.attachElementAfter(
+            net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements.MOB_EFFECTS,
+            net.minecraft.resources.Identifier.fromNamespaceAndPath("pouchqa", "minimap-observer"),
+            (graphics, counter) -> renderedLevel = net.minecraft.client.Minecraft.getInstance().level);
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (done || client.player == null || client.level == null) return;
             try {
@@ -37,6 +44,9 @@ public class PouchClientQa implements ClientModInitializer {
                 switch (phase) {
                     case 0 -> {
                         if (ticks < 60) return;
+                        if (Boolean.getBoolean("pouch.qa.regressionsOnly")) {
+                            Files.writeString(control.resolve("command"), "regressions"); phase = 4; ticks = 0; return;
+                        }
                         scans("accessories");
                         ((Map<?, ?>) field(MinimapOverlay.class, "CACHED_CENTERS")).clear();
                         WorldMapScreen.clearMaps();
@@ -55,7 +65,7 @@ public class PouchClientQa implements ClientModInitializer {
                         check(ModClientUtil.hasCompass(client, "minimap"), "pouch compass detected");
                         check(ModClientUtil.hasClock(client, "time"), "pouch clock detected");
                         check(((ItemStack) field(MinimapOverlay.class, "lastAtlas")).getOrDefault(ModDataComponents.ATLAS_ACTIVE_MAP_ID, -1) == id.id(), "real minimap render selected atlas");
-                        check(((Map<?, ?>) field(MinimapOverlay.class, "CACHED_CENTERS")).containsKey(id), "real minimap render cached map center");
+                        check(((Map<?, ?>) field(MinimapOverlay.class, "CACHED_CENTERS")).get(id) != null, "real minimap render has non-null center for initially metadata-less seed map");
                         scans("hotbar");
                         check(ModClientUtil.getFirstItem(client, ModItems.ATLAS).isEmpty(), "disabled accessories excludes nested atlas");
                         check(!ModClientUtil.hasCompass(client, "minimap"), "disabled accessories excludes nested compass");
@@ -84,10 +94,55 @@ public class PouchClientQa implements ClientModInitializer {
                         evidence.add((scenario == 0 ? "inventory" : "leggings") + ": map=" + id.id() + "; minimap rendered; compass and clock detected; disabling accessories excludes all three; worldmap tiles=" + maps);
                         client.gui.screen().onClose();
                         if (scenario++ == 0) { phase = 0; ticks = 0; }
-                        else {
-                            Files.writeString(control.resolve("result.txt"), "PASS " + checks + " assertions; real client/server Tool Pouch smoke\n" + String.join("\n", evidence) + "\n");
-                            done = true;
-                        }
+                        else { Files.writeString(control.resolve("command"), "regressions"); phase = 4; ticks = 0; }
+                    }
+                    case 4 -> {
+                        if (!Files.exists(control.resolve("ack"))) return;
+                        String response = Files.readString(control.resolve("ack"));
+                        if (!response.startsWith("regressions PASS")) return;
+                        evidence.add(response);
+                        if (Boolean.getBoolean("pouch.qa.regressionsOnly")) { finish(); return; }
+                        check(((Map<?, ?>) field(MinimapOverlay.class, "CACHED_CENTERS")).get(id) != null, "map center cached before dimension change");
+                        @SuppressWarnings("unchecked") var cached = (Map<MapId, org.joml.Vector2i>) field(MinimapOverlay.class, "CACHED_CENTERS");
+                        cached.put(staleWorldId, new org.joml.Vector2i(123456, -654321));
+                        cached.put(id, new org.joml.Vector2i(Integer.MAX_VALUE, Integer.MIN_VALUE));
+                        Files.writeString(control.resolve("command"), "world-nether"); phase = 5; ticks = 0;
+                    }
+                    case 5 -> {
+                        if (ticks < 60 || renderedLevel != client.level || client.gui.screen() != null || !client.level.dimension().equals(net.minecraft.world.level.Level.NETHER)) return;
+                        check(!((Map<?, ?>) field(MinimapOverlay.class, "CACHED_CENTERS")).containsKey(staleWorldId), "rendered world transition discards map ID belonging only to old cache");
+                        Files.writeString(control.resolve("command"), "world-overworld"); phase = 6; ticks = 0;
+                    }
+                    case 6 -> {
+                        if (ticks < 60 || renderedLevel != client.level || client.gui.screen() != null || !client.level.dimension().equals(net.minecraft.world.level.Level.OVERWORLD)) return;
+                        check(((Map<?, ?>) field(MinimapOverlay.class, "CACHED_CENTERS")).get(id) != null, "returning to overworld rebuilds minimap map center");
+                        var atlas = ModClientUtil.getFirstItem(client, ModItems.ATLAS);
+                        var expectedCenter = atlas.get(net.minecraft.core.component.DataComponents.BUNDLE_CONTENTS).items().getFirst().get(ModDataComponents.MAP_CENTER);
+                        check(expectedCenter.equals(((Map<?, ?>) field(MinimapOverlay.class, "CACHED_CENTERS")).get(id)), "returning world replaces reused ID's incorrect cached center with atlas center");
+                        check(client.level.getMapData(id) != null, "returning to overworld receives map render data");
+                        evidence.add("dimension round trip clears and rebuilds minimap cache");
+                        Files.writeString(control.resolve("command"), "craft-setup"); phase = 7; ticks = 0;
+                    }
+                    case 7 -> {
+                        if (ticks < 60) return;
+                        var result = client.player.inventoryMenu.getSlot(0).getItem();
+                        check(result.is(ModItems.ATLAS), "native crafting menu receives authoritative atlas result");
+                        check(result.get(net.minecraft.core.component.DataComponents.BUNDLE_CONTENTS).items().getFirst().count() == 1, "native recipe result contains only one seed map");
+                        client.gameMode.handleContainerInput(client.player.inventoryMenu.containerId, 0, 0, net.minecraft.world.inventory.ContainerInput.PICKUP, client.player);
+                        phase = 8; ticks = 0;
+                    }
+                    case 8 -> {
+                        if (ticks < 40) return;
+                        var carried = client.player.inventoryMenu.getCarried();
+                        check(carried.is(ModItems.ATLAS) && carried.get(net.minecraft.core.component.DataComponents.BUNDLE_CONTENTS).items().getFirst().count() == 1, "native client actual crafting click receives one-map atlas");
+                        check(client.player.inventoryMenu.getSlot(1).getItem().getCount() == 7 && client.player.inventoryMenu.getSlot(2).getItem().getCount() == 15, "native client observes one book and one map consumed");
+                        Files.writeString(control.resolve("command"), "craft-check"); phase = 9; ticks = 0;
+                    }
+                    case 9 -> {
+                        String response = Files.readString(control.resolve("ack"));
+                        if (!response.startsWith("craft PASS")) return;
+                        evidence.add(response);
+                        finish();
                     }
                 }
             } catch (Throwable failure) {
@@ -95,5 +150,9 @@ public class PouchClientQa implements ClientModInitializer {
                 try { Files.writeString(control.resolve("result.txt"), "FAIL phase=" + phase + " " + failure + "\n" + String.join("\n", evidence)); } catch (Exception ignored) {}
             }
         });
+    }
+    void finish() throws Exception {
+        Files.writeString(control.resolve("result.txt"), "PASS " + checks + " client assertions; real client/server Tool Pouch smoke\n" + String.join("\n", evidence) + "\n");
+        done = true;
     }
 }

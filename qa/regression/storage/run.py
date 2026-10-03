@@ -100,7 +100,14 @@ try:
             time.sleep(1)
         else:
             raise TimeoutError('Server startup')
-        print('STORAGE_SERVER_READY', flush=True)
+        runtime_path = control / 'runtime-result.txt'
+        for _ in range(30):
+            if runtime_path.exists(): break
+            if server_process.poll() is not None: raise RuntimeError('Server exited before runtime assertions')
+            time.sleep(1)
+        runtime = runtime_path.read_text()
+        if not runtime.startswith('PASS'): raise RuntimeError(runtime)
+        print('STORAGE_SERVER_READY', runtime.strip(), flush=True)
         for mode, username in [('native', 'BackpackNativeQA'), ('native-polymer', 'PackPolymerQA'), ('vanilla', 'PackVanillaQA')]:
             directory = run / mode
             (directory / 'mods').mkdir(parents=True)

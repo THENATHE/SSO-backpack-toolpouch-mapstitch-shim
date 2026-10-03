@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Real Fabric addon regression: combined server, original native client, immutable addon 1.0.0."""
+"""Real Fabric addon regression: combined server and original native client, with a selectable addon."""
 import argparse, hashlib, importlib.util, json, os, shutil, subprocess, time, zipfile
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
@@ -43,14 +43,20 @@ def stop(children):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--shim',type=Path,required=True)
+    parser.add_argument('--addon',type=Path,default=ADDON)
+    parser.add_argument('--without-mapstitch',action='store_true')
+    parser.add_argument('--atlas-regressions-only',action='store_true')
     parser.add_argument('--suite',choices=['atlas','elytra'],required=True)
     parser.add_argument('--port',type=int)
     parser.add_argument('--build-only',action='store_true')
     args=parser.parse_args(); suite=args.suite; where=HERE/suite
     port=args.port or (25856 if suite=='atlas' else 25866)
     originals=list((BUNDLE/'mods').glob('*.jar'))
-    server_mods=[p for p in originals if not any(p.name.startswith(x) for x in ('simple-smithing-polymer-compat-', 'tiered-backpacks-polymer-compat-', 'toolpouch-polymer-compat-', 'mapstitch-polymer-compat-'))]+[args.shim.resolve(),ADDON]
-    native_mods=list((BUNDLE/'native-client/mods').glob('*.jar'))+[ADDON]
+    server_mods=[p for p in originals if not any(p.name.startswith(x) for x in ('simple-smithing-polymer-compat-', 'tiered-backpacks-polymer-compat-', 'toolpouch-polymer-compat-', 'mapstitch-polymer-compat-'))]+[args.shim.resolve(),args.addon.resolve()]
+    native_mods=list((BUNDLE/'native-client/mods').glob('*.jar'))+[args.addon.resolve()]
+    if args.without_mapstitch:
+        server_mods=[p for p in server_mods if not p.name.startswith('mapstitch-')]
+        native_mods=[p for p in native_mods if not p.name.startswith('mapstitch-')]
     assert not any('polymer' in p.name.lower() for p in native_mods)
     mods=list(dict.fromkeys(server_mods+native_mods)); build(where,mods,suite)
     if args.build_only:return
@@ -74,6 +80,7 @@ def main():
                 command=launch.base_command(mode,run,port)
                 prefix='elytra' if suite=='elytra' else 'pouch'
                 command.insert(1,f'-D{prefix}.qa.control={control}')
+                if args.atlas_regressions_only: command.insert(1,'-Dpouch.qa.regressionsOnly=true')
                 if stage==2:command.insert(1,'-Delytra.qa.reconnect=true')
                 (run/f'launch-audit-{stage}.json').write_text(json.dumps({'command':command,'mods':[{'path':str(p),'sha256':sha(p)} for p in selected],'qa_fixture':True,'client_has_polymer':False},indent=2))
                 logpath=run/f'console-{stage}.log';log=logpath.open('w')

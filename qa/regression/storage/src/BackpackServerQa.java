@@ -33,12 +33,19 @@ public class BackpackServerQa implements ModInitializer {
     final Path control = Path.of(System.getProperty("backpack.qa.control"));
     static final Item[] TIERS = {ModItems.LEATHER_BACKPACK,ModItems.COPPER_BACKPACK,ModItems.IRON_BACKPACK,ModItems.GOLDEN_BACKPACK,ModItems.DIAMOND_BACKPACK,ModItems.NETHERITE_BACKPACK};
     int checks;
+    /** Polymer wraps already-styled tooltip components; compare their rendered runs. */
+    static List<Map.Entry<net.minecraft.network.chat.Style,String>> styledRuns(Component component) {
+        var runs=new ArrayList<Map.Entry<net.minecraft.network.chat.Style,String>>();
+        component.visit((style,text)->{if(!text.isEmpty())runs.add(Map.entry(style,text));return Optional.<Void>empty();},net.minecraft.network.chat.Style.EMPTY);
+        return runs;
+    }
     void check(boolean ok,String message) { if(!ok)throw new AssertionError(message);checks++; }
     void write(Path path,String text) { try { Files.createDirectories(path.getParent());Files.writeString(path,text+"\n"); }catch(Exception e){throw new RuntimeException(e);} }
     void write(ServerPlayer p,String file,String text) { write(control.resolve(p.getGameProfile().name()).resolve(file),text); }
     static ItemStack backpack(int tier) {
         ItemStack s = new ItemStack(TIERS[tier]);
         s.set(DataComponents.CUSTOM_NAME,Component.literal("QA tier "+tier));
+        s.set(DataComponents.LORE,new ItemLore(List.of(Component.literal("Original backpack lore "+tier))));
         s.set(DataComponents.CONTAINER,ItemContainerContents.fromItems(List.of(new ItemStack(Items.DIAMOND,7),new ItemStack(Items.EMERALD,3))));
         s.set(DataComponents.DYED_COLOR,new DyedItemColor(0x123456));
         s.set(ModDataComponents.STORED_BACKPACK_DYE,new DyedItemColor(0xabcdef));
@@ -69,11 +76,34 @@ public class BackpackServerQa implements ModInitializer {
                         check(wire.get(DataComponents.CONTAINER)==null,"contents hidden from vanilla wire");
                         check(wire.get(DataComponents.EQUIPPABLE)==null,"equipment interaction removed from vanilla wire");
                         check(wire.get(DataComponents.LORE).lines().stream().anyMatch(c->c.getString().contains("need the Tiered Backpacks mod")),"mod-required notice present");
+                        var expectedLore=styledRuns(s.get(DataComponents.LORE).styledLines().getFirst());
+                        check(wire.get(DataComponents.LORE).styledLines().stream().map(BackpackServerQa::styledRuns).anyMatch(expectedLore::equals),"custom backpack lore text/style retained among native container/dye tooltip lines; expected="+expectedLore+" actual="+wire.get(DataComponents.LORE));
                         var restored=PolymerItemUtils.getRealItemStack(wire,context,lookup);
                         check(saved.equals(ItemStack.CODEC.encodeStart(lookup.createSerializationContext(NbtOps.INSTANCE),restored).getOrThrow()),"complete fallback roundtrip preserves contents and components");
                         setSyntheticNative(context,true);
                         check(PolymerItemUtils.getPolymerItemStack(s,TooltipFlag.NORMAL,context,lookup)==s,"native original item identity tier="+tier);
                         check(saved.equals(ItemStack.CODEC.encodeStart(lookup.createSerializationContext(NbtOps.INSTANCE),s).getOrThrow()),"source unchanged");
+                    }
+                }
+                setSyntheticNative(context,false);
+                for(var id:List.of("tiered_backpacks:leather_backpack","toolpouch:tool_pouch","toolpouch:netherite_tool_pouch")) {
+                    var item=BuiltInRegistries.ITEM.getValue(Identifier.parse(id));
+                    check(item!=null&&item!=Items.AIR,"lore boundary item present "+id);
+                    for(int length:new int[]{0,1,ItemLore.MAX_LINES-1,ItemLore.MAX_LINES}) {
+                        var s=new ItemStack(item);
+                        var lines=new ArrayList<Component>();
+                        for(int i=0;i<length;i++)lines.add(Component.literal("Original lore "+i).withStyle(net.minecraft.ChatFormatting.AQUA));
+                        s.set(DataComponents.LORE,new ItemLore(List.copyOf(lines)));
+                        var saved=ItemStack.CODEC.encodeStart(lookup.createSerializationContext(NbtOps.INSTANCE),s).getOrThrow();
+                        var wire=PolymerItemUtils.getPolymerItemStack(s,TooltipFlag.NORMAL,context,lookup);
+                        var shown=wire.get(DataComponents.LORE).lines();
+                        check(shown.size()==Math.min(length+1,ItemLore.MAX_LINES),"bounded lore length "+id+" "+length);
+                        for(int i=0;i<Math.min(length,ItemLore.MAX_LINES-1);i++)check(styledRuns(shown.get(i)).equals(styledRuns(s.get(DataComponents.LORE).styledLines().get(i))),"original lore text/style retained "+i);
+                        if(length==ItemLore.MAX_LINES)check(styledRuns(shown.getLast()).getFirst().equals(styledRuns(s.get(DataComponents.LORE).styledLines().getLast()).getFirst()),"final full-lore text/style preserved");
+                        check(shown.getLast().getString().contains("mod"),"notice remains visible at lore boundary");
+                        check(saved.equals(ItemStack.CODEC.encodeStart(lookup.createSerializationContext(NbtOps.INSTANCE),s).getOrThrow()),"lore projection leaves source untouched");
+                        var restored=PolymerItemUtils.getRealItemStack(wire,context,lookup);
+                        check(saved.equals(ItemStack.CODEC.encodeStart(lookup.createSerializationContext(NbtOps.INSTANCE),restored).getOrThrow()),"lore boundary roundtrip preserves exact source");
                     }
                 }
                 write(control.resolve("runtime-result.txt"),"PASS: "+checks+" assertions; all six tiers, pack absent/accepted/declined, native identity, vanilla fallback and complete serialized roundtrips");

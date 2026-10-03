@@ -6,12 +6,17 @@ import java.util.*;
 import com.thenathe.toolpouchcompat.CompatClient;
 import com.thenathe.toolpouchcompat.ElytraPreference;
 import me.pajic.toolpouch.util.ToolPouchUtil;
+import me.pajic.toolpouch.keybind.ModKeybinds;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.components.AbstractWidget;
+import net.minecraft.client.gui.screens.options.controls.KeyBindsList;
+import net.minecraft.client.gui.screens.options.controls.KeyBindsScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.Level;
 
 /** Exercises the registered key mapping and unmodified production networking. */
 public class ElytraClientQa implements ClientModInitializer {
@@ -58,6 +63,22 @@ public class ElytraClientQa implements ClientModInitializer {
         Component message = (Component) field.get(client.gui.hud);
         check(message != null && message.getString().equals(expected), "actionbar: " + expected);
     }
+    void controls(Minecraft client) throws Exception {
+        var screen = new KeyBindsScreen(null, client.options);
+        var list = new KeyBindsList(screen, client);
+        String heading = ModKeybinds.MOD_KEYS.label().getString();
+        long headings = list.children().stream()
+            .filter(entry -> entry instanceof KeyBindsList.CategoryEntry)
+            .filter(entry -> entry.children().stream().anyMatch(widget ->
+                widget instanceof AbstractWidget text && text.getMessage().getString().equals(heading)))
+            .count();
+        check(headings == 1, "controls contain one Tool Pouch heading (actual=" + headings + ")");
+        check(CompatClient.TOGGLE_ELYTRA.getCategory() == ModKeybinds.MOD_KEYS,
+            "toggle shares upstream Tool Pouch category instance");
+        check(Arrays.stream(client.options.keyMappings).filter(mapping ->
+            mapping.getName().equals("key.toolpouch.toggle_elytra")).count() == 1,
+            "toggle is registered exactly once");
+    }
     public void onInitializeClient() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (done || client.player == null || client.level == null) return;
@@ -69,6 +90,7 @@ public class ElytraClientQa implements ClientModInitializer {
                         if (ticks < 60) return;
                         check(CompatClient.TOGGLE_ELYTRA.getDefaultKey().equals(InputConstants.UNKNOWN), "toggle defaults to unbound");
                         check(Arrays.asList(client.options.keyMappings).contains(CompatClient.TOGGLE_ELYTRA), "toggle registered in controls");
+                        controls(client);
                         CompatClient.TOGGLE_ELYTRA.setKey(key);
                         KeyMapping.resetMapping();
                         if (reconnect) { state(client, false, false); command("inspect-reconnect"); phase = 20; }
@@ -134,10 +156,41 @@ public class ElytraClientQa implements ClientModInitializer {
                     case 22 -> {
                         if ((ack = ack()) == null) return;
                         serverState(ack, true, true, true);
+                        client.getConnection().sendCommand("toolpouch-elytra off");
+                        ticks = 0; phase = 23;
+                    }
+                    case 23 -> {
+                        if (ticks < 10 || enabled(client)) return;
+                        state(client, false, false); actionbar(client, "Tool Pouch Elytra disabled");
+                        // Explicit off must be idempotent and available to non-operator players.
+                        client.getConnection().sendCommand("toolpouch-elytra off");
+                        ticks = 0; phase = 24;
+                    }
+                    case 24 -> {
+                        if (ticks < 30) return;
+                        state(client, false, false);
+                        command("change-dimension"); phase = 25;
+                    }
+                    case 25 -> {
+                        if ((ack = ack()) == null || ticks < 60 || client.level.dimension() != Level.NETHER) return;
+                        serverState(ack, false, false, true); state(client, false, false);
+                        check(client.level.dimension() == Level.NETHER, "disabled preference resynchronized across dimension change");
+                        client.getConnection().sendCommand("toolpouch-elytra on");
+                        ticks = 0; phase = 26;
+                    }
+                    case 26 -> {
+                        if (ticks < 10 || !enabled(client)) return;
+                        state(client, true, true); actionbar(client, "Tool Pouch Elytra enabled");
+                        client.getConnection().sendCommand("toolpouch-elytra");
+                        ticks = 0; phase = 27;
+                    }
+                    case 27 -> {
+                        if (ticks < 10 || enabled(client)) return;
+                        state(client, false, false); actionbar(client, "Tool Pouch Elytra disabled");
                         CompatClient.TOGGLE_ELYTRA.setKey(InputConstants.UNKNOWN);
                         KeyMapping.resetMapping();
                         long total = Files.readAllLines(control.resolve("assertions.txt")).size();
-                        Files.writeString(control.resolve("result.txt"), "PASS " + total + " assertions; Fabric 26.3 registered key -> C2S toggle -> S2C shim state; inventory, leggings, chest fallback, respawn and reconnect\n"); done = true;
+                        Files.writeString(control.resolve("result.txt"), "PASS " + total + " assertions; Fabric 26.3 controls heading, registered key -> C2S toggle -> S2C shim state; inventory, leggings, chest fallback, respawn, reconnect, non-operator commands and dimension change\n"); done = true;
                     }
                 }
             } catch (Throwable failure) {

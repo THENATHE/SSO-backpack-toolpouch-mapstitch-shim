@@ -1,6 +1,7 @@
 package com.thenathe.toolpouchcompat;
 
 import eu.pb4.polymer.core.api.item.PolymerItem;
+import com.thenathe.combinedshim.FallbackLore;
 import eu.pb4.polymer.core.api.other.PolymerComponent;
 import eu.pb4.polymer.rsm.api.RegistrySyncUtils;
 import me.pajic.toolpouch.component.ModDataComponents;
@@ -77,6 +78,10 @@ public final class ToolpouchCompat {
     }
 
     private record PouchOverlay(boolean netherite) implements PolymerItem {
+        @Override public void modifyClientTooltip(List<Component> tooltip, ItemStack stack, PacketContext context) {
+            FallbackLore.fitTooltip(tooltip);
+        }
+
         @Override public boolean canSyncRawToClient(PacketContext context) { return nativeClient(context); }
         @Override public Item getPolymerItem(ItemStack stack, PacketContext context) {
             return nativeClient(context) ? stack.getItem() : Items.LEATHER;
@@ -89,9 +94,8 @@ public final class ToolpouchCompat {
             if (nativeClient(context)) return stack;
             var result = PolymerItem.super.getPolymerItemStack(stack, tooltip, context, lookup);
             result.set(DataComponents.ITEM_NAME, Component.literal(netherite ? "Netherite Tool Pouch" : "Tool Pouch"));
-            var lines = new ArrayList<>(result.getOrDefault(DataComponents.LORE, ItemLore.EMPTY).lines());
-            lines.add(NOTICE);
-            result.set(DataComponents.LORE, new ItemLore(lines));
+            result.set(DataComponents.LORE, FallbackLore.withNotice(
+                    result.getOrDefault(DataComponents.LORE, ItemLore.EMPTY), NOTICE));
             return result;
         }
     }

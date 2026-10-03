@@ -1,0 +1,9 @@
+{
+  "result": "FAIL (expected baseline reproduction)",
+  "assertion": "FAIL phase=0 java.lang.AssertionError: controls contain one Tool Pouch heading (actual=2)",
+  "addon": {
+    "path": "toolpouch-atlas-elytra-compat-1.0.0+26.3.jar",
+    "sha256": "9969d1e8e4debb7e85832137add1fc5f5ae49c2f235469a9f95dacc9e3bc7be6"
+  },
+  "method": "Real Fabric native client constructs vanilla KeyBindsList; counts Tool Pouch category heading widgets. Original addon generates two headings."
+}

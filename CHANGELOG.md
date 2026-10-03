@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.2+26.3 — 2026-10-02
+
+- Restore missing or incorrect atlas seed-map centers from saved map data; recover stale active-map selections, preserving map contents and metadata.
+- Keep atlas crafting to one consumed seed map; rebuild each preview from current ingredients and reject nonexistent saved map data.
+- Preserve custom backpack/pouch lore in vanilla fallback items, including 256 custom entries plus generated container/dye tooltip lines, without packet conversion overflow.
+- Expand runtime QA for map rendering/crafting, item lore, native storage, optional modules and both SSO target tracks. Retain baseline failures and exact artifact evidence.
+- Package releases under the standalone Multi-Shim family with separate developer and SSO-port records. The companion addon 1.0.1 carries the controls-category and world-cache fixes.
+
+
 ## 1.0.1+26.3 — 2026-10-01
 
 Fix native-client default repair-material corruption when SSO/Defaulted coexist with Polymer-hidden Chalk items. An emptied Chalk selector could incorrectly apply the calcite repair rule to every client item. Native Creative packets could then persist that wrong component, making enchanted whetstone repairs reject the correct material.

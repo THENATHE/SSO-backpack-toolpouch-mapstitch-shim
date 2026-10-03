@@ -90,3 +90,5 @@ finally:
  result['suite']=suite;result['pass']=result.get('client-result','').startswith('PASS') and result.get('server-result','').startswith('PASS')
  (run/'result.json').write_text(json.dumps(result,indent=2)+'\n')
  print('RESULT',result['pass'],flush=True)
+
+sys.exit(0 if result["pass"] else 1)

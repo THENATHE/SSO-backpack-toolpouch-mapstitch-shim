@@ -4,12 +4,13 @@ Unofficial server-side Polymer compatibility for Minecraft **26.3 / Fabric**, wi
 
 [Releases](https://github.com/THENATHE/SSO-backpack-toolpouch-mapstitch-shim/releases) · [Validation](VALIDATION.md) · [Credits](NOTICE.md)
 
-**1.0.1 fixes incorrect repair materials on native clients.** Polymer-hidden Chalk items could empty a Defaulted selector and turn the Chalk-only calcite repair rule into a rule for every client item. Enchanted tools could consequently retain the wrong repair material and reject diamond repairs. This release keeps outgoing Defaulted rules scoped to the items actually present in the client registry, while retaining the original library and server rules.
+**1.0.2 fixes missing atlas minimap tiles and hardens crafting and item fallbacks.** Existing nested maps regain their saved center metadata when the atlas ticks, and stale active-map IDs recover automatically. Atlas crafting consumes one seed map, handles repeated previews consistently, and rejects missing saved map data. Custom backpack/pouch lore survives fallback conversion without exceeding Minecraft's 256-entry limit.
 
-**Moving-click ghost items:** follow-up tests reproduced a placed diamond stack also remaining on the cursor in 1.0.0 when the item carried the saved incorrect calcite override. Movement invokes quick-craft packets; the mismatched client defaults cause intermediate carried-item corrections to arrive after placement. The same saved override stays synchronized with a fresh native client on 1.0.1. See [moving-cursor reproduction and controls](qa/evidence/cursor-motion-1.0.1.md).
+The separate **Tool Pouch Atlas & Elytra addon 1.0.1** fixes the duplicate Tool Pouch controls heading and resets MapStitch's map-center cache when changing worlds. Update that addon on both server and native clients for its client-side fixes. This combined shim stays server-only.
 
-Replace combined shim 1.0.0 with 1.0.1 on the server, then fully restart the server and Minecraft clients. Already saved incorrect overrides persist until repaired: hold an affected item and, as an operator, run `/sso-shim repair-held`. This restores only the unexpected calcite repair-material component to its server default, preserving enchantments, damage, names, contents and other components. It does not alter other inventory items or legitimate calcite-repairable Chalk. Because an intentional command-created calcite override is indistinguishable from this bug's override, recovery is explicit and selected-item-only.
+The full QA record includes reproduced failures, native/vanilla networking, optional-module combinations, separate SSO tracks, and explicit coverage limits: [validation](VALIDATION.md). Releases now have their own local `Builds/Minecraft/Multi-Shim/` family; the pre-QA 1.0.1 releases remain available in both tracks.
 
+The earlier repair-material correction remains in place. For saved unexpected calcite repair overrides, an operator can hold the affected item and run `/sso-shim repair-held`. It changes only that selected item's unexpected repairability, preserving other components. Deliberate command-created calcite overrides cannot be distinguished from the old bug, so recovery remains explicit.
 
 | Module | Original target | Client without the original mod |
 | --- | --- | --- |
@@ -26,7 +27,7 @@ Native clients use the matching original mods for their native systems. **Chalk 
 2. Keep the original mods you want and their required dependencies. Add this single combined shim to the server's `mods/` folder.
 3. Remove the four separate SSO, Tiered Backpacks, Tool Pouch and MapStitch Polymer shims. Fabric rejects duplicate shim installations to prevent competing registry translations. Keep the separate Chalk shim if using Chalk.
 4. For native play, install matching original mods and dependencies on the client. The combined shim is server-only; Polymer is not required on native clients.
-5. For the Tool Pouch atlas/elytra integration, keep `toolpouch-atlas-elytra-compat-1.0.0+26.3.jar` on **both** server and native client, together with Tool Pouch and MapStitch. It remains a separate addon.
+5. For the Tool Pouch atlas/elytra integration, keep `toolpouch-atlas-elytra-compat-1.0.1+26.3.jar` on **both** server and native client, together with Tool Pouch and MapStitch. It remains a separate addon.
 6. Restart the server and fully restart clients after replacing mods. The server log prints `SSO_STACK_MODULES` with enabled modules.
 
 Polymer's generated resource pack supplies custom visual assets. Configure Polymer pack hosting/distribution and have vanilla players accept the pack for these visuals; safe vanilla fallback items remain available without it. Pack generation/hosting is provided by Polymer, not a custom client mod.
@@ -53,7 +54,7 @@ Supply the exact unmodified local developer JARs listed in `dependencies.lock.js
 ./gradlew build
 ```
 
-Output: `build/libs/SSO-backpack-toolpouch-mapstitch-shim-1.0.1+26.3.jar`. This workspace also supports a JDK 27 compiler with `-PcompilerVersion=27`, producing Java 25 bytecode while Gradle runs on JDK 25.
+Output: `build/libs/SSO-backpack-toolpouch-mapstitch-shim-1.0.2+26.3.jar`. This workspace also supports a JDK 27 compiler with `-PcompilerVersion=27`, producing Java 25 bytecode while Gradle runs on JDK 25.
 
 Optional mixins are gated before original-mod classes load. One shared connection-scoped coordinator negotiates native capabilities, restores allowed registry entries and assigns a single dense item/component/recipe/menu mapping. Both packet directions, registry tags and component preservation share this mapping. This replaces the former competing per-shim coordinators. Original item objects and saved data remain owned by the original mods.
 
