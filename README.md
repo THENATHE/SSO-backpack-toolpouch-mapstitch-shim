@@ -8,7 +8,7 @@ Unofficial server-side Polymer compatibility for Minecraft **26.3 / Fabric**, wi
 
 The 1.0.2 atlas and fallback fixes remain included. Existing nested maps regain their saved center metadata when the atlas ticks, and stale active-map IDs recover automatically. Atlas crafting consumes one seed map and handles repeated previews consistently. Custom backpack/pouch lore survives fallback conversion within Minecraft's 256-entry limit.
 
-The separate **Tool Pouch Atlas & Elytra addon 1.0.3** fixes the duplicate Tool Pouch controls heading and resets MapStitch's map-center cache when changing worlds. Update that addon on both server and native clients for its client-side fixes. Addon 1.0.2 also enables XP Mending for Elytra in the active pouch, following SSO’s regular-Mending setting and using XP left after equipped items. Addon 1.0.3 also restores the configured larger capacity for leggings-attached netherite pouches and clears stale attachment tier markers. This combined shim stays server-only.
+The separate **Tool Pouch Atlas & Elytra addon 1.0.4** fixes the duplicate Tool Pouch controls heading and resets MapStitch's map-center cache when changing worlds. Update that addon on both server and native clients for its client-side fixes. Addon 1.0.2 also enables XP Mending for Elytra in the active pouch, following SSO’s regular-Mending setting and using XP left after equipped items. Addon 1.0.3 also restores the configured larger capacity for leggings-attached netherite pouches and clears stale attachment tier markers. This combined shim stays server-only.
 
 The full QA record includes reproduced failures, native/vanilla networking, optional-module combinations, separate SSO tracks, and explicit coverage limits: [validation](VALIDATION.md). Releases now have their own local `Builds/Minecraft/Multi-Shim/` family; the pre-QA 1.0.1 releases remain available in both tracks.
 
@@ -29,7 +29,7 @@ Native clients use the matching original mods for their native systems. **Chalk 
 2. Keep the original mods you want and their required dependencies. Add this single combined shim to the server's `mods/` folder.
 3. Remove the four separate SSO, Tiered Backpacks, Tool Pouch and MapStitch Polymer shims. Fabric rejects duplicate shim installations to prevent competing registry translations. Keep the separate Chalk shim if using Chalk.
 4. For native play, install matching original mods and dependencies on the client. The combined shim is server-only; Polymer is not required on native clients.
-5. For the Tool Pouch atlas/elytra integration, keep `toolpouch-atlas-elytra-compat-1.0.3+26.3.jar` on **both** server and native client, together with Tool Pouch and MapStitch. It remains a separate addon.
+5. For the Tool Pouch atlas/elytra integration, keep `toolpouch-atlas-elytra-compat-1.0.4+26.3.jar` on **both** server and native client, together with Tool Pouch and MapStitch. It remains a separate addon.
 6. Restart the server and fully restart clients after replacing mods. The server log prints `SSO_STACK_MODULES` with enabled modules.
 
 Polymer's generated resource pack supplies custom visual assets. Configure Polymer pack hosting/distribution and have vanilla players accept the pack for these visuals; safe vanilla fallback items remain available without it. Pack generation/hosting is provided by Polymer, not a custom client mod.
@@ -63,3 +63,5 @@ Optional mixins are gated before original-mod classes load. One shared connectio
 See [VALIDATION.md](VALIDATION.md) for tested coverage and limitations. Automated regression checks cannot certify every gameplay combination or an arbitrary production modpack.
 
 Tiered Backpacks **1.0.20+26.3** was independently verified with the unchanged 1.0.3 shim on both SSO tracks, including native/Polymer/vanilla clients and the updated GUI. See the [compatibility report and evidence](qa/tiered-1.0.20/README.md).
+
+Addon 1.0.4 adds optional ClientSort chest-style sort/refill/transfer support for Tool Pouch and Tiered Backpacks. Its developer-stack native and accelerated tests passed; the SSO-port track is paused and was not tested for this addon update. See the [addon validation](https://github.com/THENATHE/toolpouch-atlas-elytra-modification/blob/v1.0.4%2B26.3/docs/VALIDATION.md). The Multi-Shim binary remains unchanged.
