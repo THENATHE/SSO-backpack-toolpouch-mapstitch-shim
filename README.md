@@ -1,3 +1,7 @@
+> **Archived on 2026-10-04.** Future combined Minecraft 26.3 development continues in [Vanilla++ Quality of Life Suite](https://github.com/THENATHE/vanilla-plusplus-quality-of-life-suite). Existing standalone releases and source remain available here.
+>
+> The suite incorporates this component. Existing standalone installations remain a separate option; follow the suite installation instructions when migrating.
+
 # SSO-backpack-toolpouch-mapstitch-shim
 
 Unofficial server-side Polymer compatibility for Minecraft **26.3 / Fabric**, with four independently enabled modules. A module activates only when its original mod is installed. The original mods and their dependencies stay separate.
